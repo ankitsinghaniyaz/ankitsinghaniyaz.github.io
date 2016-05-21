@@ -116,6 +116,10 @@ git push
 
 &lt;p&gt;Now you can just run &lt;code&gt;bash deploy.sh &amp;quot;your message&amp;quot;&lt;/code&gt;. This will do all the above tasks we did manually.&lt;/p&gt;
 
+&lt;h2 id=&#34;custom-domain:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Custom Domain&lt;/h2&gt;
+
+&lt;p&gt;Adding a domain to your website is optional. You can read &lt;a href=&#34;http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/&#34;&gt;how to add domain to my github page&lt;/a&gt;.&lt;/p&gt;
+
 &lt;h2 id=&#34;finally:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Finally&lt;/h2&gt;
 
 &lt;p&gt;I tried to show every step I took in hosting my website. My experience was not good with the available documentation, but I hope that this will help you all. If you find anything missing or not mentioned, do let me know in the comments below! Thanks for reading&amp;hellip;&lt;/p&gt;
