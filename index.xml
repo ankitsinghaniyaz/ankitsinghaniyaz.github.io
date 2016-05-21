@@ -6,8 +6,121 @@
     <description>Recent content on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 May 2016 19:45:15 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 21 May 2016 15:36:40 +0530</lastBuildDate>
     <atom:link href="http://ankitsinghaniyaz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to Easily Host a Static website on Github</title>
+      <link>http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/</link>
+      <pubDate>Sat, 21 May 2016 15:36:40 +0530</pubDate>
+      
+      <guid>http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/</guid>
+      <description>
+
+&lt;p&gt;This post shows, how you can easily host your static website on Github. We are using Hugo static site generator. You can use anything similar.&lt;/p&gt;
+
+&lt;h2 id=&#34;initial-setup:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Initial Setup&lt;/h2&gt;
+
+&lt;p&gt;I believe that you already have &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;setup your hugo project&lt;/a&gt;, refer the link in case you want to start a project. Then open your &lt;code&gt;config.toml&lt;/code&gt; file and modify the &lt;strong&gt;baseUrl&lt;/strong&gt; as:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;baseurl = &amp;quot;http://{username}.github.io/&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;replace {username} with your username.&lt;/p&gt;
+
+&lt;h2 id=&#34;repository-for-project-files:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Repository for Project Files&lt;/h2&gt;
+
+&lt;p&gt;This step is not mandatory, but still you want to do this. Creating a repository for you content will help you monitor how your site advanced. It will also help you correct changes in case you do something wrong(which is bound to happen).&lt;/p&gt;
+
+&lt;p&gt;Create a new repository on Github with same name as your project. Then &lt;code&gt;cd&lt;/code&gt; inside the directory and issue following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init
+git add -A
+git commit -m &amp;quot;init : setup project&amp;quot;
+git remote add origin &amp;lt;project name&amp;gt;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These commands will also be displayed to you when you create the repository on Github.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note : Make sure you are inside the project directory, before issuing the commands.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;repository-for-web-pages:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Repository for Web Pages&lt;/h2&gt;
+
+&lt;p&gt;We will now create another repository to hold our static website. Create a new repository on GitHub with name as &lt;code&gt;{username}.github.io&lt;/code&gt;. Replace the {username} with you Github username.&lt;/p&gt;
+
+&lt;p&gt;After this create a new directory parallel to your project directory. Name it as you find appropriate. I name it same as the project directory with some extra suffix. This helps in keeping them close. like
+&lt;code&gt;github&lt;/code&gt; and &lt;code&gt;github_pages&lt;/code&gt;. Move into this new directory and do as following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init
+git add -A
+git commit -m &amp;quot;init : setup project&amp;quot;
+git remote add origin {username}.github.io
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;generate-static-site:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Generate Static Site&lt;/h2&gt;
+
+&lt;p&gt;We are all set-up. We will create our website which will be visible to everyone.
+Move into your project directory and run following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo -d ../github_pages [-t theme_name]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note : Change directory name to match yours.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;-d&lt;/code&gt; flag tells where should hugo dumb the site&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;-t&lt;/code&gt; flag is optional, you can specify a theme name you are using.&lt;/p&gt;
+
+&lt;p&gt;So, Now we have our website ready. All we need to do is host them and make it available to everyone.&lt;/p&gt;
+
+&lt;h2 id=&#34;bring-it-live:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Bring It Live&lt;/h2&gt;
+
+&lt;p&gt;To get our site live we have to move into our &lt;code&gt;github_pages&lt;/code&gt; directory and push it up to Github.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add -A
+git push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can now view you website at &lt;a href=&#34;www.yourusername.github.io&#34;&gt;www.{username}.github.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;automate-it:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Automate It&lt;/h2&gt;
+
+&lt;p&gt;We do not want to repeat commands every time we make some changes. So in my &lt;code&gt;github&lt;/code&gt; project directory I create a new file called &lt;code&gt;deploy.sh&lt;/code&gt; and add following lines to it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+
+# Build the project.
+hugo -d ../classandobjectspage
+
+# Change directory
+cd ../classandobjectspage
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&amp;quot;rebuilding site `date`&amp;quot;
+if [ $# -eq 1 ]
+  then msg=&amp;quot;$1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you can just run &lt;code&gt;bash deploy.sh &amp;quot;your message&amp;quot;&lt;/code&gt;. This will do all the above tasks we did manually.&lt;/p&gt;
+
+&lt;h2 id=&#34;finally:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Finally&lt;/h2&gt;
+
+&lt;p&gt;I tried to show every step I took in hosting my website. My experience was not good with the available documentation, but I hope that this will help you all. If you find anything missing or not mentioned, do let me know in the comments below! Thanks for reading&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Why Hugo is best for blogging? You should use it too!</title>
@@ -17,7 +130,7 @@
       <guid>http://ankitsinghaniyaz.github.io/hugo/why_hugo/</guid>
       <description>
 
-&lt;p&gt;Just like any blogger, I also wanted to start my own blog. I had many doubts. What is my niche? Will people read my blog? Which platform to use for blogging? I do not know if I have found my answers but, for the last one it is &lt;strong&gt;HUGO&lt;/strong&gt;. Yes, I searched for different blogging platform and all had their own set of drawbacks. Here are few reasons for not selecting them :&lt;/p&gt;
+&lt;p&gt;Just like any blogger, I also wanted to start my own blog. I had many doubts. What is my niche? Will people read my blog? Which platform to use for blogging? I do not know if I have found my answers, but for the last one it is &lt;strong&gt;HUGO&lt;/strong&gt;. Yes, I searched for different blogging platforms and all had their own set of drawbacks. Here are few reasons for not selecting them :&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Blogger : Free, SEO optimized, but no good themes&lt;/li&gt;
@@ -29,7 +142,7 @@
 
 &lt;h2 id=&#34;fast-very-fast:47e02ac62400e2bf33a3dc648fdd1233&#34;&gt;Fast, very fast&lt;/h2&gt;
 
-&lt;p&gt;I did my research and found out that hugo is faster than, not only Wordpress, but also against other products(static site generators) like Jekyll and Octopress2. You can see this &lt;a href=&#34;https://youtu.be/CdiDYZ51a2o&#34;&gt;video&lt;/a&gt; on hugo official website and get the estimate. For detailed comparison, this &lt;a href=&#34;http://conscientiousprogrammer.com/blog/2015/05/31/why-i-switched-from-octopress-2-to-hugo/&#34;&gt;blog&lt;/a&gt; is also an awesome resource to look at.&lt;/p&gt;
+&lt;p&gt;I did my research and found out that hugo is faster than Wordpress and many other products(static site generators) like Jekyll and Octopress2. You can see this &lt;a href=&#34;https://youtu.be/CdiDYZ51a2o&#34;&gt;video&lt;/a&gt; on hugo official website and get the estimate. For detailed comparison, this &lt;a href=&#34;http://conscientiousprogrammer.com/blog/2015/05/31/why-i-switched-from-octopress-2-to-hugo/&#34;&gt;blog&lt;/a&gt; is also an awesome resource.&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;In simple words, Hugo creates and stores your HTML file just once. This reduces the delay of creating HTML content every time. These files do not require much resource(CPU, Memory, etc), thus it can be hosted cheap.&lt;/p&gt;
@@ -37,7 +150,7 @@
 
 &lt;h2 id=&#34;themes-beautiful-themes:47e02ac62400e2bf33a3dc648fdd1233&#34;&gt;Themes, beautiful themes&lt;/h2&gt;
 
-&lt;p&gt;I am crazy about the look and feel of anything. Say me nuts, but I will not use anything that does not look good. It may have lot of functionalities, but the feel is equally important to me. Hugo has a good set of themes you can choose from and customize, if needed. You can also create your own theme. This is also a theme called as &lt;a href=&#34;http://themes.gohugo.io/crisp/&#34;&gt;Hugo Crips&lt;/a&gt;. I liked it for the simplicity. You can explore more hugo themes at &lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;themes.gohugo.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am crazy about the look and feel of anything. Say me nuts, but I will not use anything that does not look good. It may have lot of functionalities, but the feel is equally important to me. Hugo has a good set of themes you can choose from and customize, if needed. You can also create your own theme. This is also a theme called as &lt;a href=&#34;http://themes.gohugo.io/crisp/&#34;&gt;Hugo Crips&lt;/a&gt;. I liked it for its simplicity. You can explore more hugo themes at &lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;themes.gohugo.io&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;ease-of-setup:47e02ac62400e2bf33a3dc648fdd1233&#34;&gt;Ease of Setup&lt;/h2&gt;
 
@@ -50,10 +163,10 @@ You can just click and install it just like any other operating system. For ubun
 
 &lt;!-- point about hosting github detailed blog --&gt;
 
-&lt;p&gt;It is almost free to host them. They can be hosted for free on &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;github&lt;/a&gt; or &lt;a href=&#34;https://gohugo.io/tutorials/hosting-on-bitbucket/&#34;&gt;bitbucket&lt;/a&gt; with links to their respective official tutorial. You can also see &lt;a href=&#34;..&#34;&gt;how to setup custom domain on github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It is almost free to host them. They can be hosted for free on &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;github&lt;/a&gt; or &lt;a href=&#34;https://gohugo.io/tutorials/hosting-on-bitbucket/&#34;&gt;bitbucket&lt;/a&gt; with links to their respective official tutorial. You can also see &lt;a href=&#34;http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github&#34;&gt;how to host a static website easily on github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;This domain will cost you just $5 per year.&lt;/p&gt;
+&lt;p&gt;A domain will cost you just $5 per year.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&#34;warning:47e02ac62400e2bf33a3dc648fdd1233&#34;&gt;Warning&lt;/h2&gt;
