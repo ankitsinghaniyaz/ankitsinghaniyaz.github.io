@@ -7,30 +7,29 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" How to Easily Host a Static website on Github &middot;  Class &amp; Objects" />
+        <meta property="og:title" content=" Adding Domain to Github Pages &middot;  Class &amp; Objects" />
         <meta property="og:site_name" content="Class &amp; Objects" />
-        <meta property="og:url" content="http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/" />
+        <meta property="og:url" content="http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/" />
 
     
         <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2016-05-21T15:36:40&#43;05:30" />
-        <meta property="og:article:tag" content="hosting on github" />
-        <meta property="og:article:tag" content="hugo" />
-        <meta property="og:article:tag" content="github" />
+        <meta property="og:article:published_time" content="2016-05-22T16:48:45&#43;05:30" />
+        <meta property="og:article:tag" content="add doamin to github page" />
+        <meta property="og:article:tag" content="add godaddy domain to github page" />
         
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@" />
         <meta name="twitter:creator" content="@" />
-        <meta name="twitter:title" content="How to Easily Host a Static website on Github" />
-        <meta name="twitter:description" content="" />
-        <meta name="twitter:url" content="http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/" />
+        <meta name="twitter:title" content="Adding Domain to Github Pages" />
+        <meta name="twitter:description" content="Step by step guide on how to add custom domain to github pages and blogs" />
+        <meta name="twitter:url" content="http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/" />
     
 
-        <title> How to Easily Host a Static website on Github &middot;  Class &amp; Objects</title>
+        <title> Adding Domain to Github Pages &middot;  Class &amp; Objects</title>
 
     
-        <meta name="description" content="Useful blogs that matters!" />
+        <meta name="description" content="Step by step guide on how to add custom domain to github pages and blogs" />
     
 
         <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
@@ -46,21 +45,21 @@
     
 
     
-        <link rel="canonical" href="http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/" />
+        <link rel="canonical" href="http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/" />
 
     
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "How to Easily Host a Static website on Github",
+        "headline": "Adding Domain to Github Pages",
         "author": {
             "@type": "Person",
             "name": "http://profiles.google.com/?rel=author"
         },
-        "datePublished": "2016-05-21",
-        "description": "",
-        "wordCount":  578 
+        "datePublished": "2016-05-22",
+        "description": "Step by step guide on how to add custom domain to github pages and blogs",
+        "wordCount":  275 
     }
     </script>
     
@@ -76,7 +75,7 @@
         <header id="header">
             <a id="logo" href="http://ankitsinghaniyaz.github.io/"><img src="https://www.gravatar.com/avatar/eeb8f1009ec39ef99a26740cb0361418?s=512" alt="Class &amp; Objects" /></a>
             <h1><a href="http://ankitsinghaniyaz.github.io/">Class &amp; Objects</a></h1>
-            <p></p>
+            <p>Step by step guide on how to add custom domain to github pages and blogs</p>
 
             <div id="follow-icons">
 	
@@ -96,140 +95,65 @@
 
 <article id="" class="hugo">
     <div class="post-stamp">
-        <time datetime="2016-05-21T15:36:40&#43;05:30">
-            21 May 2016
+        <time datetime="2016-05-22T16:48:45&#43;05:30">
+            22 May 2016
         </time>
         <span class="taglist">
         
         &middot;
         
-            <a href="http://ankitsinghaniyaz.github.io/tags/hosting-on-github/">hosting on github</a>
+            <a href="http://ankitsinghaniyaz.github.io/tags/add-doamin-to-github-page/">add doamin to github page</a>
         
-            <a href="http://ankitsinghaniyaz.github.io/tags/hugo/">hugo</a>
-        
-            <a href="http://ankitsinghaniyaz.github.io/tags/github/">github</a>
+            <a href="http://ankitsinghaniyaz.github.io/tags/add-godaddy-domain-to-github-page/">add godaddy domain to github page</a>
         
         
         </span>
     </div>
-    <h1 class="post-title">How to Easily Host a Static website on Github</h1>
+    <h1 class="post-title">Adding Domain to Github Pages</h1>
 
     
     
 
     
 
-<p>This post shows, how you can easily host your static website on Github. We are using Hugo static site generator. You can use anything similar.</p>
+<p>A domain which shows what you do can add <em>credibility</em> to your blog. In this tutorial we are going to add custom domain to our github page. You may also want to <a href="..">host a website on github</a>. You can have domain with <a href="www.godaddy.com">godaddy</a>, <a href="www.hostgator.com">hostgator</a>, <a href="www.namecheap.com">namecheap</a>, etc. The steps remains the same. I will point out any peculiarity, if they exist. So, lets get started.</p>
 
-<h2 id="initial-setup:ea833f90ee262d4de180a4f65c4c7774">Initial Setup</h2>
+<h2 id="configuring-github:09ae30f3a7cdecb8c8d164a94bf30204">Configuring Github</h2>
 
-<p>I believe that you already have <a href="https://gohugo.io/overview/quickstart/">setup your hugo project</a>, refer the link in case you want to start a project. Then open your <code>config.toml</code> file and modify the <strong>baseUrl</strong> as:</p>
+<p>There should be a way for github to know what is the name of your domain. To keep it simple you have to create a file <code>CNAME</code> in your repository root. This will be the place where you have hosted your websites html content. In this file put in your domain name <code>mydomain.com</code>. You can <a href="https://github.com/ankitsinghaniyaz/ankitsinghaniyaz.github.io">visit my github hosting</a> and checkout how my <code>CNAME</code> file looks.</p>
 
-<p><code>baseurl = &quot;http://{username}.github.io/&quot;</code></p>
+<h2 id="configuring-domain-provider:09ae30f3a7cdecb8c8d164a94bf30204">Configuring Domain Provider</h2>
 
-<p>replace {username} with your username.</p>
-
-<h2 id="repository-for-project-files:ea833f90ee262d4de180a4f65c4c7774">Repository for Project Files</h2>
-
-<p>This step is not mandatory, but still you want to do this. Creating a repository for you content will help you monitor how your site advanced. It will also help you correct changes in case you do something wrong(which is bound to happen).</p>
-
-<p>Create a new repository on Github with same name as your project. Then <code>cd</code> inside the directory and issue following commands:</p>
-
-<pre><code class="language-bash">git init
-git add -A
-git commit -m &quot;init : setup project&quot;
-git remote add origin &lt;project name&gt;
-git push -u origin master
-</code></pre>
-
-<p>These commands will also be displayed to you when you create the repository on Github.</p>
+<p>In this step we have to login to our account where we have bought the domain.</p>
 
 <blockquote>
-<p>Note : Make sure you are inside the project directory, before issuing the commands.</p>
+<p>Warning: This may seem complicated, but it is not.</p>
 </blockquote>
 
-<h2 id="repository-for-web-pages:ea833f90ee262d4de180a4f65c4c7774">Repository for Web Pages</h2>
+<p><img src="http://ankitsinghaniyaz.github.io/images/domain_entry.png" alt="adding entries in domain" title="TEXT" /></p>
 
-<p>We will now create another repository to hold our static website. Create a new repository on GitHub with name as <code>{username}.github.io</code>. Replace the {username} with you Github username.</p>
+<p>You have to follow these three simple steps. Just add/modify these entries:</p>
 
-<p>After this create a new directory parallel to your project directory. Name it as you find appropriate. I name it same as the project directory with some extra suffix. This helps in keeping them close. like
-<code>github</code> and <code>github_pages</code>. Move into this new directory and do as following:</p>
-
-<pre><code class="language-bash">git init
-git add -A
-git commit -m &quot;init : setup project&quot;
-git remote add origin {username}.github.io
-git push -u origin master
-</code></pre>
-
-<h2 id="generate-static-site:ea833f90ee262d4de180a4f65c4c7774">Generate Static Site</h2>
-
-<p>We are all set-up. We will create our website which will be visible to everyone.
-Move into your project directory and run following commands:</p>
-
-<pre><code>hugo -d ../github_pages [-t theme_name]
-</code></pre>
+<ol>
+<li>Create/modify <code>A</code>, <code>Aname</code> or <code>Alias</code> with name as <code>@</code>  and value as <code>192.30.252.153</code></li>
+<li>Create/modify <code>A</code>, <code>Aname</code> or <code>Alias</code> with name as <code>@</code>  and value as <code>192.30.252.154</code></li>
+<li>Create/modify <code>CNAME</code> with name as <code>www</code> and value as <code>yourgithubid.github.io</code></li>
+</ol>
 
 <blockquote>
-<p>Note : Change directory name to match yours.</p>
+<p>Note: <code>A</code>, <code>Aname</code> and <code>Alias</code> are same thing.</p>
 </blockquote>
 
-<p><code>-d</code> flag tells where should hugo dumb the site</p>
+<p>Keep all other fields to their defaults. Do not hesitate to play. It is how you learn new things.</p>
 
-<p><code>-t</code> flag is optional, you can specify a theme name you are using.</p>
+<h2 id="conclusion:09ae30f3a7cdecb8c8d164a94bf30204">Conclusion</h2>
 
-<p>So, Now we have our website ready. All we need to do is host them and make it available to everyone.</p>
-
-<h2 id="bring-it-live:ea833f90ee262d4de180a4f65c4c7774">Bring It Live</h2>
-
-<p>To get our site live we have to move into our <code>github_pages</code> directory and push it up to Github.</p>
-
-<pre><code class="language-bash">git add -A
-git push
-</code></pre>
-
-<p>You can now view you website at <a href="www.yourusername.github.io">www.{username}.github.io</a></p>
-
-<h2 id="automate-it:ea833f90ee262d4de180a4f65c4c7774">Automate It</h2>
-
-<p>We do not want to repeat commands every time we make some changes. So in my <code>github</code> project directory I create a new file called <code>deploy.sh</code> and add following lines to it.</p>
-
-<pre><code class="language-bash">#!/bin/bash
-
-# Build the project.
-hugo -d ../classandobjectspage
-
-# Change directory
-cd ../classandobjectspage
-
-# Add changes to git.
-git add -A
-
-# Commit changes.
-msg=&quot;rebuilding site `date`&quot;
-if [ $# -eq 1 ]
-  then msg=&quot;$1&quot;
-fi
-git commit -m &quot;$msg&quot;
-
-# Push source and build repos.
-git push
-</code></pre>
-
-<p>Now you can just run <code>bash deploy.sh &quot;your message&quot;</code>. This will do all the above tasks we did manually.</p>
-
-<h2 id="custom-domain:ea833f90ee262d4de180a4f65c4c7774">Custom Domain</h2>
-
-<p>Adding a domain to your website is optional. You can read <a href="http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/">how to add domain to my github page</a>.</p>
-
-<h2 id="finally:ea833f90ee262d4de180a4f65c4c7774">Finally</h2>
-
-<p>I tried to show every step I took in hosting my website. My experience was not good with the available documentation, but I hope that this will help you all. If you find anything missing or not mentioned, do let me know in the comments below! Thanks for reading&hellip;</p>
+<p>Within less than 10 minutes you website will come live. You can go to your link and try it! If you find any information missing or have any doubts feel free to leave a comment below. Thanks for reading.</p>
 
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
       <li class="email">
-          <a href="mailto:?subject=How%20to%20Easily%20Host%20a%20Static%20website%20on%20Github&amp;body=http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/">
+          <a href="mailto:?subject=Adding%20Domain%20to%20Github%20Pages&amp;body=http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
@@ -239,7 +163,7 @@ git push
           </a>
       </li>
       <li class="facebook">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/" class="popup">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
@@ -249,7 +173,7 @@ git push
           </a>
       </li>
 			<li class="twitter">
-          <a href="http://twitter.com/home?status=How%20to%20Easily%20Host%20a%20Static%20website%20on%20Github%20http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/" class="popup">
+          <a href="http://twitter.com/home?status=Adding%20Domain%20to%20Github%20Pages%20http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
@@ -259,7 +183,7 @@ git push
           </a>
       </li>
 			<li class="linkedin">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/&amp;title=How%20to%20Easily%20Host%20a%20Static%20website%20on%20Github&amp;summary=This%20post%20shows%2c%20how%20you%20can%20easily%20host%20your%20static%20website%20on%20Github.%20We%20are%20using%20Hugo%20static%20site%20generator.%20You%20can%20use%20anything%20similar.%20Initial%20Setup%20I%20believe%20that%20you%20already%20have%20setup%20your%20hugo%20project%2c%20refer%20the%20link%20in%20case%20you%20want%20to%20start%20a%20project.%20Then%20open%20your%20config.toml%20file%20and%20modify%20the%20baseUrl%20as%3a%20baseurl%20%3d%20%26quot%3bhttp%3a%2f%2f%7busername%7d.github.io%2f%26quot%3b%20replace%20%7busername%7d%20with%20your%20username.%20Repository%20for%20Project%20Files%20This%20step%20is%20not%20mandatory%2c%20but%20still%20you%20want%20to%20do%20this...." class="popup">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/&amp;title=Adding%20Domain%20to%20Github%20Pages&amp;summary=A%20domain%20which%20shows%20what%20you%20do%20can%20add%20credibility%20to%20your%20blog.%20In%20this%20tutorial%20we%20are%20going%20to%20add%20custom%20domain%20to%20our%20github%20page.%20You%20may%20also%20want%20to%20host%20a%20website%20on%20github.%20You%20can%20have%20domain%20with%20godaddy%2c%20hostgator%2c%20namecheap%2c%20etc.%20The%20steps%20remains%20the%20same.%20I%20will%20point%20out%20any%20peculiarity%2c%20if%20they%20exist.%20So%2c%20lets%20get%20started.%20Configuring%20Github%20There%20should%20be%20a%20way%20for%20github%20to%20know%20what%20is%20the%20name%20of%20your%20domain...." class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
@@ -270,7 +194,7 @@ git push
       </li>
       <li class="tumblr">
 					<script>
-						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/ankitsinghaniyaz.github.io\/hugo\/host_static_site_on_github\/') + '&amp;t=How to Easily Host a Static website on Github" class="popup">');
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/ankitsinghaniyaz.github.io\/hugo\/adding_custom_domain_to_github_pages\/') + '&amp;t=Adding Domain to Github Pages" class="popup">');
 					</script>
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -281,7 +205,7 @@ git push
           <script>document.write('</a>');</script>
       </li>
       <li class="reddit">
-          <a href="http://www.reddit.com/submit?url=http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/">
+          <a href="http://www.reddit.com/submit?url=http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/">
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 											<g>
@@ -296,7 +220,7 @@ git push
           </a>
       </li>
       <li class="googleplus">
-          <a href="https://plus.google.com/share?url=http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/" class="popup">
+          <a href="https://plus.google.com/share?url=http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <g>
@@ -326,9 +250,9 @@ git push
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'classandobjects';
-      var disqus_identifier = 'http:\/\/ankitsinghaniyaz.github.io\/hugo\/host_static_site_on_github\/';
-      var disqus_title = 'How to Easily Host a Static website on Github';
-      var disqus_url = 'http:\/\/ankitsinghaniyaz.github.io\/hugo\/host_static_site_on_github\/';
+      var disqus_identifier = 'http:\/\/ankitsinghaniyaz.github.io\/hugo\/adding_custom_domain_to_github_pages\/';
+      var disqus_title = 'Adding Domain to Github Pages';
+      var disqus_url = 'http:\/\/ankitsinghaniyaz.github.io\/hugo\/adding_custom_domain_to_github_pages\/';
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
