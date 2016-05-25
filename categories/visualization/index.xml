@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Visualization on Class &amp; Objects</title>
-    <link>http://ankitsinghaniyaz.github.io/categories/visualization/</link>
+    <link>http://classandobjects.com/categories/visualization/</link>
     <description>Recent content in Visualization on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 24 May 2016 21:48:05 +0530</lastBuildDate>
-    <atom:link href="http://ankitsinghaniyaz.github.io/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://classandobjects.com/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Interactive Visualization in R using Rcharts</title>
-      <link>http://ankitsinghaniyaz.github.io/analytics/interactive_visualization_using_rcharts_in_r/</link>
+      <title>Interactive visualization in R using Rcharts</title>
+      <link>http://classandobjects.com/analytics/interactive_visualization_using_rcharts_in_r/</link>
       <pubDate>Tue, 24 May 2016 21:48:05 +0530</pubDate>
       
-      <guid>http://ankitsinghaniyaz.github.io/analytics/interactive_visualization_using_rcharts_in_r/</guid>
+      <guid>http://classandobjects.com/analytics/interactive_visualization_using_rcharts_in_r/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -52,7 +52,7 @@ So let’s explore rCharts without delay.&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/intro/create.html#xcharts&#34;&gt;xCharts&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;You can click on any of them to go to their respective examples. They all have their pros and cons. I would suggest you to use NVD3 if you are interested in a graph that has just one type of element eg: Scatter Plot, Line, Bar, etc. If you are interested in more features then you can checkout &lt;a href=&#34;http://ankitsinghaniyaz.github.io/underconstruction/&#34;&gt;creating a scatter plot with regression line&lt;/a&gt; and &lt;a href=&#34;http://ankitsinghaniyaz.github.io/underconstruction/&#34;&gt;bar with average line&lt;/a&gt;. These are the only library which currently support layering.&lt;/p&gt;
+&lt;p&gt;You can click on any of them to go to their respective examples. They all have their pros and cons. I would suggest you to use NVD3 if you are interested in a graph that has just one type of element eg: Scatter Plot, Line, Bar, etc. If you are interested in more features then you can checkout &lt;a href=&#34;http://classandobjects.com/underconstruction/&#34;&gt;creating a scatter plot with regression line&lt;/a&gt; and &lt;a href=&#34;http://classandobjects.com/underconstruction/&#34;&gt;bar with average line&lt;/a&gt;. These are the only library which currently support layering.&lt;/p&gt;
 
 &lt;p&gt;Below I&amp;rsquo;ll give code and output for using Highcharts and NVD3. Dimple was just updated as I am writing this blog, I&amp;rsquo;ll try to write a separate blog on that.&lt;/p&gt;
 
@@ -91,7 +91,7 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)	               # save it as html
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:
-&lt;img src=&#34;http://ankitsinghaniyaz.github.io/images/analytics/nvd_graph.png&#34; alt=&#34;nvd3 charts graphics in r&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://classandobjects.com/images/analytics/nvd_graph.png&#34; alt=&#34;nvd3 charts graphics in r&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://rcharts.io/viewer/?ec3e1d782fa46be590cb#.Vr1HyPkdD_x&#34;&gt;See Interactive Ouput on Github Here&lt;/a&gt;&lt;/p&gt;
 
@@ -137,7 +137,7 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)		                 #saves to html
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Output:
-&lt;img src=&#34;http://ankitsinghaniyaz.github.io/images/analytics/highchart.png&#34; alt=&#34;high charts graphics in r&#34; /&gt;
+&lt;img src=&#34;http://classandobjects.com/images/analytics/highchart.png&#34; alt=&#34;high charts graphics in r&#34; /&gt;
 &lt;a href=&#34;http://rcharts.github.io/viewer/?ecd2a7f0b7abd611ed9a&#34;&gt;See Interactive Ouput on Github Here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I hope you liked the blog and the examples proved useful. They have been taken from many different websites and StackExchange. Thank you everyone for reading.&lt;/p&gt;

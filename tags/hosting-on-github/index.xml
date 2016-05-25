@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hosting On Github on Class &amp; Objects</title>
-    <link>http://ankitsinghaniyaz.github.io/tags/hosting-on-github/</link>
+    <link>http://classandobjects.com/tags/hosting-on-github/</link>
     <description>Recent content in Hosting On Github on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 21 May 2016 15:36:40 +0530</lastBuildDate>
-    <atom:link href="http://ankitsinghaniyaz.github.io/tags/hosting-on-github/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://classandobjects.com/tags/hosting-on-github/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to Easily Host a Static website on Github</title>
-      <link>http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/</link>
+      <link>http://classandobjects.com/hugo/host_static_site_on_github/</link>
       <pubDate>Sat, 21 May 2016 15:36:40 +0530</pubDate>
       
-      <guid>http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/</guid>
+      <guid>http://classandobjects.com/hugo/host_static_site_on_github/</guid>
       <description>
 
 &lt;p&gt;This post shows, how you can easily host your static website on Github. We are using Hugo static site generator. You can use anything similar.&lt;/p&gt;

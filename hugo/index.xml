@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugos on Class &amp; Objects</title>
-    <link>http://ankitsinghaniyaz.github.io/hugo/</link>
+    <link>http://classandobjects.com/hugo/</link>
     <description>Recent content in Hugos on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 May 2016 16:48:45 +0530</lastBuildDate>
-    <atom:link href="http://ankitsinghaniyaz.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://classandobjects.com/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Adding Domain to Github Pages</title>
-      <link>http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/</link>
+      <link>http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/</link>
       <pubDate>Sun, 22 May 2016 16:48:45 +0530</pubDate>
       
-      <guid>http://ankitsinghaniyaz.github.io/hugo/adding_custom_domain_to_github_pages/</guid>
+      <guid>http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/</guid>
       <description>
 
 &lt;p&gt;A domain which shows what you do can add &lt;em&gt;credibility&lt;/em&gt; to your blog. In this tutorial we are going to add custom domain to our github page. You may also want to &lt;a href=&#34;..&#34;&gt;host a website on github&lt;/a&gt;. You can have domain with &lt;a href=&#34;www.godaddy.com&#34;&gt;godaddy&lt;/a&gt;, &lt;a href=&#34;www.hostgator.com&#34;&gt;hostgator&lt;/a&gt;, &lt;a href=&#34;www.namecheap.com&#34;&gt;namecheap&lt;/a&gt;, etc. The steps remains the same. I will point out any peculiarity, if they exist. So, lets get started.&lt;/p&gt;
@@ -31,7 +31,7 @@
 &lt;p&gt;Warning: This may seem complicated, but it is not.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ankitsinghaniyaz.github.io/images/domain_entry.png&#34; alt=&#34;adding entries in domain&#34; title=&#34;TEXT&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/domain_entry.png&#34; alt=&#34;adding entries in domain&#34; title=&#34;TEXT&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You have to follow these three simple steps. Just add/modify these entries:&lt;/p&gt;
 
@@ -55,10 +55,10 @@
     
     <item>
       <title>How to Easily Host a Static website on Github</title>
-      <link>http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/</link>
+      <link>http://classandobjects.com/hugo/host_static_site_on_github/</link>
       <pubDate>Sat, 21 May 2016 15:36:40 +0530</pubDate>
       
-      <guid>http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github/</guid>
+      <guid>http://classandobjects.com/hugo/host_static_site_on_github/</guid>
       <description>
 
 &lt;p&gt;This post shows, how you can easily host your static website on Github. We are using Hugo static site generator. You can use anything similar.&lt;/p&gt;
@@ -172,10 +172,10 @@ git push
     
     <item>
       <title>Why Hugo is best for blogging? You should use it too!</title>
-      <link>http://ankitsinghaniyaz.github.io/hugo/why_hugo/</link>
+      <link>http://classandobjects.com/hugo/why_hugo/</link>
       <pubDate>Wed, 18 May 2016 19:45:15 +0530</pubDate>
       
-      <guid>http://ankitsinghaniyaz.github.io/hugo/why_hugo/</guid>
+      <guid>http://classandobjects.com/hugo/why_hugo/</guid>
       <description>
 
 &lt;p&gt;Just like any blogger, I also wanted to start my own blog. I had many doubts. What is my niche? Will people read my blog? Which platform to use for blogging? I do not know if I have found my answers, but for the last one it is &lt;strong&gt;HUGO&lt;/strong&gt;. Yes, I searched for different blogging platforms and all had their own set of drawbacks. Here are few reasons for not selecting them :&lt;/p&gt;
@@ -211,7 +211,7 @@ You can just click and install it just like any other operating system. For ubun
 
 &lt;!-- point about hosting github detailed blog --&gt;
 
-&lt;p&gt;It is almost free to host them. They can be hosted for free on &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;github&lt;/a&gt; or &lt;a href=&#34;https://gohugo.io/tutorials/hosting-on-bitbucket/&#34;&gt;bitbucket&lt;/a&gt; with links to their respective official tutorial. You can also see &lt;a href=&#34;http://ankitsinghaniyaz.github.io/hugo/host_static_site_on_github&#34;&gt;how to host a static website easily on github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It is almost free to host them. They can be hosted for free on &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;github&lt;/a&gt; or &lt;a href=&#34;https://gohugo.io/tutorials/hosting-on-bitbucket/&#34;&gt;bitbucket&lt;/a&gt; with links to their respective official tutorial. You can also see &lt;a href=&#34;http://classandobjects.com/hugo/host_static_site_on_github&#34;&gt;how to host a static website easily on github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;A domain will cost you just $5 per year.&lt;/p&gt;
