@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Class &amp; Objects</title>
+    <link>http://classandobjects.com/categories/python/</link>
+    <description>Recent content in Python on Class &amp; Objects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 May 2016 11:03:20 +0530</lastBuildDate>
+    <atom:link href="http://classandobjects.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Step by Step Guide on Deploying Django Application on Heroku</title>
+      <link>http://classandobjects.com/python/host_django_app_on_heroku/</link>
+      <pubDate>Fri, 27 May 2016 11:03:20 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/python/host_django_app_on_heroku/</guid>
+      <description>
+
+&lt;p&gt;This guide describe how to deploy Django application on Heroku, gracefully! Yes, you heard it right. Heroku was mostly build with Ruby in mind but now it supports Python applications too. There are some points which are not mentioned in other blogs and &lt;a href=&#34;https://devcenter.heroku.com/articles/django-app-configuration&#34;&gt;Heroku official docs&lt;/a&gt;. I will try to describe all the process in detail here, so that you have a good experience deploying you apps. Lets get started!&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-the-project:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Creating the Project&lt;/h2&gt;
+
+&lt;p&gt;Creating your project is the most important step in this series. Create your application with default Django settings. These are the few configuration that you will have to do. You can create a Django project using following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;django-admin startproject myproject
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This tutorial talks about configuring Django apps created through above method!&lt;/p&gt;
+
+&lt;p&gt;If you are creating a new application I highly recommend using Heroku Django template. You can start your project as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;django-admin startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile  myproject
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: If you created application using this template you can skip the configuration step.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;creating-virtual-environment:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Creating Virtual Environment&lt;/h2&gt;
+
+&lt;p&gt;There are lot of packages in your default python path. You may want to create a fresh and sandboxed environment for this application. This avoids your global changes from affecting this application. Install &lt;code&gt;virtualenv&lt;/code&gt; with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install virtualenv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can create the virtual environment with following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# creates virtualenv with name myenv, feel free to change it
+virtualenv myenv
+
+# activate the environment
+source myenv/bin/activate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;installing-dependencies:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Installing Dependencies&lt;/h2&gt;
+
+&lt;p&gt;These are few dependencies which are required to successfully deploy your application. Make sure you install them all.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install django
+pip install gunicorn
+pip install dj-database-url
+pip install whitenoise
+pip install psycopg2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can get &lt;a href=&#34;http://stackoverflow.com/questions/5420789/how-to-install-psycopg2-with-pip-on-python&#34;&gt;error while installing psycopg2&lt;/a&gt;. I found solution to that on stackoverflow:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install libpq-dev python-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Try again installing &lt;code&gt;psycopg2&lt;/code&gt;!&lt;/p&gt;
+
+&lt;p&gt;You also want to install &lt;a href=&#34;https://devcenter.heroku.com/articles/getting-started-with-python#set-up&#34;&gt;Heroku Toolbelt&lt;/a&gt; and &lt;a href=&#34;https://git-scm.com/book/en/v2/Getting-Started-Installing-Git&#34;&gt;git&lt;/a&gt; for your platform. This helps us easily manage our application remotely.&lt;/p&gt;
+
+&lt;p&gt;Try following commands on console to make sure you installed them properly:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;heroku --help
+git --help
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If these commands return with some options, you have successfully installed them.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Did You Know?&lt;/strong&gt; Heroku uses git to create local repository&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;creating-requirements-txt:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Creating requirements.txt&lt;/h2&gt;
+
+&lt;p&gt;There is no way for Heroku to know your application dependencies. So we need a &lt;code&gt;requirements.txt&lt;/code&gt; file in our root at the same level as &lt;code&gt;manage.py&lt;/code&gt; file.
+We can generate the file with following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pip freeze &amp;gt; requirements.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: Make sure you create the file parallel to manage.py file.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;creating-procfile:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Creating Procfile&lt;/h2&gt;
+
+&lt;p&gt;Create a file called as &lt;code&gt;Procfile&lt;/code&gt; at same level as your &lt;code&gt;manage.py&lt;/code&gt; file. Put the following line into it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;web: gunicorn myproject.wsgi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: Procfile starts with a capital &lt;code&gt;P&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Note: Make sure to change myproject.wsgi to yourprojectname.wsgi&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This file is used by Heroku to determine what kind of service will be running on the server. It says that &amp;ldquo;We want a web server gunicorn with the project mentioned&amp;rdquo;&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-runtime-txt:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Creating runtime.txt&lt;/h2&gt;
+
+&lt;p&gt;Herkou uses &lt;code&gt;Python2&lt;/code&gt; as default. If you are like me and want to use &lt;code&gt;Python3&lt;/code&gt; instead. You can create a file &lt;code&gt;runtime.txt&lt;/code&gt; in your project root at the same level as &lt;code&gt;manage.py&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find out your python version by firing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;python -V
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;then put the line in your &lt;code&gt;runtime.txt&lt;/code&gt; file as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python-3.5.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;configuring-to-deploy:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Configuring to Deploy&lt;/h2&gt;
+
+&lt;p&gt;Now you are all set to Configure your Django app for Herkou. There are two files that you need to edit.&lt;/p&gt;
+
+&lt;h3 id=&#34;modify-settings-py:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Modify settings.py&lt;/h3&gt;
+
+&lt;p&gt;Open &lt;code&gt;settings.py&lt;/code&gt; file, it can be found under your &lt;code&gt;myproject/myproject/setting.py&lt;/code&gt;. There is only one &lt;code&gt;settings.py&lt;/code&gt; file in your project. Edit it and the following lines following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# add this import at top
+import dj_database_url
+
+# scroll down to find entries related to DATABASE, below that put following lines
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES[&#39;default&#39;].update(db_from_env)
+
+# scroll down to find entries realted to STATIC, add these lines there
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, &#39;staticfiles&#39;)
+STATIC_URL = &#39;/static/&#39;
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, &#39;static&#39;),
+)
+STATICFILES_STORAGE = &#39;whitenoise.django.GzipManifestStaticFilesStorage&#39;
+
+# make sure to remove duplicates line if they exist
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;modify-wsgi-py:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Modify wsgi.py&lt;/h3&gt;
+
+&lt;p&gt;Find &lt;code&gt;wsgi.py&lt;/code&gt; file parallel to &lt;code&gt;settings.py&lt;/code&gt; file. Edit it and add following lines:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Add these imports at top
+from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
+
+application = get_wsgi_application()
+application = DjangoWhiteNoise(application)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;create-gitignore:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Create .gitignore&lt;/h2&gt;
+
+&lt;p&gt;Create a git ignore file to avoid adding of unwanted files to our repository. Create a file called &lt;code&gt;.gitignore&lt;/code&gt; on your project root. Add following lines to it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# name of your environment
+venv
+# do not allow python cache file
+*.pyc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Alternatively you can delete the virtual environment &lt;code&gt;venv&lt;/code&gt; you created!&lt;/p&gt;
+
+&lt;h2 id=&#34;deploy-on-heroku:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Deploy on Heroku&lt;/h2&gt;
+
+&lt;p&gt;Now you are done with configuring Django application. We are now going to host our application to Heroku. We will use the &lt;strong&gt;herkou toolbelt and git&lt;/strong&gt; we installed previously.&lt;/p&gt;
+
+&lt;p&gt;Go to &lt;a href=&#34;https://www.heroku.com/&#34;&gt;heroku&lt;/a&gt; and sign up for an account. Do not forget to verify the email address. Fire in following commands while inside your project root.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;heroku login
+# Enter your login id and password you used to create the account
+
+# Set up git flow
+git init
+git add .
+
+# may have to provide email and name
+git config user.email &amp;quot;email@domain.com&amp;quot;
+git config user.name &amp;quot;yourname&amp;quot;
+
+git commit -m &#39;Initial commit&#39;
+
+heroku create
+# Creates a new application for this project
+
+git push heroku master
+# creates a local repository heroku and starts to host it on heroku
+
+# if above step throws an error you may have to disable static collection and push again using above command
+heroku config:set DISABLE_COLLECTSTATIC=1
+
+heroku open
+# opens you app on browser
+
+heroku logs
+# use this to see how your app is working in case you find some error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;conclusion:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I have tried to give all the steps I took to deploy apps to heroku. If you find this article usefull share it with your friends. Feel free to comment about any improvement you would like to see.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We Learn, We Grow..&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

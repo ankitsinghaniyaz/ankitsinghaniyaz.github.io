@@ -7,29 +7,29 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Adding Domain to Github Pages &middot;  Class &amp; Objects" />
+        <meta property="og:title" content=" Step by Step Guide on Deploying Django Application on Heroku &middot;  Class &amp; Objects" />
         <meta property="og:site_name" content="Class &amp; Objects" />
-        <meta property="og:url" content="http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/" />
+        <meta property="og:url" content="http://classandobjects.com/python/host_django_app_on_heroku/" />
 
     
         <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2016-05-22T16:48:45&#43;05:30" />
-        <meta property="og:article:tag" content="add doamin to github page" />
-        <meta property="og:article:tag" content="add godaddy domain to github page" />
+        <meta property="og:article:published_time" content="2016-05-27T11:03:20&#43;05:30" />
+        <meta property="og:article:tag" content="how to host django application on heroku" />
+        <meta property="og:article:tag" content="deploy django application on heroku" />
         
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@classandobjects" />
         <meta name="twitter:creator" content="@classandobjects" />
-        <meta name="twitter:title" content="Adding Domain to Github Pages" />
-        <meta name="twitter:description" content="Step by step guide on how to add custom domain to github pages and blogs" />
-        <meta name="twitter:url" content="http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/" />
+        <meta name="twitter:title" content="Step by Step Guide on Deploying Django Application on Heroku" />
+        <meta name="twitter:description" content="Step by step guide on how to deploy django application on heroku. This guide talks about creating Procfile, requirement.txt and setting up the toolbelt" />
+        <meta name="twitter:url" content="http://classandobjects.com/python/host_django_app_on_heroku/" />
     
 
-        <title> Adding Domain to Github Pages &middot;  Class &amp; Objects</title>
+        <title> Step by Step Guide on Deploying Django Application on Heroku &middot;  Class &amp; Objects</title>
 
     
-        <meta name="description" content="Step by step guide on how to add custom domain to github pages and blogs" />
+        <meta name="description" content="Step by step guide on how to deploy django application on heroku. This guide talks about creating Procfile, requirement.txt and setting up the toolbelt" />
     
 
         <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
@@ -45,21 +45,21 @@
     
 
     
-        <link rel="canonical" href="http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/" />
+        <link rel="canonical" href="http://classandobjects.com/python/host_django_app_on_heroku/" />
 
     
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Adding Domain to Github Pages",
+        "headline": "Step by Step Guide on Deploying Django Application on Heroku",
         "author": {
             "@type": "Person",
             "name": "http://profiles.google.com/\x2bAnkitSinghaniya?rel=author"
         },
-        "datePublished": "2016-05-22",
-        "description": "Step by step guide on how to add custom domain to github pages and blogs",
-        "wordCount":  275 
+        "datePublished": "2016-05-27",
+        "description": "Step by step guide on how to deploy django application on heroku. This guide talks about creating Procfile, requirement.txt and setting up the toolbelt",
+        "wordCount":  967 
     }
     </script>
     
@@ -75,7 +75,7 @@
         <header id="header">
             <a id="logo" href="http://classandobjects.com/"><img src="https://www.gravatar.com/avatar/eeb8f1009ec39ef99a26740cb0361418?s=512" alt="Class &amp; Objects" /></a>
             <h1><a href="http://classandobjects.com/">Class &amp; Objects</a></h1>
-            <p>Step by step guide on how to add custom domain to github pages and blogs</p>
+            <p>Step by step guide on how to deploy django application on heroku. This guide talks about creating Procfile, requirement.txt and setting up the toolbelt</p>
 
             <div id="follow-icons">
 	
@@ -93,67 +93,239 @@
 
 <main id="content">
 
-<article id="" class="hugo">
+<article id="host_django_app_on_heroku" class="python">
     <div class="post-stamp">
-        <time datetime="2016-05-22T16:48:45&#43;05:30">
-            22 May 2016
+        <time datetime="2016-05-27T11:03:20&#43;05:30">
+            27 May 2016
         </time>
         <span class="taglist">
         
         &middot;
         
-            <a href="http://classandobjects.com/tags/add-doamin-to-github-page/">add doamin to github page</a>
+            <a href="http://classandobjects.com/tags/how-to-host-django-application-on-heroku/">how to host django application on heroku</a>
         
-            <a href="http://classandobjects.com/tags/add-godaddy-domain-to-github-page/">add godaddy domain to github page</a>
+            <a href="http://classandobjects.com/tags/deploy-django-application-on-heroku/">deploy django application on heroku</a>
         
         
         </span>
     </div>
-    <h1 class="post-title">Adding Domain to Github Pages</h1>
+    <h1 class="post-title">Step by Step Guide on Deploying Django Application on Heroku</h1>
 
     
     
 
     
 
-<p>A domain which shows what you do can add <em>credibility</em> to your blog. In this tutorial we are going to add custom domain to our github page. You may also want to <a href="..">host a website on github</a>. You can have domain with <a href="https://www.godaddy.com">godaddy</a>, <a href="https://www.hostgator.com">hostgator</a>, <a href="https://www.namecheap.com">namecheap</a>, etc. The steps remains the same. I will point out any peculiarity, if they exist. So, lets get started.</p>
+<p>This guide describe how to deploy Django application on Heroku, gracefully! Yes, you heard it right. Heroku was mostly build with Ruby in mind but now it supports Python applications too. There are some points which are not mentioned in other blogs and <a href="https://devcenter.heroku.com/articles/django-app-configuration">Heroku official docs</a>. I will try to describe all the process in detail here, so that you have a good experience deploying you apps. Lets get started!</p>
 
-<h2 id="configuring-github:09ae30f3a7cdecb8c8d164a94bf30204">Configuring Github</h2>
+<h2 id="creating-the-project:710c80679a96f399e4a7e7e32ef8455f">Creating the Project</h2>
 
-<p>There should be a way for github to know what is the name of your domain. To keep it simple you have to create a file <code>CNAME</code> in your repository root. This will be the place where you have hosted your websites html content. In this file put in your domain name <code>mydomain.com</code>. You can <a href="https://github.com/ankitsinghaniyaz/ankitsinghaniyaz.github.io">visit my github hosting</a> and checkout how my <code>CNAME</code> file looks.</p>
+<p>Creating your project is the most important step in this series. Create your application with default Django settings. These are the few configuration that you will have to do. You can create a Django project using following command:</p>
 
-<h2 id="configuring-domain-provider:09ae30f3a7cdecb8c8d164a94bf30204">Configuring Domain Provider</h2>
+<pre><code class="language-bash">django-admin startproject myproject
+</code></pre>
 
-<p>In this step we have to login to our account where we have bought the domain.</p>
+<p>This tutorial talks about configuring Django apps created through above method!</p>
+
+<p>If you are creating a new application I highly recommend using Heroku Django template. You can start your project as:</p>
+
+<pre><code class="language-bash">django-admin startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile  myproject
+</code></pre>
 
 <blockquote>
-<p>Warning: This may seem complicated, but it is not.</p>
+<p>Note: If you created application using this template you can skip the configuration step.</p>
 </blockquote>
 
-<p><img src="http://classandobjects.com/images/domain_entry.png" alt="adding entries in domain" title="TEXT" /></p>
+<h2 id="creating-virtual-environment:710c80679a96f399e4a7e7e32ef8455f">Creating Virtual Environment</h2>
 
-<p>You have to follow these three simple steps. Just add/modify these entries:</p>
+<p>There are lot of packages in your default python path. You may want to create a fresh and sandboxed environment for this application. This avoids your global changes from affecting this application. Install <code>virtualenv</code> with:</p>
 
-<ol>
-<li>Create/modify <code>A</code>, <code>Aname</code> or <code>Alias</code> with name as <code>@</code>  and value as <code>192.30.252.153</code></li>
-<li>Create/modify <code>A</code>, <code>Aname</code> or <code>Alias</code> with name as <code>@</code>  and value as <code>192.30.252.154</code></li>
-<li>Create/modify <code>CNAME</code> with name as <code>www</code> and value as <code>yourgithubid.github.io</code></li>
-</ol>
+<pre><code class="language-bash">pip install virtualenv
+</code></pre>
+
+<p>You can create the virtual environment with following commands:</p>
+
+<pre><code class="language-bash"># creates virtualenv with name myenv, feel free to change it
+virtualenv myenv
+
+# activate the environment
+source myenv/bin/activate
+</code></pre>
+
+<h2 id="installing-dependencies:710c80679a96f399e4a7e7e32ef8455f">Installing Dependencies</h2>
+
+<p>These are few dependencies which are required to successfully deploy your application. Make sure you install them all.</p>
+
+<pre><code class="language-bash">pip install django
+pip install gunicorn
+pip install dj-database-url
+pip install whitenoise
+pip install psycopg2
+</code></pre>
+
+<p>You can get <a href="http://stackoverflow.com/questions/5420789/how-to-install-psycopg2-with-pip-on-python">error while installing psycopg2</a>. I found solution to that on stackoverflow:</p>
+
+<pre><code class="language-bash">sudo apt-get install libpq-dev python-dev
+</code></pre>
+
+<p>Try again installing <code>psycopg2</code>!</p>
+
+<p>You also want to install <a href="https://devcenter.heroku.com/articles/getting-started-with-python#set-up">Heroku Toolbelt</a> and <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git</a> for your platform. This helps us easily manage our application remotely.</p>
+
+<p>Try following commands on console to make sure you installed them properly:</p>
+
+<pre><code class="language-bash">heroku --help
+git --help
+</code></pre>
+
+<p>If these commands return with some options, you have successfully installed them.</p>
 
 <blockquote>
-<p>Note: <code>A</code>, <code>Aname</code> and <code>Alias</code> are same thing.</p>
+<p><strong>Did You Know?</strong> Heroku uses git to create local repository</p>
 </blockquote>
 
-<p>Keep all other fields to their defaults. Do not hesitate to play. It is how you learn new things.</p>
+<h2 id="creating-requirements-txt:710c80679a96f399e4a7e7e32ef8455f">Creating requirements.txt</h2>
 
-<h2 id="conclusion:09ae30f3a7cdecb8c8d164a94bf30204">Conclusion</h2>
+<p>There is no way for Heroku to know your application dependencies. So we need a <code>requirements.txt</code> file in our root at the same level as <code>manage.py</code> file.
+We can generate the file with following command:</p>
 
-<p>Within less than 10 minutes you website will come live. You can go to your link and try it! If you find any information missing or have any doubts feel free to leave a comment below. Thanks for reading.</p>
+<pre><code>pip freeze &gt; requirements.txt
+</code></pre>
+
+<blockquote>
+<p>Note: Make sure you create the file parallel to manage.py file.</p>
+</blockquote>
+
+<h2 id="creating-procfile:710c80679a96f399e4a7e7e32ef8455f">Creating Procfile</h2>
+
+<p>Create a file called as <code>Procfile</code> at same level as your <code>manage.py</code> file. Put the following line into it:</p>
+
+<pre><code>web: gunicorn myproject.wsgi
+</code></pre>
+
+<blockquote>
+<p>Note: Procfile starts with a capital <code>P</code></p>
+
+<p>Note: Make sure to change myproject.wsgi to yourprojectname.wsgi</p>
+</blockquote>
+
+<p>This file is used by Heroku to determine what kind of service will be running on the server. It says that &ldquo;We want a web server gunicorn with the project mentioned&rdquo;</p>
+
+<h2 id="creating-runtime-txt:710c80679a96f399e4a7e7e32ef8455f">Creating runtime.txt</h2>
+
+<p>Herkou uses <code>Python2</code> as default. If you are like me and want to use <code>Python3</code> instead. You can create a file <code>runtime.txt</code> in your project root at the same level as <code>manage.py</code></p>
+
+<p>You can find out your python version by firing:</p>
+
+<pre><code class="language-bash">python -V
+</code></pre>
+
+<p>then put the line in your <code>runtime.txt</code> file as:</p>
+
+<pre><code>python-3.5.1
+</code></pre>
+
+<h2 id="configuring-to-deploy:710c80679a96f399e4a7e7e32ef8455f">Configuring to Deploy</h2>
+
+<p>Now you are all set to Configure your Django app for Herkou. There are two files that you need to edit.</p>
+
+<h3 id="modify-settings-py:710c80679a96f399e4a7e7e32ef8455f">Modify settings.py</h3>
+
+<p>Open <code>settings.py</code> file, it can be found under your <code>myproject/myproject/setting.py</code>. There is only one <code>settings.py</code> file in your project. Edit it and the following lines following:</p>
+
+<pre><code class="language-python"># add this import at top
+import dj_database_url
+
+# scroll down to find entries related to DATABASE, below that put following lines
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+# scroll down to find entries realted to STATIC, add these lines there
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+# make sure to remove duplicates line if they exist
+</code></pre>
+
+<h3 id="modify-wsgi-py:710c80679a96f399e4a7e7e32ef8455f">Modify wsgi.py</h3>
+
+<p>Find <code>wsgi.py</code> file parallel to <code>settings.py</code> file. Edit it and add following lines:</p>
+
+<pre><code class="language-python"># Add these imports at top
+from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
+
+application = get_wsgi_application()
+application = DjangoWhiteNoise(application)
+</code></pre>
+
+<h2 id="create-gitignore:710c80679a96f399e4a7e7e32ef8455f">Create .gitignore</h2>
+
+<p>Create a git ignore file to avoid adding of unwanted files to our repository. Create a file called <code>.gitignore</code> on your project root. Add following lines to it.</p>
+
+<pre><code># name of your environment
+venv
+# do not allow python cache file
+*.pyc
+</code></pre>
+
+<p>Alternatively you can delete the virtual environment <code>venv</code> you created!</p>
+
+<h2 id="deploy-on-heroku:710c80679a96f399e4a7e7e32ef8455f">Deploy on Heroku</h2>
+
+<p>Now you are done with configuring Django application. We are now going to host our application to Heroku. We will use the <strong>herkou toolbelt and git</strong> we installed previously.</p>
+
+<p>Go to <a href="https://www.heroku.com/">heroku</a> and sign up for an account. Do not forget to verify the email address. Fire in following commands while inside your project root.</p>
+
+<pre><code class="language-bash">heroku login
+# Enter your login id and password you used to create the account
+
+# Set up git flow
+git init
+git add .
+
+# may have to provide email and name
+git config user.email &quot;email@domain.com&quot;
+git config user.name &quot;yourname&quot;
+
+git commit -m 'Initial commit'
+
+heroku create
+# Creates a new application for this project
+
+git push heroku master
+# creates a local repository heroku and starts to host it on heroku
+
+# if above step throws an error you may have to disable static collection and push again using above command
+heroku config:set DISABLE_COLLECTSTATIC=1
+
+heroku open
+# opens you app on browser
+
+heroku logs
+# use this to see how your app is working in case you find some error
+</code></pre>
+
+<h2 id="conclusion:710c80679a96f399e4a7e7e32ef8455f">Conclusion</h2>
+
+<p>I have tried to give all the steps I took to deploy apps to heroku. If you find this article usefull share it with your friends. Feel free to comment about any improvement you would like to see.</p>
+
+<blockquote>
+<p>We Learn, We Grow..</p>
+</blockquote>
 
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
       <li class="email">
-          <a href="mailto:?subject=Adding%20Domain%20to%20Github%20Pages&amp;body=http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/">
+          <a href="mailto:?subject=Step%20by%20Step%20Guide%20on%20Deploying%20Django%20Application%20on%20Heroku&amp;body=http://classandobjects.com/python/host_django_app_on_heroku/">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
@@ -163,7 +335,7 @@
           </a>
       </li>
       <li class="facebook">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/" class="popup">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://classandobjects.com/python/host_django_app_on_heroku/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
@@ -173,7 +345,7 @@
           </a>
       </li>
 			<li class="twitter">
-          <a href="http://twitter.com/home?status=Adding%20Domain%20to%20Github%20Pages%20http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/" class="popup">
+          <a href="http://twitter.com/home?status=Step%20by%20Step%20Guide%20on%20Deploying%20Django%20Application%20on%20Heroku%20http://classandobjects.com/python/host_django_app_on_heroku/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
@@ -183,7 +355,7 @@
           </a>
       </li>
 			<li class="linkedin">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/&amp;title=Adding%20Domain%20to%20Github%20Pages&amp;summary=A%20domain%20which%20shows%20what%20you%20do%20can%20add%20credibility%20to%20your%20blog.%20In%20this%20tutorial%20we%20are%20going%20to%20add%20custom%20domain%20to%20our%20github%20page.%20You%20may%20also%20want%20to%20host%20a%20website%20on%20github.%20You%20can%20have%20domain%20with%20godaddy%2c%20hostgator%2c%20namecheap%2c%20etc.%20The%20steps%20remains%20the%20same.%20I%20will%20point%20out%20any%20peculiarity%2c%20if%20they%20exist.%20So%2c%20lets%20get%20started.%20Configuring%20Github%20There%20should%20be%20a%20way%20for%20github%20to%20know%20what%20is%20the%20name%20of%20your%20domain...." class="popup">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://classandobjects.com/python/host_django_app_on_heroku/&amp;title=Step%20by%20Step%20Guide%20on%20Deploying%20Django%20Application%20on%20Heroku&amp;summary=This%20guide%20describe%20how%20to%20deploy%20Django%20application%20on%20Heroku%2c%20gracefully%21%20Yes%2c%20you%20heard%20it%20right.%20Heroku%20was%20mostly%20build%20with%20Ruby%20in%20mind%20but%20now%20it%20supports%20Python%20applications%20too.%20There%20are%20some%20points%20which%20are%20not%20mentioned%20in%20other%20blogs%20and%20Heroku%20official%20docs.%20I%20will%20try%20to%20describe%20all%20the%20process%20in%20detail%20here%2c%20so%20that%20you%20have%20a%20good%20experience%20deploying%20you%20apps.%20Lets%20get%20started%21%20Creating%20the%20Project%20Creating%20your%20project%20is%20the%20most%20important%20step%20in%20this%20series...." class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
@@ -194,7 +366,7 @@
       </li>
       <li class="tumblr">
 					<script>
-						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/classandobjects.com\/hugo\/adding_custom_domain_to_github_pages\/') + '&amp;t=Adding Domain to Github Pages" class="popup">');
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/classandobjects.com\/python\/host_django_app_on_heroku\/') + '&amp;t=Step by Step Guide on Deploying Django Application on Heroku" class="popup">');
 					</script>
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -205,7 +377,7 @@
           <script>document.write('</a>');</script>
       </li>
       <li class="reddit">
-          <a href="http://www.reddit.com/submit?url=http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/">
+          <a href="http://www.reddit.com/submit?url=http://classandobjects.com/python/host_django_app_on_heroku/">
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 											<g>
@@ -220,7 +392,7 @@
           </a>
       </li>
       <li class="googleplus">
-          <a href="https://plus.google.com/share?url=http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/" class="popup">
+          <a href="https://plus.google.com/share?url=http://classandobjects.com/python/host_django_app_on_heroku/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <g>
@@ -250,9 +422,9 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'classandobjects';
-      var disqus_identifier = 'http:\/\/classandobjects.com\/hugo\/adding_custom_domain_to_github_pages\/';
-      var disqus_title = 'Adding Domain to Github Pages';
-      var disqus_url = 'http:\/\/classandobjects.com\/hugo\/adding_custom_domain_to_github_pages\/';
+      var disqus_identifier = 'http:\/\/classandobjects.com\/python\/host_django_app_on_heroku\/';
+      var disqus_title = 'Step by Step Guide on Deploying Django Application on Heroku';
+      var disqus_url = 'http:\/\/classandobjects.com\/python\/host_django_app_on_heroku\/';
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
