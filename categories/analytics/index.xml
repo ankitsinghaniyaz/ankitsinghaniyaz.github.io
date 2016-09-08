@@ -56,7 +56,7 @@ So let’s explore rCharts without delay.&lt;/p&gt;
 
 &lt;p&gt;Below I&amp;rsquo;ll give code and output for using Highcharts and NVD3. Dimple was just updated as I am writing this blog, I&amp;rsquo;ll try to write a separate blog on that.&lt;/p&gt;
 
-&lt;h2 id=&#34;prerequisite:c08bdd7c7218578739198737fb20bb13&#34;&gt;Prerequisite&lt;/h2&gt;
+&lt;h2 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h2&gt;
 
 &lt;p&gt;Install rCharts. This requires devtools to be installed.&lt;/p&gt;
 
@@ -64,7 +64,7 @@ So let’s explore rCharts without delay.&lt;/p&gt;
 install_github(&#39;rCharts&#39;, &#39;ramnathv&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;nvd3:c08bdd7c7218578739198737fb20bb13&#34;&gt;NVD3&lt;/h3&gt;
+&lt;h3 id=&#34;nvd3&#34;&gt;NVD3&lt;/h3&gt;
 
 &lt;p&gt;We will our &lt;code&gt;mtcars&lt;/code&gt; data set in all below examples to keep it simple. Visit &lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/nvd3/create.html&#34;&gt;NVD3 documentation&lt;/a&gt; for more example, have a look below and you will understand how they work.&lt;/p&gt;
 
@@ -95,7 +95,7 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)	               # save it as html
 
 &lt;p&gt;&lt;a href=&#34;http://rcharts.io/viewer/?ec3e1d782fa46be590cb#.Vr1HyPkdD_x&#34;&gt;See Interactive Ouput on Github Here&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;highcharts:c08bdd7c7218578739198737fb20bb13&#34;&gt;Highcharts&lt;/h3&gt;
+&lt;h3 id=&#34;highcharts&#34;&gt;Highcharts&lt;/h3&gt;
 
 &lt;p&gt;The example below creates a scatter plot with &lt;code&gt;mtcars&lt;/code&gt;. I have tried to use almost all the functions and parameters. If I have missed some, please point it out in the comments below.&lt;/p&gt;
 

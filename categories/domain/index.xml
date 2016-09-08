@@ -19,11 +19,11 @@
 
 &lt;p&gt;A domain which shows what you do can add &lt;em&gt;credibility&lt;/em&gt; to your blog. In this tutorial we are going to add custom domain to our github page. You may also want to &lt;a href=&#34;..&#34;&gt;host a website on github&lt;/a&gt;. You can have domain with &lt;a href=&#34;https://www.godaddy.com&#34;&gt;godaddy&lt;/a&gt;, &lt;a href=&#34;https://www.hostgator.com&#34;&gt;hostgator&lt;/a&gt;, &lt;a href=&#34;https://www.namecheap.com&#34;&gt;namecheap&lt;/a&gt;, etc. The steps remains the same. I will point out any peculiarity, if they exist. So, lets get started.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuring-github:09ae30f3a7cdecb8c8d164a94bf30204&#34;&gt;Configuring Github&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-github&#34;&gt;Configuring Github&lt;/h2&gt;
 
 &lt;p&gt;There should be a way for github to know what is the name of your domain. To keep it simple you have to create a file &lt;code&gt;CNAME&lt;/code&gt; in your repository root. This will be the place where you have hosted your websites html content. In this file put in your domain name &lt;code&gt;mydomain.com&lt;/code&gt;. You can &lt;a href=&#34;https://github.com/ankitsinghaniyaz/ankitsinghaniyaz.github.io&#34;&gt;visit my github hosting&lt;/a&gt; and checkout how my &lt;code&gt;CNAME&lt;/code&gt; file looks.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuring-domain-provider:09ae30f3a7cdecb8c8d164a94bf30204&#34;&gt;Configuring Domain Provider&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-domain-provider&#34;&gt;Configuring Domain Provider&lt;/h2&gt;
 
 &lt;p&gt;In this step we have to login to our account where we have bought the domain.&lt;/p&gt;
 
@@ -47,7 +47,7 @@
 
 &lt;p&gt;Keep all other fields to their defaults. Do not hesitate to play. It is how you learn new things.&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion:09ae30f3a7cdecb8c8d164a94bf30204&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Within less than 10 minutes you website will come live. You can go to your link and try it! If you find any information missing or have any doubts feel free to leave a comment below. Thanks for reading.&lt;/p&gt;
 </description>

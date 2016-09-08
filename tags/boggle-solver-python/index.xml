@@ -19,7 +19,7 @@
 
 &lt;p&gt;Boggle is a word game designed by Allan Turoff and originally distributed by Parker Brothers. The game is played using a plastic grid of lettered dice, in which players attempt to find words in sequences of adjacent letters&amp;hellip; &lt;a href=&#34;https://en.wikipedia.org/wiki/Boggle&#34;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;problem-statement:29c5ad0b220829407ab663db5dfbd0af&#34;&gt;Problem Statement&lt;/h2&gt;
+&lt;h2 id=&#34;problem-statement&#34;&gt;Problem Statement&lt;/h2&gt;
 
 &lt;p&gt;This problem is also &lt;em&gt;said as&lt;/em&gt; &lt;strong&gt;Jigsaw Crossword Puzzle&lt;/strong&gt;. You are given a board containing MxN cells, each letter containing an alphabet of the English language.
 The goal of the program is to traverse through different cells to find a given word such that the following conditions are satisfied.&lt;/p&gt;
@@ -72,7 +72,7 @@ o r d o z
 &lt;p&gt;DIY : It is highly recommended to try solving it without looking ahead!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;algorithm-pseudo-code:29c5ad0b220829407ab663db5dfbd0af&#34;&gt;Algorithm / Pseudo Code&lt;/h2&gt;
+&lt;h2 id=&#34;algorithm-pseudo-code&#34;&gt;Algorithm / Pseudo Code&lt;/h2&gt;
 
 &lt;p&gt;This part describes the algorithm or pseudo code for boggle solver.&lt;/p&gt;
 
@@ -90,7 +90,7 @@ o r d o z
 &lt;p&gt;DIY : This should give you some hint! Follow these steps and try building the code you started!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;code:29c5ad0b220829407ab663db5dfbd0af&#34;&gt;Code&lt;/h2&gt;
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;It is OK to fail. It is not OK to give up!&lt;/p&gt;

@@ -118,7 +118,7 @@
 
 <p>This guide describe how to deploy Django application on Heroku, gracefully! Yes, you heard it right. Heroku was mostly build with Ruby in mind but now it supports Python applications too. There are some points which are not mentioned in other blogs and <a href="https://devcenter.heroku.com/articles/django-app-configuration">Heroku official docs</a>. I will try to describe all the process in detail here, so that you have a good experience deploying you apps. Lets get started!</p>
 
-<h2 id="creating-the-project:710c80679a96f399e4a7e7e32ef8455f">Creating the Project</h2>
+<h2 id="creating-the-project">Creating the Project</h2>
 
 <p>Creating your project is the most important step in this series. Create your application with default Django settings. These are the few configuration that you will have to do. You can create a Django project using following command:</p>
 
@@ -136,7 +136,7 @@
 <p>Note: If you created application using this template you can skip the configuration step.</p>
 </blockquote>
 
-<h2 id="creating-virtual-environment:710c80679a96f399e4a7e7e32ef8455f">Creating Virtual Environment</h2>
+<h2 id="creating-virtual-environment">Creating Virtual Environment</h2>
 
 <p>There are lot of packages in your default python path. You may want to create a fresh and sandboxed environment for this application. This avoids your global changes from affecting this application. Install <code>virtualenv</code> with:</p>
 
@@ -152,7 +152,7 @@ virtualenv myenv
 source myenv/bin/activate
 </code></pre>
 
-<h2 id="installing-dependencies:710c80679a96f399e4a7e7e32ef8455f">Installing Dependencies</h2>
+<h2 id="installing-dependencies">Installing Dependencies</h2>
 
 <p>These are few dependencies which are required to successfully deploy your application. Make sure you install them all.</p>
 
@@ -184,7 +184,7 @@ git --help
 <p><strong>Did You Know?</strong> Heroku uses git to create local repository</p>
 </blockquote>
 
-<h2 id="creating-requirements-txt:710c80679a96f399e4a7e7e32ef8455f">Creating requirements.txt</h2>
+<h2 id="creating-requirements-txt">Creating requirements.txt</h2>
 
 <p>There is no way for Heroku to know your application dependencies. So we need a <code>requirements.txt</code> file in our root at the same level as <code>manage.py</code> file.
 We can generate the file with following command:</p>
@@ -196,7 +196,7 @@ We can generate the file with following command:</p>
 <p>Note: Make sure you create the file parallel to manage.py file.</p>
 </blockquote>
 
-<h2 id="creating-procfile:710c80679a96f399e4a7e7e32ef8455f">Creating Procfile</h2>
+<h2 id="creating-procfile">Creating Procfile</h2>
 
 <p>Create a file called as <code>Procfile</code> at same level as your <code>manage.py</code> file. Put the following line into it:</p>
 
@@ -211,7 +211,7 @@ We can generate the file with following command:</p>
 
 <p>This file is used by Heroku to determine what kind of service will be running on the server. It says that &ldquo;We want a web server gunicorn with the project mentioned&rdquo;</p>
 
-<h2 id="creating-runtime-txt:710c80679a96f399e4a7e7e32ef8455f">Creating runtime.txt</h2>
+<h2 id="creating-runtime-txt">Creating runtime.txt</h2>
 
 <p>Herkou uses <code>Python2</code> as default. If you are like me and want to use <code>Python3</code> instead. You can create a file <code>runtime.txt</code> in your project root at the same level as <code>manage.py</code></p>
 
@@ -225,11 +225,11 @@ We can generate the file with following command:</p>
 <pre><code>python-3.5.1
 </code></pre>
 
-<h2 id="configuring-to-deploy:710c80679a96f399e4a7e7e32ef8455f">Configuring to Deploy</h2>
+<h2 id="configuring-to-deploy">Configuring to Deploy</h2>
 
 <p>Now you are all set to Configure your Django app for Herkou. There are two files that you need to edit.</p>
 
-<h3 id="modify-settings-py:710c80679a96f399e4a7e7e32ef8455f">Modify settings.py</h3>
+<h3 id="modify-settings-py">Modify settings.py</h3>
 
 <p>Open <code>settings.py</code> file, it can be found under your <code>myproject/myproject/setting.py</code>. There is only one <code>settings.py</code> file in your project. Edit it and the following lines following:</p>
 
@@ -255,7 +255,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # make sure to remove duplicates line if they exist
 </code></pre>
 
-<h3 id="modify-wsgi-py:710c80679a96f399e4a7e7e32ef8455f">Modify wsgi.py</h3>
+<h3 id="modify-wsgi-py">Modify wsgi.py</h3>
 
 <p>Find <code>wsgi.py</code> file parallel to <code>settings.py</code> file. Edit it and add following lines:</p>
 
@@ -267,7 +267,7 @@ application = get_wsgi_application()
 application = DjangoWhiteNoise(application)
 </code></pre>
 
-<h2 id="create-gitignore:710c80679a96f399e4a7e7e32ef8455f">Create .gitignore</h2>
+<h2 id="create-gitignore">Create .gitignore</h2>
 
 <p>Create a git ignore file to avoid adding of unwanted files to our repository. Create a file called <code>.gitignore</code> on your project root. Add following lines to it.</p>
 
@@ -279,7 +279,7 @@ venv
 
 <p>Alternatively you can delete the virtual environment <code>venv</code> you created!</p>
 
-<h2 id="deploy-on-heroku:710c80679a96f399e4a7e7e32ef8455f">Deploy on Heroku</h2>
+<h2 id="deploy-on-heroku">Deploy on Heroku</h2>
 
 <p>Now you are done with configuring Django application. We are now going to host our application to Heroku. We will use the <strong>herkou toolbelt and git</strong> we installed previously.</p>
 
@@ -314,7 +314,7 @@ heroku logs
 # use this to see how your app is working in case you find some error
 </code></pre>
 
-<h2 id="conclusion:710c80679a96f399e4a7e7e32ef8455f">Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>I have tried to give all the steps I took to deploy apps to heroku. If you find this article usefull share it with your friends. Feel free to comment about any improvement you would like to see.</p>
 
