@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Class &amp; Objects</title>
-    <link>http://classandobjects.com/blogs/</link>
-    <description>Recent content in Blogs on Class &amp; Objects</description>
+    <title>Better Developer on Class &amp; Objects</title>
+    <link>http://classandobjects.com/tags/better-developer/</link>
+    <description>Recent content in Better Developer on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Sep 2016 19:17:43 +0530</lastBuildDate>
-    <atom:link href="http://classandobjects.com/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://classandobjects.com/tags/better-developer/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Level Up the Programming Skills : Language vs Logic</title>
@@ -22,20 +22,6 @@
 &lt;p&gt;Here is a quick suggestion on what I feel is the right approach to the right balance. When you have plenty of time and you are in a learning phase, focus on building logic. You can build logical abilities by solving different algorithmic problems on different coding platforms. You should also try out classical problems like trees, sorting techniques, pattern printing and recursion. Now when you are comfortable with one language and know the logic, it is time to dive deep into learning language intricacies. Try getting your hands on some framework and build something real. The most obvious way would be to go with  web development or mobile development. You should also build some projects and start learning the language part(framework) when you are nearing to apply for a job. You need some solid projects to back you up in the interview. This is going to give you the matter to talk on and your logical skills are going to get you through the tricky programming questions most interviewers ask.&lt;/p&gt;
 
 &lt;p&gt;In the end, I would just say that build your logical skills first and keep an eye on what are you going to do with these skills. As you get into the career you will not have much time to work on the logical part but you should keep taking some occasional coding challenges to keep yourself revitalized. Thanks for reading, looking forward to a difference in opinion!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>To Life: Work from home</title>
-      <link>http://classandobjects.com/blogs/why_freelance/</link>
-      <pubDate>Thu, 08 Sep 2016 23:11:40 +0530</pubDate>
-      
-      <guid>http://classandobjects.com/blogs/why_freelance/</guid>
-      <description>&lt;p&gt;I may be young, but age is just a number. I have seen life and work. I have been lost and I have been saved. I have travelled from the complete chaos of not knowing where to go and then to the bliss of understanding how everything fits together. I have hopped from language to language and now I understand them all(almost).&lt;/p&gt;
-
-&lt;p&gt;I love to code in Python, given how clean, readable and maintainable it looks. In my professional work I use Ruby on Rails as my mode of transport and React js as my way to interact. I have always wondered how can one land a freelance job and then work less and enjoy more. I am a firm believer that workplace can never be as comfortable as home, the smell of my table, my fire(I&amp;rsquo;ll get one) and everything else. They just save you a lot of energy. You do not have to travel, time saved. You can use your resources and of course, earn better. I am also a budding traveller, I want to explore places and learn more, and of course, this includes technology. Freelancing empowers me in both the ways, financially and physically.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.toptal.com/web&#34;&gt;Toptal&lt;/a&gt; is an awesome platform, indeed the best one for freelancing. If given, I would love to explore amazing people, exciting job and gorgeous lifestyle.&lt;/p&gt;
 </description>
     </item>
     
