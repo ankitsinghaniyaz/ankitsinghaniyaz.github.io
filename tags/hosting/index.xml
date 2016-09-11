@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hosting on Class &amp; Objects</title>
+    <link>http://classandobjects.com/tags/hosting/</link>
+    <description>Recent content in Hosting on Class &amp; Objects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 May 2016 16:48:45 +0530</lastBuildDate>
+    <atom:link href="http://classandobjects.com/tags/hosting/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Adding Domain to Github Pages</title>
+      <link>http://classandobjects.com/tutorial/adding_custom_domain_to_github_pages/</link>
+      <pubDate>Sun, 22 May 2016 16:48:45 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/adding_custom_domain_to_github_pages/</guid>
+      <description>
+
+&lt;p&gt;A domain which shows what you do can add &lt;em&gt;credibility&lt;/em&gt; to your blog. In this tutorial we are going to add custom domain to our github page. You may also want to &lt;a href=&#34;..&#34;&gt;host a website on github&lt;/a&gt;. You can have domain with &lt;a href=&#34;https://www.godaddy.com&#34;&gt;godaddy&lt;/a&gt;, &lt;a href=&#34;https://www.hostgator.com&#34;&gt;hostgator&lt;/a&gt;, &lt;a href=&#34;https://www.namecheap.com&#34;&gt;namecheap&lt;/a&gt;, etc. The steps remains the same. I will point out any peculiarity, if they exist. So, lets get started.&lt;/p&gt;
+
+&lt;h2 id=&#34;configuring-github&#34;&gt;Configuring Github&lt;/h2&gt;
+
+&lt;p&gt;There should be a way for github to know what is the name of your domain. To keep it simple you have to create a file &lt;code&gt;CNAME&lt;/code&gt; in your repository root. This will be the place where you have hosted your websites html content. In this file put in your domain name &lt;code&gt;mydomain.com&lt;/code&gt;. You can &lt;a href=&#34;https://github.com/ankitsinghaniyaz/ankitsinghaniyaz.github.io&#34;&gt;visit my github hosting&lt;/a&gt; and checkout how my &lt;code&gt;CNAME&lt;/code&gt; file looks.&lt;/p&gt;
+
+&lt;h2 id=&#34;configuring-domain-provider&#34;&gt;Configuring Domain Provider&lt;/h2&gt;
+
+&lt;p&gt;In this step we have to login to our account where we have bought the domain.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Warning: This may seem complicated, but it is not.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/domain_entry.png&#34; alt=&#34;adding entries in domain&#34; title=&#34;TEXT&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You have to follow these three simple steps. Just add/modify these entries:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create/modify &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;Aname&lt;/code&gt; or &lt;code&gt;Alias&lt;/code&gt; with name as &lt;code&gt;@&lt;/code&gt;  and value as &lt;code&gt;192.30.252.153&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create/modify &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;Aname&lt;/code&gt; or &lt;code&gt;Alias&lt;/code&gt; with name as &lt;code&gt;@&lt;/code&gt;  and value as &lt;code&gt;192.30.252.154&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create/modify &lt;code&gt;CNAME&lt;/code&gt; with name as &lt;code&gt;www&lt;/code&gt; and value as &lt;code&gt;yourgithubid.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;Aname&lt;/code&gt; and &lt;code&gt;Alias&lt;/code&gt; are same thing.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Keep all other fields to their defaults. Do not hesitate to play. It is how you learn new things.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Within less than 10 minutes you website will come live. You can go to your link and try it! If you find any information missing or have any doubts feel free to leave a comment below. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Easily Host a Static website on Github</title>
+      <link>http://classandobjects.com/tutorial/host_static_site_on_github/</link>
+      <pubDate>Sat, 21 May 2016 15:36:40 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/host_static_site_on_github/</guid>
+      <description>
+
+&lt;p&gt;This post shows, how you can easily host your static website on Github. We are using Hugo static site generator. You can use anything similar.&lt;/p&gt;
+
+&lt;h2 id=&#34;initial-setup&#34;&gt;Initial Setup&lt;/h2&gt;
+
+&lt;p&gt;I believe that you already have &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;setup your hugo project&lt;/a&gt;, refer the link in case you want to start a project. Then open your &lt;code&gt;config.toml&lt;/code&gt; file and modify the &lt;strong&gt;baseUrl&lt;/strong&gt; as:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;baseurl = &amp;quot;http://{username}.github.io/&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;replace {username} with your username.&lt;/p&gt;
+
+&lt;h2 id=&#34;repository-for-project-files&#34;&gt;Repository for Project Files&lt;/h2&gt;
+
+&lt;p&gt;This step is not mandatory, but still you want to do this. Creating a repository for you content will help you monitor how your site advanced. It will also help you correct changes in case you do something wrong(which is bound to happen).&lt;/p&gt;
+
+&lt;p&gt;Create a new repository on Github with same name as your project. Then &lt;code&gt;cd&lt;/code&gt; inside the directory and issue following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init
+git add -A
+git commit -m &amp;quot;init : setup project&amp;quot;
+git remote add origin &amp;lt;project name&amp;gt;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These commands will also be displayed to you when you create the repository on Github.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note : Make sure you are inside the project directory, before issuing the commands.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;repository-for-web-pages&#34;&gt;Repository for Web Pages&lt;/h2&gt;
+
+&lt;p&gt;We will now create another repository to hold our static website. Create a new repository on GitHub with name as &lt;code&gt;{username}.github.io&lt;/code&gt;. Replace the {username} with you Github username.&lt;/p&gt;
+
+&lt;p&gt;After this create a new directory parallel to your project directory. Name it as you find appropriate. I name it same as the project directory with some extra suffix. This helps in keeping them close. like
+&lt;code&gt;github&lt;/code&gt; and &lt;code&gt;github_pages&lt;/code&gt;. Move into this new directory and do as following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init
+git add -A
+git commit -m &amp;quot;init : setup project&amp;quot;
+git remote add origin {username}.github.io
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;generate-static-site&#34;&gt;Generate Static Site&lt;/h2&gt;
+
+&lt;p&gt;We are all set-up. We will create our website which will be visible to everyone.
+Move into your project directory and run following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo -d ../github_pages [-t theme_name]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note : Change directory name to match yours.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;-d&lt;/code&gt; flag tells where should hugo dumb the site&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;-t&lt;/code&gt; flag is optional, you can specify a theme name you are using.&lt;/p&gt;
+
+&lt;p&gt;So, Now we have our website ready. All we need to do is host them and make it available to everyone.&lt;/p&gt;
+
+&lt;h2 id=&#34;bring-it-live&#34;&gt;Bring It Live&lt;/h2&gt;
+
+&lt;p&gt;To get our site live we have to move into our &lt;code&gt;github_pages&lt;/code&gt; directory and push it up to Github.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add -A
+git push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can now view you website at &lt;strong&gt;www.yourusername.github.io&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;automate-it&#34;&gt;Automate It&lt;/h2&gt;
+
+&lt;p&gt;We do not want to repeat commands every time we make some changes. So in my &lt;code&gt;github&lt;/code&gt; project directory I create a new file called &lt;code&gt;deploy.sh&lt;/code&gt; and add following lines to it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+
+# Build the project.
+hugo -d ../classandobjectspage
+
+# Change directory
+cd ../classandobjectspage
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&amp;quot;rebuilding site `date`&amp;quot;
+if [ $# -eq 1 ]
+  then msg=&amp;quot;$1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you can just run &lt;code&gt;bash deploy.sh &amp;quot;your message&amp;quot;&lt;/code&gt;. This will do all the above tasks we did manually.&lt;/p&gt;
+
+&lt;h2 id=&#34;custom-domain&#34;&gt;Custom Domain&lt;/h2&gt;
+
+&lt;p&gt;Adding a domain to your website is optional. You can read &lt;a href=&#34;http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/&#34;&gt;how to add domain to my github page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;finally&#34;&gt;Finally&lt;/h2&gt;
+
+&lt;p&gt;I tried to show every step I took in hosting my website. My experience was not good with the available documentation, but I hope that this will help you all. If you find anything missing or not mentioned, do let me know in the comments below! Thanks for reading&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

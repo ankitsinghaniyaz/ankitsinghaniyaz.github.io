@@ -11,10 +11,10 @@
     
     <item>
       <title>How to Easily Host a Static website on Github</title>
-      <link>http://classandobjects.com/hugo/host_static_site_on_github/</link>
+      <link>http://classandobjects.com/tutorial/host_static_site_on_github/</link>
       <pubDate>Sat, 21 May 2016 15:36:40 +0530</pubDate>
       
-      <guid>http://classandobjects.com/hugo/host_static_site_on_github/</guid>
+      <guid>http://classandobjects.com/tutorial/host_static_site_on_github/</guid>
       <description>
 
 &lt;p&gt;This post shows, how you can easily host your static website on Github. We are using Hugo static site generator. You can use anything similar.&lt;/p&gt;

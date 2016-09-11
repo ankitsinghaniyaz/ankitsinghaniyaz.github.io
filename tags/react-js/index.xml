@@ -11,10 +11,10 @@
     
     <item>
       <title>Things Beginners Find Confusing About React.js</title>
-      <link>http://classandobjects.com/blogs/confusing_things_in_react/</link>
+      <link>http://classandobjects.com/tutorial/confusing_things_in_react/</link>
       <pubDate>Fri, 09 Sep 2016 20:12:23 +0530</pubDate>
       
-      <guid>http://classandobjects.com/blogs/confusing_things_in_react/</guid>
+      <guid>http://classandobjects.com/tutorial/confusing_things_in_react/</guid>
       <description>
 
 &lt;p&gt;React js is currently the most hyped front-end framework(view) today. I am lucky that at my current workplace I am getting a chance to explore react and rails. I am a Python lover, but I am completely open to learning new technologies. I have seen confusing things in Ruby on Rails which is very opposite to React and Javascript environment. I have pointed out top 5 reasons why React js can be confusing. So let us get started.&lt;/p&gt;

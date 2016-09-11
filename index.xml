@@ -11,10 +11,10 @@
     
     <item>
       <title>Things Beginners Find Confusing About React.js</title>
-      <link>http://classandobjects.com/blogs/confusing_things_in_react/</link>
+      <link>http://classandobjects.com/tutorial/confusing_things_in_react/</link>
       <pubDate>Fri, 09 Sep 2016 20:12:23 +0530</pubDate>
       
-      <guid>http://classandobjects.com/blogs/confusing_things_in_react/</guid>
+      <guid>http://classandobjects.com/tutorial/confusing_things_in_react/</guid>
       <description>
 
 &lt;p&gt;React js is currently the most hyped front-end framework(view) today. I am lucky that at my current workplace I am getting a chance to explore react and rails. I am a Python lover, but I am completely open to learning new technologies. I have seen confusing things in Ruby on Rails which is very opposite to React and Javascript environment. I have pointed out top 5 reasons why React js can be confusing. So let us get started.&lt;/p&gt;
@@ -100,10 +100,10 @@ class ComponentB extends React.Component {
     
     <item>
       <title>Step by Step Guide on Deploying Django Application on Heroku</title>
-      <link>http://classandobjects.com/python/host_django_app_on_heroku/</link>
+      <link>http://classandobjects.com/tutorial/host_django_app_on_heroku/</link>
       <pubDate>Fri, 27 May 2016 11:03:20 +0530</pubDate>
       
-      <guid>http://classandobjects.com/python/host_django_app_on_heroku/</guid>
+      <guid>http://classandobjects.com/tutorial/host_django_app_on_heroku/</guid>
       <description>
 
 &lt;p&gt;This guide describe how to deploy Django application on Heroku, gracefully! Yes, you heard it right. Heroku was mostly build with Ruby in mind but now it supports Python applications too. There are some points which are not mentioned in other blogs and &lt;a href=&#34;https://devcenter.heroku.com/articles/django-app-configuration&#34;&gt;Heroku official docs&lt;/a&gt;. I will try to describe all the process in detail here, so that you have a good experience deploying you apps. Lets get started!&lt;/p&gt;
@@ -316,10 +316,10 @@ heroku logs
     
     <item>
       <title>Can you Boggle Solve?</title>
-      <link>http://classandobjects.com/algorithms/python_boggle_solver/</link>
+      <link>http://classandobjects.com/tutorial/python_boggle_solver/</link>
       <pubDate>Fri, 27 May 2016 00:36:36 +0530</pubDate>
       
-      <guid>http://classandobjects.com/algorithms/python_boggle_solver/</guid>
+      <guid>http://classandobjects.com/tutorial/python_boggle_solver/</guid>
       <description>
 
 &lt;p&gt;Boggle is a word game designed by Allan Turoff and originally distributed by Parker Brothers. The game is played using a plastic grid of lettered dice, in which players attempt to find words in sequences of adjacent letters&amp;hellip; &lt;a href=&#34;https://en.wikipedia.org/wiki/Boggle&#34;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
@@ -411,10 +411,10 @@ o r d o z
     
     <item>
       <title>Interactive visualization in R using Rcharts</title>
-      <link>http://classandobjects.com/analytics/interactive_visualization_using_rcharts_in_r/</link>
+      <link>http://classandobjects.com/tutorial/interactive_visualization_using_rcharts_in_r/</link>
       <pubDate>Tue, 24 May 2016 21:48:05 +0530</pubDate>
       
-      <guid>http://classandobjects.com/analytics/interactive_visualization_using_rcharts_in_r/</guid>
+      <guid>http://classandobjects.com/tutorial/interactive_visualization_using_rcharts_in_r/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -546,10 +546,10 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)		                 #saves to html
     
     <item>
       <title>Adding Domain to Github Pages</title>
-      <link>http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/</link>
+      <link>http://classandobjects.com/tutorial/adding_custom_domain_to_github_pages/</link>
       <pubDate>Sun, 22 May 2016 16:48:45 +0530</pubDate>
       
-      <guid>http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/</guid>
+      <guid>http://classandobjects.com/tutorial/adding_custom_domain_to_github_pages/</guid>
       <description>
 
 &lt;p&gt;A domain which shows what you do can add &lt;em&gt;credibility&lt;/em&gt; to your blog. In this tutorial we are going to add custom domain to our github page. You may also want to &lt;a href=&#34;..&#34;&gt;host a website on github&lt;/a&gt;. You can have domain with &lt;a href=&#34;https://www.godaddy.com&#34;&gt;godaddy&lt;/a&gt;, &lt;a href=&#34;https://www.hostgator.com&#34;&gt;hostgator&lt;/a&gt;, &lt;a href=&#34;https://www.namecheap.com&#34;&gt;namecheap&lt;/a&gt;, etc. The steps remains the same. I will point out any peculiarity, if they exist. So, lets get started.&lt;/p&gt;
@@ -590,10 +590,10 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)		                 #saves to html
     
     <item>
       <title>How to Easily Host a Static website on Github</title>
-      <link>http://classandobjects.com/hugo/host_static_site_on_github/</link>
+      <link>http://classandobjects.com/tutorial/host_static_site_on_github/</link>
       <pubDate>Sat, 21 May 2016 15:36:40 +0530</pubDate>
       
-      <guid>http://classandobjects.com/hugo/host_static_site_on_github/</guid>
+      <guid>http://classandobjects.com/tutorial/host_static_site_on_github/</guid>
       <description>
 
 &lt;p&gt;This post shows, how you can easily host your static website on Github. We are using Hugo static site generator. You can use anything similar.&lt;/p&gt;
@@ -707,10 +707,10 @@ git push
     
     <item>
       <title>Why Hugo is best for blogging? You should use it too!</title>
-      <link>http://classandobjects.com/hugo/why_hugo/</link>
+      <link>http://classandobjects.com/blogs/why_hugo/</link>
       <pubDate>Wed, 18 May 2016 19:45:15 +0530</pubDate>
       
-      <guid>http://classandobjects.com/hugo/why_hugo/</guid>
+      <guid>http://classandobjects.com/blogs/why_hugo/</guid>
       <description>
 
 &lt;p&gt;Just like any blogger, I also wanted to start my own blog. I had many doubts. What is my niche? Will people read my blog? Which platform to use for blogging? I do not know if I have found my answers, but for the last one it is &lt;strong&gt;HUGO&lt;/strong&gt;. Yes, I searched for different blogging platforms and all had their own set of drawbacks. Here are few reasons for not selecting them :&lt;/p&gt;

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visualization on Class &amp; Objects</title>
+    <link>http://classandobjects.com/tags/visualization/</link>
+    <description>Recent content in Visualization on Class &amp; Objects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 May 2016 21:48:05 +0530</lastBuildDate>
+    <atom:link href="http://classandobjects.com/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Interactive visualization in R using Rcharts</title>
+      <link>http://classandobjects.com/tutorial/interactive_visualization_using_rcharts_in_r/</link>
+      <pubDate>Tue, 24 May 2016 21:48:05 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/interactive_visualization_using_rcharts_in_r/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;Visualization is daydreaming with a purpose ~ Bo Bennett&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;R is good at one thing, analysis. Until now it was sufficient on its own, with its library base, but now the need have changed. We want interactive visualization and JavaScript is ahead in the race. Thanks to this man, &lt;a href=&#34;https://github.com/ramnathv&#34;&gt;Ramnath Vaidya&lt;/a&gt;, who created a wonderful library called &lt;a href=&#34;http://rcharts.io/&#34;&gt;rCharts&lt;/a&gt; that brings JavaScript&amp;rsquo;s graphics into R. As you are reading this you must be familiar with plot and ggplot in R.
+So let’s explore rCharts without delay.&lt;/p&gt;
+
+&lt;p&gt;rCharts supports multiple JavaScript charting libraries:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/intro/create.html#nvd3&#34;&gt;NVD3&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Most Interactive&lt;/li&gt;
+&lt;li&gt;Multiple layers do not work&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/intro/create.html#highcharts&#34;&gt;Highcharts (Free for non-comercial use)&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Better than below&lt;/li&gt;
+&lt;li&gt;Supports multiple layers/series&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/dimple/index.html&#34;&gt;Dimple&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/intro/create.html#polycharts&#34;&gt;Polycharts (Free for non-comercial use)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/intro/create.html#morris&#34;&gt;Morris&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/intro/create.html#rickshaw&#34;&gt;Rickshaw&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/intro/create.html#xcharts&#34;&gt;xCharts&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can click on any of them to go to their respective examples. They all have their pros and cons. I would suggest you to use NVD3 if you are interested in a graph that has just one type of element eg: Scatter Plot, Line, Bar, etc. If you are interested in more features then you can checkout &lt;a href=&#34;http://classandobjects.com/underconstruction/&#34;&gt;creating a scatter plot with regression line&lt;/a&gt; and &lt;a href=&#34;http://classandobjects.com/underconstruction/&#34;&gt;bar with average line&lt;/a&gt;. These are the only library which currently support layering.&lt;/p&gt;
+
+&lt;p&gt;Below I&amp;rsquo;ll give code and output for using Highcharts and NVD3. Dimple was just updated as I am writing this blog, I&amp;rsquo;ll try to write a separate blog on that.&lt;/p&gt;
+
+&lt;h2 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h2&gt;
+
+&lt;p&gt;Install rCharts. This requires devtools to be installed.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;require(devtools)
+install_github(&#39;rCharts&#39;, &#39;ramnathv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;nvd3&#34;&gt;NVD3&lt;/h3&gt;
+
+&lt;p&gt;We will our &lt;code&gt;mtcars&lt;/code&gt; data set in all below examples to keep it simple. Visit &lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/nvd3/create.html&#34;&gt;NVD3 documentation&lt;/a&gt; for more example, have a look below and you will understand how they work.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(&amp;quot;rCharts&amp;quot;)
+#NVD3 is nPlot()
+
+a &amp;lt;- nPlot(
+	mpg ~ wt,                             # y vs x
+	data = mtcars,			      # data set
+	group = &amp;quot;cyl&amp;quot;,			      # group by
+	type = &amp;quot;scatterChart&amp;quot;)                # type of chart
+					      # eg:multiBarChart, lineChart, pieChart
+
+   a$xAxis(axisLabel = &amp;quot;Weight&amp;quot;)
+   a$yAxis(axisLabel = &amp;quot;MPG&amp;quot;)
+
+   a$chart(color = c(
+   		&#39;brown&#39;,
+   		&#39;black&#39;,
+	      &#39;#FFAFA&#39;))		       # override default colors
+
+a			               # prints the graph
+a$save(&amp;quot;E:\\temp.html&amp;quot;)	               # save it as html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:
+&lt;img src=&#34;http://classandobjects.com/images/analytics/nvd_graph.png&#34; alt=&#34;nvd3 charts graphics in r&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://rcharts.io/viewer/?ec3e1d782fa46be590cb#.Vr1HyPkdD_x&#34;&gt;See Interactive Ouput on Github Here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;highcharts&#34;&gt;Highcharts&lt;/h3&gt;
+
+&lt;p&gt;The example below creates a scatter plot with &lt;code&gt;mtcars&lt;/code&gt;. I have tried to use almost all the functions and parameters. If I have missed some, please point it out in the comments below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(&amp;quot;rCharts&amp;quot;)
+#Highcharts is hPlot()
+
+a &amp;lt;- hPlot(
+	x = &amp;quot;wt&amp;quot;,				#x axis value
+	y = &amp;quot;mpg&amp;quot;,				#y axis value
+	data = mtcars,			        #dataset
+	type = &amp;quot;scatter&amp;quot;,		        #type: line, bubble,..
+	group = &amp;quot;cyl&amp;quot;,		                #group by
+	#size = &amp;quot;cyl&amp;quot;,			        #can adjust size of bubble etc
+	radius = 5)				#size of points
+
+a$title(&amp;quot;This is a Title&amp;quot;)
+a$subtitle(&amp;quot;This is a subtitle&amp;quot;)
+a$credits(text = &amp;quot;Created with rCharts&amp;quot;, href = &amp;quot;rCharts&amp;quot;)
+
+a$legend(					#use this to modify legend
+  title = list(
+     text = &amp;quot;Number&amp;quot;),		                #adds a title to legend
+     align = &#39;right&#39;, 			        #default is at bottom
+     verticalAlign = &#39;middle&#39;,
+     layout = &#39;vertical&#39;)
+
+a$plotOptions(				        #Display all groups as circle
+  scatter = list(marker = list(symbol = &#39;circle&#39;)))
+
+a$colors(					#add custom colors
+  &#39;rgba(223, 83, 83, .75)&#39;,
+  &#39;rgba(60, 179, 113, .75)&#39;,
+  &#39;rgba(238, 130, 238, .75)&#39;
+)
+
+a					         #prints the graph
+a$save(&amp;quot;E:\\temp.html&amp;quot;)		                 #saves to html
+#More complex graphs in next blog!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:
+&lt;img src=&#34;http://classandobjects.com/images/analytics/highchart.png&#34; alt=&#34;high charts graphics in r&#34; /&gt;
+&lt;a href=&#34;http://rcharts.github.io/viewer/?ecd2a7f0b7abd611ed9a&#34;&gt;See Interactive Ouput on Github Here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I hope you liked the blog and the examples proved useful. They have been taken from many different websites and StackExchange. Thank you everyone for reading.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

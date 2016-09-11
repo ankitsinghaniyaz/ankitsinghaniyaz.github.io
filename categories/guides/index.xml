@@ -6,51 +6,50 @@
     <description>Recent content in Guides on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Jun 2016 22:08:08 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 22 May 2016 16:48:45 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/categories/guides/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Selecting the Right Framework</title>
-      <link>http://classandobjects.com/guides/selecting_right_framework/</link>
-      <pubDate>Sun, 19 Jun 2016 22:08:08 +0530</pubDate>
+      <title>Adding Domain to Github Pages</title>
+      <link>http://classandobjects.com/tutorial/adding_custom_domain_to_github_pages/</link>
+      <pubDate>Sun, 22 May 2016 16:48:45 +0530</pubDate>
       
-      <guid>http://classandobjects.com/guides/selecting_right_framework/</guid>
+      <guid>http://classandobjects.com/tutorial/adding_custom_domain_to_github_pages/</guid>
       <description>
 
-&lt;p&gt;There is an endless debate on the best framework. Let it be backend frameworks like Rails, Django and NodeJs or frontend frameworks like Angular, Ember and React. I have spent hours reading through all these debates, and made few conclusions. I have found out a solid way of &lt;strong&gt;selecting the best framework for your job&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A domain which shows what you do can add &lt;em&gt;credibility&lt;/em&gt; to your blog. In this tutorial we are going to add custom domain to our github page. You may also want to &lt;a href=&#34;..&#34;&gt;host a website on github&lt;/a&gt;. You can have domain with &lt;a href=&#34;https://www.godaddy.com&#34;&gt;godaddy&lt;/a&gt;, &lt;a href=&#34;https://www.hostgator.com&#34;&gt;hostgator&lt;/a&gt;, &lt;a href=&#34;https://www.namecheap.com&#34;&gt;namecheap&lt;/a&gt;, etc. The steps remains the same. I will point out any peculiarity, if they exist. So, lets get started.&lt;/p&gt;
 
-&lt;h2 id=&#34;past-experience:bc4e9a1dd2237de84731d6bf70a28152&#34;&gt;Past Experience&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-github&#34;&gt;Configuring Github&lt;/h2&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;Experience is the best teacher!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;There should be a way for github to know what is the name of your domain. To keep it simple you have to create a file &lt;code&gt;CNAME&lt;/code&gt; in your repository root. This will be the place where you have hosted your websites html content. In this file put in your domain name &lt;code&gt;mydomain.com&lt;/code&gt;. You can &lt;a href=&#34;https://github.com/ankitsinghaniyaz/ankitsinghaniyaz.github.io&#34;&gt;visit my github hosting&lt;/a&gt; and checkout how my &lt;code&gt;CNAME&lt;/code&gt; file looks.&lt;/p&gt;
 
-&lt;p&gt;It is right to say that few things can only be learnt via experience, alone. This can give you the best start in selecting the framework you need. If you already have an experience with a framework, you should try to figure out that is it suitable for task that you are trying to do. Are there other projects, which are similar in structure, made using that framework. Else, you should try answering what are your &lt;em&gt;sour&lt;/em&gt; experiences using that particular framework. It will give you an intuition about using that framework or not.&lt;/p&gt;
+&lt;h2 id=&#34;configuring-domain-provider&#34;&gt;Configuring Domain Provider&lt;/h2&gt;
 
-&lt;p&gt;If you do not have the past experience, try to figure out what is your style of programming. Which language and framework suits your style of coding. If you like neat, self-controlled structure you may like Python. If you like fast, convention oriented design you may love Ruby. If you like to have same technology in frontend as well as backend you may like JavaScript. This should be the first and most important factor determining your technology of choice. You will probably be working for long on the code base and want to have good control over you system.&lt;/p&gt;
-
-&lt;h2 id=&#34;team-qualification:bc4e9a1dd2237de84731d6bf70a28152&#34;&gt;Team Qualification&lt;/h2&gt;
-
-&lt;p&gt;You cannot do everything alone. Think about who your other project mates are. What are the technology they like. Do a consensus and find out what is the best bet for your team. Always remember that frameworks and languages are just tools. You can get almost everything with anything, but it is always better to keep your mates in mind. This helps keep productivity high and team comfortable.&lt;/p&gt;
-
-&lt;h2 id=&#34;market-analysis:bc4e9a1dd2237de84731d6bf70a28152&#34;&gt;Market Analysis&lt;/h2&gt;
-
-&lt;p&gt;Now comes the point of these debates and Reddit threads. You should read and try to avoid getting biased to your likes. Also avoid &lt;em&gt;Green Grass Syndrome&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In this step we have to login to our account where we have bought the domain.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Quote: The grass is greener on the other side&lt;/p&gt;
+&lt;p&gt;Warning: This may seem complicated, but it is not.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;These things tend to happen. What you should keep in mind is like finding similar product which used the same technology. This would avoid a rollback in middle of the project. You can be sure that if someone has build a similar &lt;em&gt;good&lt;/em&gt; product, you can do that easily too. You can rely on their expertise and research which turns out to be true most of the times.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/domain_entry.png&#34; alt=&#34;adding entries in domain&#34; title=&#34;TEXT&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You have to follow these three simple steps. Just add/modify these entries:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create/modify &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;Aname&lt;/code&gt; or &lt;code&gt;Alias&lt;/code&gt; with name as &lt;code&gt;@&lt;/code&gt;  and value as &lt;code&gt;192.30.252.153&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create/modify &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;Aname&lt;/code&gt; or &lt;code&gt;Alias&lt;/code&gt; with name as &lt;code&gt;@&lt;/code&gt;  and value as &lt;code&gt;192.30.252.154&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create/modify &lt;code&gt;CNAME&lt;/code&gt; with name as &lt;code&gt;www&lt;/code&gt; and value as &lt;code&gt;yourgithubid.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Tip: Always follow your gut when not sure&lt;/p&gt;
+&lt;p&gt;Note: &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;Aname&lt;/code&gt; and &lt;code&gt;Alias&lt;/code&gt; are same thing.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;conclusion:bc4e9a1dd2237de84731d6bf70a28152&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Keep all other fields to their defaults. Do not hesitate to play. It is how you learn new things.&lt;/p&gt;
 
-&lt;p&gt;I believe that &lt;em&gt;past experience, team comfort and existing product analysis&lt;/em&gt; are the best way to find the best technology stack for you.
-If you have some difference in opinion do point it in the comments below. Do not forget to share it with your friends if you liked it. Thanks for reading!&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Within less than 10 minutes you website will come live. You can go to your link and try it! If you find any information missing or have any doubts feel free to leave a comment below. Thanks for reading.&lt;/p&gt;
 </description>
     </item>
     
