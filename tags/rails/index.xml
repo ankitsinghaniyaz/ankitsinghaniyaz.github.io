@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rails on Class &amp; Objects</title>
+    <link>http://classandobjects.com/tags/rails/</link>
+    <description>Recent content in Rails on Class &amp; Objects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Sep 2016 01:02:27 +0530</lastBuildDate>
+    <atom:link href="http://classandobjects.com/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to use React and MobX with Rails 5</title>
+      <link>http://classandobjects.com/tutorial/using_react_mobx_with_rails/</link>
+      <pubDate>Thu, 15 Sep 2016 01:02:27 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/using_react_mobx_with_rails/</guid>
+      <description>
+
+&lt;p&gt;MobX is the new state management library which packs really well with react. Mobx makes things much simpler to &lt;code&gt;redux&lt;/code&gt;, which is more famous in react community. I have detailed out the step on how to get started with using mobx and rails 5.&lt;/p&gt;
+
+&lt;h2 id=&#34;install-react-on-rails-gem-https-github-com-shakacode-react-on-rails-blob-master-docs-tutorial-md&#34;&gt;Install &lt;a href=&#34;https://github.com/shakacode/react_on_rails/blob/master/docs/tutorial.md&#34;&gt;react_on_rails gem&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;To make mobx functional with rails, I had to drop &lt;code&gt;react-rails&lt;/code&gt; gem and adopt the &lt;code&gt;react_on_rails&lt;/code&gt; gem. Setting it up is cumbersome in the beginning but it pays off well in the long run. React on rails site have a detailed guide on how to setup react_on_rails gem, I&amp;rsquo;ll just quickly brush them up.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The below lines are just for reference, you can directly download the &lt;a href=&#34;https://github.com/ankitsinghaniyaz/react-rails-mobx-boilerplate&#34;&gt;react-rails-mobx-boilerplate&lt;/a&gt; from my GitHub repo and get started.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;# adding the gem, add the below line to your gem file
+gem &#39;react_on_rails&#39;, &#39;~&amp;gt;6&#39;
+
+# Git commit all your changes and then
+bundle
+
+# you may need to do git commit again
+# below lines will create a sample welcome controller
+rails generate react_on_rails:install
+
+# install
+bundle &amp;amp;&amp;amp; npm install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are few things to know about &lt;code&gt;react_on_rails&lt;/code&gt; gem, which can be confusing for starters like me.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# You expose your react module so that it can be available outside
+import ReactOnRails from &#39;react-on-rails&#39;;
+
+# register you component
+ReactOnRails.register({ Counter });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;# you should also keep in mind that when creating new .jsx files
+# you should add its path to webpack.config.js entry hash as
+const config = {
+  entry: [
+    &#39;es5-shim/es5-shim&#39;,
+    &#39;es5-shim/es5-sham&#39;,
+    &#39;babel-polyfill&#39;,
+    &#39;./app/welcome/Counter&#39;, // like this
+  ],
+  .........
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;NOTE: Make sure your Node js version is greater than 5, react_on_rails gem has this requirement.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;add-mobx-and-mobx-react&#34;&gt;Add Mobx and Mobx React&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;# After previous step you will have a client folder
+# inside that folder edit the package.json and add the below lines to the dependencies list
+
+&amp;quot;mobx-react&amp;quot;: &amp;quot;^3.5.6&amp;quot;,
+&amp;quot;mobx&amp;quot;: &amp;quot;^2.5.1&amp;quot;
+
+# If you will want to use decorators with mobx then make your .babelrc file look something like this
+
+{
+  &amp;quot;presets&amp;quot;: [&amp;quot;es2015&amp;quot;, &amp;quot;stage-0&amp;quot;, &amp;quot;react&amp;quot;],
+  &amp;quot;plugins&amp;quot;: [&amp;quot;transform-decorators-legacy&amp;quot;]
+}
+
+# I was also required to install
+npm install babel-plugin-transform-decorators-legacy --save-dev
+
+# finally do npm install to install newly added dependencies
+npm install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;bring-it-up&#34;&gt;Bring it Up&lt;/h2&gt;
+
+&lt;p&gt;Now you are all set to bring your system up.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# create all the database if you are using postgresql as database, else skip, you will need to run this step if you use the boilerplate code
+rails db:create # use rake db:create in rails 4 or below
+
+# start the server and webpack client for transpilation
+foreman start -f Procfile.dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I hope you were successfully able to get your system up and running. If I missed something or you have some doubts, do let me know in the comments below. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
