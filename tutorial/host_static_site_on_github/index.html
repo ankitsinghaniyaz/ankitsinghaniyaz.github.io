@@ -447,7 +447,7 @@ git push
 					var scrollPercent = (scrollTop) / (docHeight - winHeight);
 					var scrollPercentRounded = Math.round(scrollPercent*100);
 					
-					if (scrollPercentRounded == 70) {
+					if (scrollPercentRounded > 70 && scrollPercentRounded < 80) {
 						
 						createSidePopup();
 					}

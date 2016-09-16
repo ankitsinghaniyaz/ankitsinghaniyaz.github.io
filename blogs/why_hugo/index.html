@@ -384,7 +384,7 @@ You can just click and install it just like any other operating system. For ubun
 					var scrollPercent = (scrollTop) / (docHeight - winHeight);
 					var scrollPercentRounded = Math.round(scrollPercent*100);
 					
-					if (scrollPercentRounded == 70) {
+					if (scrollPercentRounded > 70 && scrollPercentRounded < 80) {
 						
 						createSidePopup();
 					}

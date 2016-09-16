@@ -465,7 +465,7 @@ a$save(&quot;E:\\temp.html&quot;)		                 #saves to html
 					var scrollPercent = (scrollTop) / (docHeight - winHeight);
 					var scrollPercentRounded = Math.round(scrollPercent*100);
 					
-					if (scrollPercentRounded == 70) {
+					if (scrollPercentRounded > 70 && scrollPercentRounded < 80) {
 						
 						createSidePopup();
 					}

@@ -352,7 +352,7 @@ clear. I thank you for your precious time!</p>
 					var scrollPercent = (scrollTop) / (docHeight - winHeight);
 					var scrollPercentRounded = Math.round(scrollPercent*100);
 					
-					if (scrollPercentRounded == 70) {
+					if (scrollPercentRounded > 70 && scrollPercentRounded < 80) {
 						
 						createSidePopup();
 					}
