@@ -6,8 +6,174 @@
     <description>Recent content in Hugo on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 May 2016 16:48:45 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 16 Sep 2016 22:35:37 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Add Subscribe Button to Your Website, also Add a Scroll Triggered Subscribe Box</title>
+      <link>http://classandobjects.com/tutorial/add_subscribe_button_on_static_site/</link>
+      <pubDate>Fri, 16 Sep 2016 22:35:37 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/add_subscribe_button_on_static_site/</guid>
+      <description>
+
+&lt;p&gt;Subscribe button is a useful feature to have on any website. It helps you create loyal audience base and helps your users get amazing content from the blogs they love. It can be quite easy to integrate one on a WordPress site or a website with a backend. In this article, I will show you how to add a subscribe button to any static website using &lt;a href=&#34;www.formspree.io&#34;&gt;formspree.io&lt;/a&gt;, &lt;a href=&#34;https://github.com/hubspot/vex&#34;&gt;Vex js&lt;/a&gt; and javascript. I will also show how you can add a subscribe box(popup) when a user has scrolled the page. I am using Hugo as my static site generator, the process is exactly the same for any static site. So let&amp;rsquo;s get started.&lt;/p&gt;
+
+&lt;h2 id=&#34;setup-vex-js&#34;&gt;Setup Vex js&lt;/h2&gt;
+
+&lt;p&gt;I did my little research and found out Vex js is the best dialogue(popup) creator library. It is &lt;strong&gt;light, good looking and has zero dependencies&lt;/strong&gt;, and that is all we need. First, you will need to &lt;a href=&#34;http://github.hubspot.com/vex/api/themes/&#34;&gt;select a theme&lt;/a&gt;, visit the link to see examples of all the themes which you can use. Select the one you like and download it from here. Also download &lt;code&gt;vex-theme-bottom-right-corner&lt;/code&gt;, if you want to do a subscribe popup after scrolling your page. You will need to &lt;a href=&#34;https://github.com/HubSpot/vex/tree/master/dist/js&#34;&gt;download vex.combined.min.js&lt;/a&gt; from this link. Make sure you have one theme CSS file and one Vex combined js file. Now you will want to store this file to your static directory, where you have your Javascript and CSS.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;NOTE: Skip to the next step if you are not using HUGO.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In case of Hugo, I will put it under the themes as follow:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/themes
+  /theme-name
+    /js
+      vex.combined.min.js
+    /css
+      vex-theme-name.css
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;add-a-subscribe-button&#34;&gt;Add a subscribe button&lt;/h2&gt;
+
+&lt;p&gt;Now, after having set up Vex, we want a form to be shown to the user when  they click the Subscribe button.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;!-- for normal HTML --&amp;gt;
+&amp;lt;!-- include css and js like this --&amp;gt;
+&amp;lt;script src=&amp;quot;path/to/myscripts.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;path/to/mystyle.css&amp;quot;&amp;gt;
+&amp;lt;!-- most of the times they are included in the `footer` partial in Hugo. --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- Add this button in your html file --&amp;gt;
+&amp;lt;button onclick=&amp;quot;subscribe()&amp;quot;&amp;gt;Subscribe&amp;lt;/button&amp;gt;
+
+&amp;lt;script&amp;gt;
+function hide (elements) {
+  elements = elements.length ? elements : [elements];
+  for (var index = 0; index &amp;lt; elements.length; index++) {
+    elements[index].style.display = &#39;none&#39;;
+  }
+}
+
+function subscribe() {
+    // replace vex-theme-plain with the name of your theme
+    vex.defaultOptions.className = &#39;vex-theme-plain&#39;;
+    var vexId = vex.dialog.open({
+    message: &#39;Get latest updates, enter your email:&#39;,
+    input: [
+        &#39;&amp;lt;input name=&amp;quot;email&amp;quot; type=&amp;quot;text&amp;quot; placeholder=&amp;quot;jhondoe@domain.com&amp;quot; required /&amp;gt;&#39;,
+    ].join(&#39;&#39;),
+    buttons: [
+        $.extend({}, vex.dialog.buttons.YES, { text: &#39;Subscribe&#39; }),
+        $.extend({}, vex.dialog.buttons.NO, { text: &#39;Back&#39; })
+    ],
+    callback: function (data) {
+        if (!data) {
+                }
+                else {
+            var email_value = data.email;
+                        var form = document.createElement(&amp;quot;form&amp;quot;);
+                        form.setAttribute(&#39;method&#39;,&amp;quot;post&amp;quot;);
+                        //replace below email with your email
+                        form.setAttribute(&#39;action&#39;, &amp;quot;http://formspree.io/classandobjects@gmail.com&amp;quot;);
+
+                        var input = document.createElement(&amp;quot;input&amp;quot;); //input element, text
+                        input.setAttribute(&#39;type&#39;,&amp;quot;email&amp;quot;);
+                        input.setAttribute(&#39;name&#39;,&amp;quot;email&amp;quot;);
+                        input.value = email_value;
+
+                        form.appendChild(input);
+                        form.submit();
+        }
+                // In most cases you wont need the below line, but after clicking submit or cancel if the box does not closes for some reason, you will want to uncommnet the line below.
+                // hide(document.querySelectorAll(&#39;.vex&#39;));
+    },
+    });
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the above example just replace classandobects@gmail.com with you own email address and the theme name with your selected Vex theme. This should be enough to get you started. Formspree.io allow you to get 1000 emails for free and is fairly easy to use. Until now you have implemented a subscribe option like the one you get when you click the &lt;code&gt;envelope&lt;/code&gt; icon on your left.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;TIP: You will have to verify the first email you get via formspree.io&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;bonus-adding-a-subscribe-form-on-scroll&#34;&gt;Bonus, Adding a subscribe form on scroll&lt;/h2&gt;
+
+&lt;p&gt;Try scrolling below on this site and as you reach around &lt;strong&gt;70%&lt;/strong&gt;, you get a popup to subscribe. You should continue this step if you want to implement something similar to this.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;NOTE: &lt;code&gt;jQuery&lt;/code&gt; is a requirement for this step. There are high chances that you are already using jQuery.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+  function createSidePopup() {
+    if (document.querySelectorAll(&#39;.vex&#39;).length == 0) {
+        vex.defaultOptions.className = &#39;vex-theme-bottom-right-corner&#39;;
+        var vexId = vex.dialog.open({
+        message: &#39;Why not subscribe for more! Email Please&#39;,
+        input: [
+            &#39;&amp;lt;input name=&amp;quot;email&amp;quot; type=&amp;quot;text&amp;quot; placeholder=&amp;quot;jhondoe@domain.com&amp;quot; required /&amp;gt;&#39;,
+        ].join(&#39;&#39;),
+        buttons: [
+            $.extend({}, vex.dialog.buttons.YES, { text: &#39;Subscribe&#39; }),
+            $.extend({}, vex.dialog.buttons.NO, { text: &#39;Back&#39; })
+        ],
+        callback: function (data) {
+            if (!data) {
+                    }
+                    else {
+                var email_value = data.email;
+                            var form = document.createElement(&amp;quot;form&amp;quot;);
+                            form.setAttribute(&#39;method&#39;,&amp;quot;post&amp;quot;);
+                            form.setAttribute(&#39;action&#39;, &amp;quot;http://formspree.io/classandobjects@gmail.com&amp;quot;);
+
+                            var input = document.createElement(&amp;quot;input&amp;quot;);
+                            input.setAttribute(&#39;type&#39;,&amp;quot;email&amp;quot;);
+                            input.setAttribute(&#39;name&#39;,&amp;quot;email&amp;quot;);
+                            input.value = email_value;
+
+                            form.appendChild(input);
+                            form.submit();
+            }
+                    hide(document.querySelectorAll(&#39;.vex&#39;));
+        },
+        });
+    }
+}
+
+function onScrollSubscribePopup () {
+    {{ if .IsPage }}
+    $(document).ready(function() {
+        $(window).scroll(function(e){
+            var scrollTop = $(window).scrollTop();
+            var docHeight = $(document).height();
+            var winHeight = $(window).height();
+            var scrollPercent = (scrollTop) / (docHeight - winHeight);
+            var scrollPercentRounded = Math.round(scrollPercent*100);
+            if (scrollPercentRounded &amp;gt; 70 &amp;amp;&amp;amp; scrollPercentRounded &amp;lt;     80) {
+                createSidePopup();
+            }
+        });
+    });
+    {{ end }}
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The code to calculate the scroll percentage has been taken from this &lt;a href=&#34;https://codepen.io/achudars/pen/Cpast&#34;&gt;codepen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I believe this post was helpful for creating a subscribe button. If you find any issue with the above code or need any help do let me know in the comments below. Thanks for reading!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Adding Domain to Github Pages</title>
