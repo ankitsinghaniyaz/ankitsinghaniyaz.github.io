@@ -19,8 +19,8 @@
 
 &lt;p&gt;Android &lt;a href=&#34;https://developer.android.com/reference/android/widget/Toolbar.html&#34;&gt;toolbar&lt;/a&gt; is a neat functionality which replaces the old Actionbar. If you want to create a traditional looking, top positioned toolbar then this article is not for you. If you are looking for something in the line of Google plus bottom bar and have the ability to customize it then you should keep reading. Here are few screenshots to demonstrate what I mean.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/google_plus.png&#34; alt=&#34;google plus bottom toolbar screenshot&#34; title=&#34;Google plus bottom bar screenshot&#34; style=&#34;width: 300px; padding-right: 30px;&#34;/&gt;
-&lt;img src=&#34;http://classandobjects.com/images/tutorial/quoted.png&#34; alt=&#34;quoted android app screenshot&#34; title=&#34;Quoted Android app screenshot&#34; style=&#34;width: 300px&#34;; padding: 20px;&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/google_plus.jpg&#34; alt=&#34;google plus bottom toolbar screenshot&#34; title=&#34;Google plus bottom bar screenshot&#34; style=&#34;width: 300px; padding-right: 30px;&#34;/&gt;
+&lt;img src=&#34;http://classandobjects.com/images/tutorial/quoted.jpg&#34; alt=&#34;quoted android app screenshot&#34; title=&#34;Quoted Android app screenshot&#34; style=&#34;width: 300px&#34;; padding: 20px;&#34;/&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;the-layout&#34;&gt;The Layout&lt;/h2&gt;
 
