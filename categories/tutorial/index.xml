@@ -6,8 +6,53 @@
     <description>Recent content in Tutorial on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Sep 2016 22:35:37 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 20 Sep 2016 21:46:00 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Best Way To Create Bottom Toolbar Like Google Plus Android App</title>
+      <link>http://classandobjects.com/tutorial/create_google_plus_like_toolbar_android/</link>
+      <pubDate>Tue, 20 Sep 2016 21:46:00 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/create_google_plus_like_toolbar_android/</guid>
+      <description>
+
+&lt;p&gt;Android &lt;a href=&#34;https://developer.android.com/reference/android/widget/Toolbar.html&#34;&gt;toolbar&lt;/a&gt; is a neat functionality which replaces the old Actionbar. If you want to create a traditional looking, top positioned toolbar then this article is not for you. If you are looking for something in the line of Google plus bottom bar and have the ability to customize it then you should keep reading. Here are few screenshots to demonstrate what I mean.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/google_plus.png&#34; alt=&#34;google plus bottom toolbar screenshot&#34; title=&#34;Google plus bottom bar screenshot&#34; style=&#34;width: 300px; padding-right: 30px;&#34;/&gt;
+&lt;img src=&#34;http://classandobjects.com/images/tutorial/quoted.png&#34; alt=&#34;quoted android app screenshot&#34; title=&#34;Quoted Android app screenshot&#34; style=&#34;width: 300px&#34;; padding: 20px;&#34;/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-layout&#34;&gt;The Layout&lt;/h2&gt;
+
+&lt;p&gt;Few thing to know before we start, I will not use &lt;code&gt;menu&lt;/code&gt; options, it makes the toolbar creation easier but takes away the power to customize. I am also using &lt;code&gt;svg&lt;/code&gt; imported images as my buttons. This allows me to alter their size on the go without loosing the quality. I will share the code snippets directly and explain as I go, so let us dive into it.&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/ankitsinghaniyaz/9f36098bc29446e46ea2bd89b1d15664.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;adding-background-to-image-view-buttons&#34;&gt;Adding Background To Image View Buttons&lt;/h2&gt;
+
+&lt;p&gt;As you will see above in the button level &lt;code&gt;LinerLayout&lt;/code&gt;, we have a background. You will need to create few drawable files as I will show below. If you do not specify this, the effect which you see when you touch a button will be absent. In some cases when you use svg or png images they may not even appear proper. Here is what you need to put into your drawable folder.&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/ankitsinghaniyaz/e2e3677bb1a6babc0ff881a6ad26387f.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;adding-touch-feedback-on-click&#34;&gt;Adding Touch Feedback on Click&lt;/h2&gt;
+
+&lt;p&gt;You may also want to enable a little haptic touch feedback. This can be done easily. Make sure you &lt;code&gt;hapticFeedbackEnabled=&amp;quot;true&amp;quot;&lt;/code&gt; in your button and wherever you are listening to the button, just add the following line.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public  void toggleFont(View view) {
+  // this line will enable haptic feedback
+  view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+  Log.d(TAG, &amp;quot;toggleFont&amp;quot;);
+  //... do more
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can try out this feature on my live app &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.classandobjects.quoted&#34;&gt;Quoted&lt;/a&gt;, which helps you &lt;em&gt;explore and share quotes&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;As you may see implementing a bottom toolbar in android with all functionality is easy. It is just that we have to hunt for information and gather it. I hope you find this article informative if yes do not forget to subscribe. If you have any doubt feel free to leave comments below or email me. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Add Subscribe Button to Your Website, also Add a Scroll Triggered Subscribe Box</title>
