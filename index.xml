@@ -6,8 +6,82 @@
     <description>Recent content on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Sep 2016 21:33:12 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 11 Nov 2016 21:14:48 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Sublime vs Atom vs VS Code</title>
+      <link>http://classandobjects.com/tutorial/sublime-vs-atom-vs-vscode/</link>
+      <pubDate>Fri, 11 Nov 2016 21:14:48 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/sublime-vs-atom-vs-vscode/</guid>
+      <description>
+
+&lt;p&gt;As a software enthusiast, there is nothing which I love more than new technology. I keep my eyes open for phones, laptops and editors. Yes, you got it right. A programmer spends most of his time looking at the screen and from that most of the time staring at the jumble of words known as code. I like fast, good looking and easy to use editors. According to me Sublime Text, Atom and Visual Studio Code are the best options right now. I have used all of them in real world projects and here are my reviews.&lt;/p&gt;
+
+&lt;h2 id=&#34;sublime-text&#34;&gt;Sublime Text&lt;/h2&gt;
+
+&lt;p&gt;The oldest in the guild yet the fastest. You won&amp;rsquo;t be disappointed if you picked up this time tasted editor. I have used sublime the longest and I am always happy to use it. Though, I have faced few issues with linting and other extensions.&lt;/p&gt;
+
+&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fast&lt;/li&gt;
+&lt;li&gt;Light&lt;/li&gt;
+&lt;li&gt;Good Theme Support&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Linting&lt;/li&gt;
+&lt;li&gt;Git tools&lt;/li&gt;
+&lt;li&gt;Debugging&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;atom&#34;&gt;Atom&lt;/h2&gt;
+
+&lt;p&gt;This editor is my favourite currently and I use this one mostly. It is made by GitHub and has a plethora of extension that makes it really useful.&lt;/p&gt;
+
+&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Best Looking&lt;/li&gt;
+&lt;li&gt;Highly Customizable&lt;/li&gt;
+&lt;li&gt;Linting&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Slower than Sublime&lt;/li&gt;
+&lt;li&gt;No VS Code like Git visual integration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;vs-code&#34;&gt;VS Code&lt;/h2&gt;
+
+&lt;p&gt;This is the youngest editor here, it is also based on the same &lt;code&gt;electron&lt;/code&gt; core used in Atom. It has an amazing GitHub Interactive tool that makes life very easy. It also supports easy debugging for people into JavaScript.&lt;/p&gt;
+
+&lt;p&gt;Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Amazing Git Tool&lt;/li&gt;
+&lt;li&gt;Debugging Support&lt;/li&gt;
+&lt;li&gt;Fast&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cons:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bad Theme&lt;/li&gt;
+&lt;li&gt;The current version has a bug which doesn&amp;rsquo;t match tags&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I feel that all these options are amazing. It is a matter of personal taste than anything else. I find my comfort with Atom, but I do remember the speed of Sublime and amazing git tool from VS Code. Feel free to let me know if I missed something by commenting below. Thanks for reading&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Best Quotes App on Android</title>
