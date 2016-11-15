@@ -6,8 +6,180 @@
     <description>Recent content in Tutorials on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Nov 2016 21:14:48 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 15 Nov 2016 21:31:53 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Moment.js Cheatsheet</title>
+      <link>http://classandobjects.com/tutorial/moment-js-cheatsheet/</link>
+      <pubDate>Tue, 15 Nov 2016 21:31:53 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/moment-js-cheatsheet/</guid>
+      <description>
+
+&lt;p&gt;Handling date and time in JavaScript could be a pain. I am a ruby enthusiast and one thing which I deeply love about it, is its date and time helper. They are easy to use and very intuitive. In JavaScript world, &lt;a href=&#34;www.momentjs.com&#34;&gt;moment.js&lt;/a&gt; comes for the rescue. It has a lot of functionality but I somehow find its syntax a bit daunting. This post aims to provide a list of few most used methods. It shall also serve as a cheatsheet and reminder to everyone. So let&amp;rsquo;s get started.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/momentjs.png&#34; alt=&#34;moment js cheatsheet&#34; title=&#34;Moment js cheatsheet&#34;/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-moment&#34;&gt;The Moment&lt;/h2&gt;
+
+&lt;p&gt;I will speak less and let the code do the talking.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// returns the current time, same as new Date()
+moment()
+
+// get moment object from string, though we should not use them as they are ambiguous.
+moment(&amp;quot;10-10-1993&amp;quot;)
+moment(&amp;quot;01/12/2015&amp;quot;)
+
+// instead use, it makes sure that your dates are interpreted correctly.
+moment(&amp;quot;10-10-1993&amp;quot;, &amp;quot;DD-MM-YYYY&amp;quot;)
+moment(&amp;quot;01/12/2015&amp;quot;, &amp;quot;DD/MM/YYYY&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here is a list of few most used parsing tokens:
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Token &lt;/th&gt;
+    &lt;th&gt;Description &lt;/th&gt;
+    &lt;th&gt;Example &lt;/th&gt;
+  &lt;/tr&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;tr&gt;
+    &lt;td&gt;YYYY&lt;/td&gt;
+    &lt;td&gt;4 Digit Year&lt;/td&gt;
+    &lt;td&gt;2016&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;YY&lt;/td&gt;
+    &lt;td&gt;2 Digit Year&lt;/td&gt;
+    &lt;td&gt;16&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;MMMM&lt;/td&gt;
+    &lt;td&gt;Full Month Name&lt;/td&gt;
+    &lt;td&gt;January&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;MMM&lt;/td&gt;
+    &lt;td&gt;3 Character Month Name&lt;/td&gt;
+    &lt;td&gt;Jan&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;MM&lt;/td&gt;
+    &lt;td&gt;2 Digit Month&lt;/td&gt;
+    &lt;td&gt;02&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;M&lt;/td&gt;
+    &lt;td&gt;1 or 2 Digit Month&lt;/td&gt;
+    &lt;td&gt;1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;DD&lt;/td&gt;
+    &lt;td&gt;2 Digit Date&lt;/td&gt;
+    &lt;td&gt;09&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;D&lt;/td&gt;
+    &lt;td&gt;1 or 2 Digit Date&lt;/td&gt;
+    &lt;td&gt;9&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;M&lt;/td&gt;
+    &lt;td&gt;1 or 2 Digit Month&lt;/td&gt;
+    &lt;td&gt;1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;HH or H&lt;/td&gt;
+    &lt;td&gt;1 or 2 Digit Hour 24hrs&lt;/td&gt;
+    &lt;td&gt;23&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;hh or h&lt;/td&gt;
+    &lt;td&gt;1 or 2 Digit Hour 12hrs&lt;/td&gt;
+    &lt;td&gt;01&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;a or A&lt;/td&gt;
+    &lt;td&gt;Am/Pm&lt;/td&gt;
+    &lt;td&gt;PM&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;m or mm&lt;/td&gt;
+    &lt;td&gt;Minutes&lt;/td&gt;
+    &lt;td&gt;59&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;s or ss&lt;/td&gt;
+    &lt;td&gt;Seconds&lt;/td&gt;
+    &lt;td&gt;23&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Tip: lower case tokens are used for time and upper case tokens are used for date.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;breaking-the-moment&#34;&gt;Breaking The Moment&lt;/h2&gt;
+
+&lt;p&gt;We find ourself most of the time accessing different pieces of information stored in the moment object. It can be &lt;code&gt;date, hour, seconds, etc&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// create the moment object
+var now = moment();
+
+// to get todays date
+now.date()
+now.hour()
+now.minute()
+now.second()
+
+// we also have get method on moment
+now.get(&#39;day&#39;) // returns day of the week
+now.get(&#39;millisecond&#39;)
+
+// get unix time
+now.unix()
+
+// I have specified the list of all possible vales you can use in get, add and subtract method in the below section.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;play-the-moment&#34;&gt;Play the Moment&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var now = moment()
+
+// clone moment
+var current = moment(now)
+// change to utc
+now.utc()
+// validate the time object
+now.isValid()
+
+// add value to a time
+// prototype: moment().add(value, scale)
+now.add(3, &#39;hours&#39;);
+now.subtract(7, &#39;days&#39;)
+
+// jumping to some time
+now.startOf(&#39;day&#39;)
+now.endOf(&#39;month&#39;)
+
+// possible fields to use
+var possibleScales = [year, month, quarter, week, isoWeek, day, date, hour, minute, second]
+
+// use any available token to format time as you need
+now.format(&#39;hh:mm a&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;moment.js methods like add and subtract mutates the object itself. This can cause an unseen bug if you are not aware!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Moment.js is very helpful to solve date and time related problems in javascript. It was created to be easy and powerful. With the right exposure we can get our work done easily with &lt;code&gt;momentjs&lt;/code&gt;. If you liked the post, please let us know how can we improve. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Sublime vs Atom vs VS Code</title>
