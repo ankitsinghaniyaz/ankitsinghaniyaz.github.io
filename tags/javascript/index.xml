@@ -6,8 +6,67 @@
     <description>Recent content in Javascript on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Nov 2016 21:31:53 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 26 Nov 2016 01:35:47 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Problem With React Single Page App</title>
+      <link>http://classandobjects.com/tutorial/problems_with_react_single_page_app/</link>
+      <pubDate>Sat, 26 Nov 2016 01:35:47 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/problems_with_react_single_page_app/</guid>
+      <description>
+
+&lt;p&gt;If you are planning to create a single page app maybe you have heard people recommending React as an option. React is amazing and I am currently using React in almost all the projects. As you may have also heard that React is just the view layer so that means you will have to make choices. The choice about the state management, styling, routing,  app structure, naming conventions and much more. These choices could be fun and intimidating at the same time. I am writing this article to outline my challenges and discovery trying to create single page app using React Js.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/react.png&#34; alt=&#34;react js single page app&#34; title=&#34;single page app issues with react&#34;/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-beginning&#34;&gt;The Beginning&lt;/h2&gt;
+
+&lt;p&gt;When I started the project I was sure that my project will be on React. I asked myself how do you start a new React project? The first crossroad was about using ES2015. I knew this was coming to all the browsers still I had to make a choice. Recently facebook has introduced a CLI for React called as React-Create-App, which will do the most recommended setup for you. I assume that you are using this CLI tool to scaffold your project. If you indeed used it, congratulations. You saved yourself the pain of setting these things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;EsLint (Helps you follow some rules and ease error identification)&lt;/li&gt;
+&lt;li&gt;Babel (Polyfill for ES6 and JSX syntax)&lt;/li&gt;
+&lt;li&gt;Webpack (Handle bundling and running babel)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://facebook.github.io/jest/&#34;&gt;Jest&lt;/a&gt; (Testing)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I still  think I haven&amp;rsquo;t mentioned all the things that scaffolding did for you. If instead, you tread on the manual path, you will have to educate yourself about setting up webpack and babel. Differentiate testing frameworks like enzyme and jest. This knowledge is not bad, but it comes in the way of what you actually want to achieve. So this was just setting up the view layer. Let&amp;rsquo;s move on.&lt;/p&gt;
+
+&lt;h2 id=&#34;state-mangement&#34;&gt;State Mangement&lt;/h2&gt;
+
+&lt;p&gt;The state is the cool thing in react, which is monitored by React and whenever a state changes the view is updated automagically. Now I asked myself how will I want to manage my states? I was presented with few answers. The idealist in me said Redux, the minimalist said React States, the optimist said &lt;a href=&#34;https://mobxjs.github.io/mobx/&#34;&gt;MobX&lt;/a&gt;. What do you choose???&lt;/p&gt;
+
+&lt;p&gt;If your app is simple you can just get away with React states and never know other libraries ever existed, but if it has some complex state management you may want to consider the others. Redux is the most famous, widely used and mature. If you are building something critical then Redux can give you powerful debugging and testing abilities. If you just want to avoid boilerplate code associated with Redux and want to get the React Magic in state management also, then MobX may be the right things.&lt;/p&gt;
+
+&lt;p&gt;After some blogs, few video lessons and a few sample projects. I decided to go with MobX, so that I have power when I need and I can avoid boilerplate as much as I can. With this checkpoint passed, you are 75% done with the setup.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;P.S. I am Rubyist, so boilerplate? NOOO!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;routing&#34;&gt;Routing&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ReactTraining/react-router&#34;&gt;React-Routers&lt;/a&gt; is the defacto way of routing with React. It also has a simple API and easy to learn. Though there are concepts like Hash History and Browser History. In short, HashHistory is ugly and not to be used in production but easier to setup. The opposite is true for BrowserHistory. In order to use this good looking, preferred BrowserHistory you have to configure the server to return the root page for anything requested. This again feels like a lot of work to me as it should have been easily available out of the box.&lt;/p&gt;
+
+&lt;h2 id=&#34;css-inline-vs-class&#34;&gt;CSS Inline vs Class&lt;/h2&gt;
+
+&lt;p&gt;I am pretty sure that your app will have some form of styling. So again you will have to spend time digging through discussion and forums deciding what kind of styling you prefer. This may not be a big deal but it takes time and impact the way you structure your project.&lt;/p&gt;
+
+&lt;h2 id=&#34;application-structure-file-name-conventions&#34;&gt;Application Structure, File Name Conventions&lt;/h2&gt;
+
+&lt;p&gt;Again not a difficult part but I like to follow some well-defined conventions so that I do not have to overload my brain with deciding where to place my files and how will I want to name them. Like my &lt;code&gt;&amp;lt;Toolbar /&amp;gt;&lt;/code&gt; should live in &lt;code&gt;toolbar.jsx&lt;/code&gt; , &lt;code&gt;toolbarComponent.js&lt;/code&gt;, &lt;code&gt;Toolbar.componet.js&lt;/code&gt;, &amp;hellip;.&lt;/p&gt;
+
+&lt;p&gt;I think you get the problem. All these options are logically sound and our mind seems to adapt and learn more patterns as we advance in the project. Some time later I may feel bad about the names I chose a few months back.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Please see these are the things which I find challenging and believe someone will feel the same. If you are fine with all these work I respect your views and choices. I am completely for the React and I love it, but surely this issues warrant my attention to other notable frameworks like &lt;a href=&#34;http://emberjs.com/&#34;&gt;ember.js&lt;/a&gt;. I will like to try out Ember and see how it fits my style of development. I will soon be doing a post on my choices and how I tackled all these problems in the React ecosystem. Then I will redo the same things with Ember and try to note my experience with the same.&lt;/p&gt;
+
+&lt;p&gt;If this post helped you in any way, I would love your appreciation below. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Moment.js Cheatsheet</title>
