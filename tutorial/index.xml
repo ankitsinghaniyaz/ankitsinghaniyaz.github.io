@@ -21,7 +21,7 @@
 
 &lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/react.png&#34; alt=&#34;react js single page app&#34; title=&#34;single page app issues with react&#34;/&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;the-beginning&#34;&gt;The Beginning&lt;/h2&gt;
+&lt;h2 id=&#34;the-beginning:193c4d247a68848b168cc40000a1dd29&#34;&gt;The Beginning&lt;/h2&gt;
 
 &lt;p&gt;When I started the project I was sure that my project will be on React. I asked myself how do you start a new React project? The first crossroad was about using ES2015. I knew this was coming to all the browsers still I had to make a choice. Recently facebook has introduced a CLI for React called as React-Create-App, which will do the most recommended setup for you. I assume that you are using this CLI tool to scaffold your project. If you indeed used it, congratulations. You saved yourself the pain of setting these things:&lt;/p&gt;
 
@@ -34,7 +34,7 @@
 
 &lt;p&gt;I still  think I haven&amp;rsquo;t mentioned all the things that scaffolding did for you. If instead, you tread on the manual path, you will have to educate yourself about setting up webpack and babel. Differentiate testing frameworks like enzyme and jest. This knowledge is not bad, but it comes in the way of what you actually want to achieve. So this was just setting up the view layer. Let&amp;rsquo;s move on.&lt;/p&gt;
 
-&lt;h2 id=&#34;state-mangement&#34;&gt;State Mangement&lt;/h2&gt;
+&lt;h2 id=&#34;state-mangement:193c4d247a68848b168cc40000a1dd29&#34;&gt;State Mangement&lt;/h2&gt;
 
 &lt;p&gt;The state is the cool thing in react, which is monitored by React and whenever a state changes the view is updated automagically. Now I asked myself how will I want to manage my states? I was presented with few answers. The idealist in me said Redux, the minimalist said React States, the optimist said &lt;a href=&#34;https://mobxjs.github.io/mobx/&#34;&gt;MobX&lt;/a&gt;. What do you choose???&lt;/p&gt;
 
@@ -46,21 +46,21 @@
 &lt;p&gt;P.S. I am Rubyist, so boilerplate? NOOO!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;routing&#34;&gt;Routing&lt;/h2&gt;
+&lt;h2 id=&#34;routing:193c4d247a68848b168cc40000a1dd29&#34;&gt;Routing&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/ReactTraining/react-router&#34;&gt;React-Routers&lt;/a&gt; is the defacto way of routing with React. It also has a simple API and easy to learn. Though there are concepts like Hash History and Browser History. In short, HashHistory is ugly and not to be used in production but easier to setup. The opposite is true for BrowserHistory. In order to use this good looking, preferred BrowserHistory you have to configure the server to return the root page for anything requested. This again feels like a lot of work to me as it should have been easily available out of the box.&lt;/p&gt;
 
-&lt;h2 id=&#34;css-inline-vs-class&#34;&gt;CSS Inline vs Class&lt;/h2&gt;
+&lt;h2 id=&#34;css-inline-vs-class:193c4d247a68848b168cc40000a1dd29&#34;&gt;CSS Inline vs Class&lt;/h2&gt;
 
 &lt;p&gt;I am pretty sure that your app will have some form of styling. So again you will have to spend time digging through discussion and forums deciding what kind of styling you prefer. This may not be a big deal but it takes time and impact the way you structure your project.&lt;/p&gt;
 
-&lt;h2 id=&#34;application-structure-file-name-conventions&#34;&gt;Application Structure, File Name Conventions&lt;/h2&gt;
+&lt;h2 id=&#34;application-structure-file-name-conventions:193c4d247a68848b168cc40000a1dd29&#34;&gt;Application Structure, File Name Conventions&lt;/h2&gt;
 
 &lt;p&gt;Again not a difficult part but I like to follow some well-defined conventions so that I do not have to overload my brain with deciding where to place my files and how will I want to name them. Like my &lt;code&gt;&amp;lt;Toolbar /&amp;gt;&lt;/code&gt; should live in &lt;code&gt;toolbar.jsx&lt;/code&gt; , &lt;code&gt;toolbarComponent.js&lt;/code&gt;, &lt;code&gt;Toolbar.componet.js&lt;/code&gt;, &amp;hellip;.&lt;/p&gt;
 
 &lt;p&gt;I think you get the problem. All these options are logically sound and our mind seems to adapt and learn more patterns as we advance in the project. Some time later I may feel bad about the names I chose a few months back.&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:193c4d247a68848b168cc40000a1dd29&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Please see these are the things which I find challenging and believe someone will feel the same. If you are fine with all these work I respect your views and choices. I am completely for the React and I love it, but surely this issues warrant my attention to other notable frameworks like &lt;a href=&#34;http://emberjs.com/&#34;&gt;ember.js&lt;/a&gt;. I will like to try out Ember and see how it fits my style of development. I will soon be doing a post on my choices and how I tackled all these problems in the React ecosystem. Then I will redo the same things with Ember and try to note my experience with the same.&lt;/p&gt;
 
@@ -80,7 +80,7 @@
 
 &lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/momentjs.png&#34; alt=&#34;moment js cheatsheet&#34; title=&#34;Moment js cheatsheet&#34;/&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;the-moment&#34;&gt;The Moment&lt;/h2&gt;
+&lt;h2 id=&#34;the-moment:33256c48849067d2e4396387431d6dd8&#34;&gt;The Moment&lt;/h2&gt;
 
 &lt;p&gt;I will speak less and let the code do the talking.&lt;/p&gt;
 
@@ -180,7 +180,7 @@ moment(&amp;quot;01/12/2015&amp;quot;, &amp;quot;DD/MM/YYYY&amp;quot;)
 &lt;p&gt;Tip: lower case tokens are used for time and upper case tokens are used for date.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;breaking-the-moment&#34;&gt;Breaking The Moment&lt;/h2&gt;
+&lt;h2 id=&#34;breaking-the-moment:33256c48849067d2e4396387431d6dd8&#34;&gt;Breaking The Moment&lt;/h2&gt;
 
 &lt;p&gt;We find ourself most of the time accessing different pieces of information stored in the moment object. It can be &lt;code&gt;date, hour, seconds, etc&lt;/code&gt;&lt;/p&gt;
 
@@ -203,7 +203,7 @@ now.unix()
 // I have specified the list of all possible vales you can use in get, add and subtract method in the below section.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;play-the-moment&#34;&gt;Play the Moment&lt;/h2&gt;
+&lt;h2 id=&#34;play-the-moment:33256c48849067d2e4396387431d6dd8&#34;&gt;Play the Moment&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var now = moment()
 
@@ -234,7 +234,7 @@ now.format(&#39;hh:mm a&#39;)
 &lt;p&gt;moment.js methods like add and subtract mutates the object itself. This can cause an unseen bug if you are not aware!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:33256c48849067d2e4396387431d6dd8&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Moment.js is very helpful to solve date and time related problems in javascript. It was created to be easy and powerful. With the right exposure we can get our work done easily with &lt;code&gt;momentjs&lt;/code&gt;. If you liked the post, please let us know how can we improve. Thanks for reading.&lt;/p&gt;
 </description>
@@ -250,7 +250,7 @@ now.format(&#39;hh:mm a&#39;)
 
 &lt;p&gt;As a software enthusiast, there is nothing which I love more than new technology. I keep my eyes open for phones, laptops and editors. Yes, you got it right. A programmer spends most of his time looking at the screen and from that most of the time staring at the jumble of words known as code. I like fast, good looking and easy to use editors. According to me Sublime Text, Atom and Visual Studio Code are the best options right now. I have used all of them in real world projects and here are my reviews.&lt;/p&gt;
 
-&lt;h2 id=&#34;sublime-text&#34;&gt;Sublime Text&lt;/h2&gt;
+&lt;h2 id=&#34;sublime-text:1136af4fc3797f4bb7a018c4eabe4463&#34;&gt;Sublime Text&lt;/h2&gt;
 
 &lt;p&gt;The oldest in the guild yet the fastest. You won&amp;rsquo;t be disappointed if you picked up this time tasted editor. I have used sublime the longest and I am always happy to use it. Though, I have faced few issues with linting and other extensions.&lt;/p&gt;
 
@@ -270,7 +270,7 @@ now.format(&#39;hh:mm a&#39;)
 &lt;li&gt;Debugging&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;atom&#34;&gt;Atom&lt;/h2&gt;
+&lt;h2 id=&#34;atom:1136af4fc3797f4bb7a018c4eabe4463&#34;&gt;Atom&lt;/h2&gt;
 
 &lt;p&gt;This editor is my favourite currently and I use this one mostly. It is made by GitHub and has a plethora of extension that makes it really useful.&lt;/p&gt;
 
@@ -289,7 +289,7 @@ now.format(&#39;hh:mm a&#39;)
 &lt;li&gt;No VS Code like Git visual integration&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;vs-code&#34;&gt;VS Code&lt;/h2&gt;
+&lt;h2 id=&#34;vs-code:1136af4fc3797f4bb7a018c4eabe4463&#34;&gt;VS Code&lt;/h2&gt;
 
 &lt;p&gt;This is the youngest editor here, it is also based on the same &lt;code&gt;electron&lt;/code&gt; core used in Atom. It has an amazing GitHub Interactive tool that makes life very easy. It also supports easy debugging for people into JavaScript.&lt;/p&gt;
 
@@ -308,7 +308,7 @@ now.format(&#39;hh:mm a&#39;)
 &lt;li&gt;The current version has a bug which doesn&amp;rsquo;t match tags&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:1136af4fc3797f4bb7a018c4eabe4463&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;I feel that all these options are amazing. It is a matter of personal taste than anything else. I find my comfort with Atom, but I do remember the speed of Sublime and amazing git tool from VS Code. Feel free to let me know if I missed something by commenting below. Thanks for reading&amp;hellip;&lt;/p&gt;
 </description>
@@ -327,19 +327,19 @@ now.format(&#39;hh:mm a&#39;)
 &lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/google_plus.jpg&#34; alt=&#34;google plus bottom toolbar screenshot&#34; title=&#34;Google plus bottom bar screenshot&#34; style=&#34;width: 300px; padding-right: 30px;&#34;/&gt;
 &lt;img src=&#34;http://classandobjects.com/images/tutorial/quoted.jpg&#34; alt=&#34;quoted android app screenshot&#34; title=&#34;Quoted Android app screenshot&#34; style=&#34;width: 300px&#34;; padding: 20px;&#34;/&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;the-layout&#34;&gt;The Layout&lt;/h2&gt;
+&lt;h2 id=&#34;the-layout:13d446a8ab04176aff5163492f84f741&#34;&gt;The Layout&lt;/h2&gt;
 
 &lt;p&gt;Few thing to know before we start, I will not use &lt;code&gt;menu&lt;/code&gt; options, it makes the toolbar creation easier but takes away the power to customize. I am also using &lt;code&gt;svg&lt;/code&gt; imported images as my buttons. This allows me to alter their size on the go without loosing the quality. I will share the code snippets directly and explain as I go, so let us dive into it.&lt;/p&gt;
 
 &lt;script src=&#34;//gist.github.com/ankitsinghaniyaz/9f36098bc29446e46ea2bd89b1d15664.js&#34;&gt;&lt;/script&gt;
 
-&lt;h2 id=&#34;adding-background-to-image-view-buttons&#34;&gt;Adding Background To Image View Buttons&lt;/h2&gt;
+&lt;h2 id=&#34;adding-background-to-image-view-buttons:13d446a8ab04176aff5163492f84f741&#34;&gt;Adding Background To Image View Buttons&lt;/h2&gt;
 
 &lt;p&gt;As you will see above in the button level &lt;code&gt;LinerLayout&lt;/code&gt;, we have a background. You will need to create few drawable files as I will show below. If you do not specify this, the effect which you see when you touch a button will be absent. In some cases when you use svg or png images they may not even appear proper. Here is what you need to put into your drawable folder.&lt;/p&gt;
 
 &lt;script src=&#34;//gist.github.com/ankitsinghaniyaz/e2e3677bb1a6babc0ff881a6ad26387f.js&#34;&gt;&lt;/script&gt;
 
-&lt;h2 id=&#34;adding-touch-feedback-on-click&#34;&gt;Adding Touch Feedback on Click&lt;/h2&gt;
+&lt;h2 id=&#34;adding-touch-feedback-on-click:13d446a8ab04176aff5163492f84f741&#34;&gt;Adding Touch Feedback on Click&lt;/h2&gt;
 
 &lt;p&gt;You may also want to enable a little haptic touch feedback. This can be done easily. Make sure you &lt;code&gt;hapticFeedbackEnabled=&amp;quot;true&amp;quot;&lt;/code&gt; in your button and wherever you are listening to the button, just add the following line.&lt;/p&gt;
 
@@ -353,7 +353,7 @@ now.format(&#39;hh:mm a&#39;)
 
 &lt;p&gt;You can try out this feature on my live app &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.classandobjects.quoted&#34;&gt;Quoted&lt;/a&gt;, which helps you &lt;em&gt;explore and share quotes&lt;/em&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:13d446a8ab04176aff5163492f84f741&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;As you may see implementing a bottom toolbar in android with all functionality is easy. It is just that we have to hunt for information and gather it. I hope you find this article informative if yes do not forget to subscribe. If you have any doubt feel free to leave comments below or email me. Thanks for reading.&lt;/p&gt;
 </description>
@@ -369,7 +369,7 @@ now.format(&#39;hh:mm a&#39;)
 
 &lt;p&gt;Subscribe button is a useful feature to have on any website. It helps you create loyal audience base and helps your users get amazing content from the blogs they love. It can be quite easy to integrate one on a WordPress site or a website with a backend. In this article, I will show you how to add a subscribe button to any static website using &lt;a href=&#34;www.formspree.io&#34;&gt;formspree.io&lt;/a&gt;, &lt;a href=&#34;https://github.com/hubspot/vex&#34;&gt;Vex js&lt;/a&gt; and javascript. I will also show how you can add a subscribe box(popup) when a user has scrolled the page. I am using Hugo as my static site generator, the process is exactly the same for any static site. So let&amp;rsquo;s get started.&lt;/p&gt;
 
-&lt;h2 id=&#34;setup-vex-js&#34;&gt;Setup Vex js&lt;/h2&gt;
+&lt;h2 id=&#34;setup-vex-js:80997bc7bd7f5c85dacbd7579f4f2263&#34;&gt;Setup Vex js&lt;/h2&gt;
 
 &lt;p&gt;I did my little research and found out Vex js is the best dialogue(popup) creator library. It is &lt;strong&gt;light, good looking and has zero dependencies&lt;/strong&gt;, and that is all we need. First, you will need to &lt;a href=&#34;http://github.hubspot.com/vex/api/themes/&#34;&gt;select a theme&lt;/a&gt;, visit the link to see examples of all the themes which you can use. Select the one you like and download it from here. Also download &lt;code&gt;vex-theme-bottom-right-corner&lt;/code&gt;, if you want to do a subscribe popup after scrolling your page. You will need to &lt;a href=&#34;https://github.com/HubSpot/vex/tree/master/dist/js&#34;&gt;download vex.combined.min.js&lt;/a&gt; from this link. Make sure you have one theme CSS file and one Vex combined js file. Now you will want to store this file to your static directory, where you have your Javascript and CSS.&lt;/p&gt;
 
@@ -387,7 +387,7 @@ now.format(&#39;hh:mm a&#39;)
       vex-theme-name.css
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;add-a-subscribe-button&#34;&gt;Add a subscribe button&lt;/h2&gt;
+&lt;h2 id=&#34;add-a-subscribe-button:80997bc7bd7f5c85dacbd7579f4f2263&#34;&gt;Add a subscribe button&lt;/h2&gt;
 
 &lt;p&gt;Now, after having set up Vex, we want a form to be shown to the user when  they click the Subscribe button.&lt;/p&gt;
 
@@ -454,7 +454,7 @@ function subscribe() {
 &lt;p&gt;TIP: You will have to verify the first email you get via formspree.io&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;bonus-adding-a-subscribe-form-on-scroll&#34;&gt;Bonus, Adding a subscribe form on scroll&lt;/h2&gt;
+&lt;h2 id=&#34;bonus-adding-a-subscribe-form-on-scroll:80997bc7bd7f5c85dacbd7579f4f2263&#34;&gt;Bonus, Adding a subscribe form on scroll&lt;/h2&gt;
 
 &lt;p&gt;Try scrolling below on this site and as you reach around &lt;strong&gt;70%&lt;/strong&gt;, you get a popup to subscribe. You should continue this step if you want to implement something similar to this.&lt;/p&gt;
 
@@ -519,7 +519,7 @@ function onScrollSubscribePopup () {
 
 &lt;p&gt;The code to calculate the scroll percentage has been taken from this &lt;a href=&#34;https://codepen.io/achudars/pen/Cpast&#34;&gt;codepen&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:80997bc7bd7f5c85dacbd7579f4f2263&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;I believe this post was helpful for creating a subscribe button. If you find any issue with the above code or need any help do let me know in the comments below. Thanks for reading!&lt;/p&gt;
 </description>
@@ -535,7 +535,7 @@ function onScrollSubscribePopup () {
 
 &lt;p&gt;MobX is the new state management library which packs really well with react. Mobx makes things much simpler to &lt;code&gt;redux&lt;/code&gt;, which is more famous in react community. I have detailed out the step on how to get started with using mobx and rails 5.&lt;/p&gt;
 
-&lt;h2 id=&#34;install-react-on-rails-gem-https-github-com-shakacode-react-on-rails-blob-master-docs-tutorial-md&#34;&gt;Install &lt;a href=&#34;https://github.com/shakacode/react_on_rails/blob/master/docs/tutorial.md&#34;&gt;react_on_rails gem&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;install-react-on-rails-gem-https-github-com-shakacode-react-on-rails-blob-master-docs-tutorial-md:c654b3e053ef669dc2fc657f0438b2e3&#34;&gt;Install &lt;a href=&#34;https://github.com/shakacode/react_on_rails/blob/master/docs/tutorial.md&#34;&gt;react_on_rails gem&lt;/a&gt;&lt;/h2&gt;
 
 &lt;p&gt;To make mobx functional with rails, I had to drop &lt;code&gt;react-rails&lt;/code&gt; gem and adopt the &lt;code&gt;react_on_rails&lt;/code&gt; gem. Setting it up is cumbersome in the beginning but it pays off well in the long run. React on rails site have a detailed guide on how to setup react_on_rails gem, I&amp;rsquo;ll just quickly brush them up.&lt;/p&gt;
 
@@ -582,7 +582,7 @@ const config = {
 &lt;p&gt;NOTE: Make sure your Node js version is greater than 5, react_on_rails gem has this requirement.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;add-mobx-and-mobx-react&#34;&gt;Add Mobx and Mobx React&lt;/h2&gt;
+&lt;h2 id=&#34;add-mobx-and-mobx-react:c654b3e053ef669dc2fc657f0438b2e3&#34;&gt;Add Mobx and Mobx React&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;# After previous step you will have a client folder
 # inside that folder edit the package.json and add the below lines to the dependencies list
@@ -604,7 +604,7 @@ npm install babel-plugin-transform-decorators-legacy --save-dev
 npm install
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;bring-it-up&#34;&gt;Bring it Up&lt;/h2&gt;
+&lt;h2 id=&#34;bring-it-up:c654b3e053ef669dc2fc657f0438b2e3&#34;&gt;Bring it Up&lt;/h2&gt;
 
 &lt;p&gt;Now you are all set to bring your system up.&lt;/p&gt;
 
@@ -615,7 +615,7 @@ rails db:create # use rake db:create in rails 4 or below
 foreman start -f Procfile.dev
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:c654b3e053ef669dc2fc657f0438b2e3&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;I hope you were successfully able to get your system up and running. If I missed something or you have some doubts, do let me know in the comments below. Thanks for reading.&lt;/p&gt;
 </description>
@@ -631,11 +631,11 @@ foreman start -f Procfile.dev
 
 &lt;p&gt;React js is currently the most hyped front-end framework(view) today. I am lucky that at my current workplace I am getting a chance to explore react and rails. I am a Python lover, but I am completely open to learning new technologies. I have seen confusing things in Ruby on Rails which is very opposite to React and Javascript environment. I am trying to list out things every react js beginner should know. I have pointed out top 5 reasons why React js can be confusing. So let us get started.&lt;/p&gt;
 
-&lt;h2 id=&#34;1-react-is-just-the-view-layer&#34;&gt;1. React is just the view layer&lt;/h2&gt;
+&lt;h2 id=&#34;1-react-is-just-the-view-layer:3222e409acaa90f43374c31f0beac177&#34;&gt;1. React is just the view layer&lt;/h2&gt;
 
 &lt;p&gt;You will not understand what does this mean, I didn&amp;rsquo;t, and it is ok. If you already do not have some understanding of what modern MVC front-end frameworks are then this definition is almost useless. In a simple way, view layer will simply mean a replacement for your HTML, CSS and Javascript(umm.. maybe). These three things make up the view of any web application. So React js provides us with a way to write things in a reusable and powerful way. You still have to do all the things like AJAX, data handling, function naming convention, etc in you own fashion. This gives you a lot of flexibility but at a reduced speed of development.&lt;/p&gt;
 
-&lt;h2 id=&#34;2-jsx-is-not-html-or-xml&#34;&gt;2. JSX is not HTML or XML&lt;/h2&gt;
+&lt;h2 id=&#34;2-jsx-is-not-html-or-xml:3222e409acaa90f43374c31f0beac177&#34;&gt;2. JSX is not HTML or XML&lt;/h2&gt;
 
 &lt;p&gt;React is aimed at being developer friendly and I second it. It uses an XML-like syntax called JSX. It will look like normal HTML, but has few catches. &lt;code&gt;class&lt;/code&gt; is a reserved keyword so you have to use &lt;code&gt;className&lt;/code&gt;, this means you cannot use your HTML code directly, you will have to do a bunch of replacements.&lt;/p&gt;
 
@@ -649,11 +649,11 @@ foreman start -f Procfile.dev
 
 &lt;p&gt;Always beware of these gaps as you tend to overlook them, even the error messaging cannot help you much.&lt;/p&gt;
 
-&lt;h2 id=&#34;3-what-should-be-a-component&#34;&gt;3.  What should be a Component?&lt;/h2&gt;
+&lt;h2 id=&#34;3-what-should-be-a-component:3222e409acaa90f43374c31f0beac177&#34;&gt;3.  What should be a Component?&lt;/h2&gt;
 
 &lt;p&gt;There is an opinion on what you should make into a component. There are people who believe that any piece of code that is supposed to be used again should be made into a component while other want to do so when you are dealing with states. This is not a big issue, but you will have to adjust yourself according to the developer culture you find yourself in.&lt;/p&gt;
 
-&lt;h2 id=&#34;4-multiple-syntax-options&#34;&gt;4. Multiple syntax options&lt;/h2&gt;
+&lt;h2 id=&#34;4-multiple-syntax-options:3222e409acaa90f43374c31f0beac177&#34;&gt;4. Multiple syntax options&lt;/h2&gt;
 
 &lt;p&gt;Javascript is evolving very fast with the advent of these new front-end frameworks. The current syntax is called as ES6 or ES2015, which is a bit different than the older version. This can be very confusing if you do not know this. In your quest to find something you may find resources which can be following the older syntax or the newer one.&lt;/p&gt;
 
@@ -670,11 +670,11 @@ class ComponentB extends React.Component {
 
 &lt;p&gt;You can find the use of the both the syntax in React official documentation. They both work fine but try avoiding mixing them up  and stick to the newer ES6 style.&lt;/p&gt;
 
-&lt;h2 id=&#34;5-how-to-use-it-with-your-existing-application&#34;&gt;5. How to use it with your existing application&lt;/h2&gt;
+&lt;h2 id=&#34;5-how-to-use-it-with-your-existing-application:3222e409acaa90f43374c31f0beac177&#34;&gt;5. How to use it with your existing application&lt;/h2&gt;
 
 &lt;p&gt;React is an independent layer which you will want to include in your already existing full stack solution. They could be a bit daunting. To me using webpack and browsify are a task in themselves. In Rails, we have &lt;code&gt;react-rails&lt;/code&gt; gem which make the task very easy. Undoubtedly there are similar efforts in other community as well. You will find many ways to integrate react, try using the easier one and upgrade as your need increases.&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:3222e409acaa90f43374c31f0beac177&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;As my conclusion, I will say that React js seem like it will stay in the market for a long time. Even if it does not, it is very easy to learn and does not require a lot of concepts. It is fast and keeps your code DRY. You should try React if you have not tried it yet. It is fun.&lt;/p&gt;
 </description>
@@ -690,7 +690,7 @@ class ComponentB extends React.Component {
 
 &lt;p&gt;This guide describe how to deploy Django application on Heroku, gracefully! Yes, you heard it right. Heroku was mostly build with Ruby in mind but now it supports Python applications too. There are some points which are not mentioned in other blogs and &lt;a href=&#34;https://devcenter.heroku.com/articles/django-app-configuration&#34;&gt;Heroku official docs&lt;/a&gt;. I will try to describe all the process in detail here, so that you have a good experience deploying you apps. Lets get started!&lt;/p&gt;
 
-&lt;h2 id=&#34;creating-the-project&#34;&gt;Creating the Project&lt;/h2&gt;
+&lt;h2 id=&#34;creating-the-project:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Creating the Project&lt;/h2&gt;
 
 &lt;p&gt;Creating your project is the most important step in this series. Create your application with default Django settings. These are the few configuration that you will have to do. You can create a Django project using following command:&lt;/p&gt;
 
@@ -708,7 +708,7 @@ class ComponentB extends React.Component {
 &lt;p&gt;Note: If you created application using this template you can skip the configuration step.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;creating-virtual-environment&#34;&gt;Creating Virtual Environment&lt;/h2&gt;
+&lt;h2 id=&#34;creating-virtual-environment:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Creating Virtual Environment&lt;/h2&gt;
 
 &lt;p&gt;There are lot of packages in your default python path. You may want to create a fresh and sandboxed environment for this application. This avoids your global changes from affecting this application. Install &lt;code&gt;virtualenv&lt;/code&gt; with:&lt;/p&gt;
 
@@ -724,7 +724,7 @@ virtualenv myenv
 source myenv/bin/activate
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;installing-dependencies&#34;&gt;Installing Dependencies&lt;/h2&gt;
+&lt;h2 id=&#34;installing-dependencies:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Installing Dependencies&lt;/h2&gt;
 
 &lt;p&gt;These are few dependencies which are required to successfully deploy your application. Make sure you install them all.&lt;/p&gt;
 
@@ -756,7 +756,7 @@ git --help
 &lt;p&gt;&lt;strong&gt;Did You Know?&lt;/strong&gt; Heroku uses git to create local repository&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;creating-requirements-txt&#34;&gt;Creating requirements.txt&lt;/h2&gt;
+&lt;h2 id=&#34;creating-requirements-txt:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Creating requirements.txt&lt;/h2&gt;
 
 &lt;p&gt;There is no way for Heroku to know your application dependencies. So we need a &lt;code&gt;requirements.txt&lt;/code&gt; file in our root at the same level as &lt;code&gt;manage.py&lt;/code&gt; file.
 We can generate the file with following command:&lt;/p&gt;
@@ -768,7 +768,7 @@ We can generate the file with following command:&lt;/p&gt;
 &lt;p&gt;Note: Make sure you create the file parallel to manage.py file.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;creating-procfile&#34;&gt;Creating Procfile&lt;/h2&gt;
+&lt;h2 id=&#34;creating-procfile:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Creating Procfile&lt;/h2&gt;
 
 &lt;p&gt;Create a file called as &lt;code&gt;Procfile&lt;/code&gt; at same level as your &lt;code&gt;manage.py&lt;/code&gt; file. Put the following line into it:&lt;/p&gt;
 
@@ -783,7 +783,7 @@ We can generate the file with following command:&lt;/p&gt;
 
 &lt;p&gt;This file is used by Heroku to determine what kind of service will be running on the server. It says that &amp;ldquo;We want a web server gunicorn with the project mentioned&amp;rdquo;&lt;/p&gt;
 
-&lt;h2 id=&#34;creating-runtime-txt&#34;&gt;Creating runtime.txt&lt;/h2&gt;
+&lt;h2 id=&#34;creating-runtime-txt:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Creating runtime.txt&lt;/h2&gt;
 
 &lt;p&gt;Herkou uses &lt;code&gt;Python2&lt;/code&gt; as default. If you are like me and want to use &lt;code&gt;Python3&lt;/code&gt; instead. You can create a file &lt;code&gt;runtime.txt&lt;/code&gt; in your project root at the same level as &lt;code&gt;manage.py&lt;/code&gt;&lt;/p&gt;
 
@@ -797,11 +797,11 @@ We can generate the file with following command:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;python-3.5.1
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;configuring-to-deploy&#34;&gt;Configuring to Deploy&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-to-deploy:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Configuring to Deploy&lt;/h2&gt;
 
 &lt;p&gt;Now you are all set to Configure your Django app for Herkou. There are two files that you need to edit.&lt;/p&gt;
 
-&lt;h3 id=&#34;modify-settings-py&#34;&gt;Modify settings.py&lt;/h3&gt;
+&lt;h3 id=&#34;modify-settings-py:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Modify settings.py&lt;/h3&gt;
 
 &lt;p&gt;Open &lt;code&gt;settings.py&lt;/code&gt; file, it can be found under your &lt;code&gt;myproject/myproject/setting.py&lt;/code&gt;. There is only one &lt;code&gt;settings.py&lt;/code&gt; file in your project. Edit it and the following lines following:&lt;/p&gt;
 
@@ -827,7 +827,7 @@ STATICFILES_STORAGE = &#39;whitenoise.django.GzipManifestStaticFilesStorage&#39;
 # make sure to remove duplicates line if they exist
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;modify-wsgi-py&#34;&gt;Modify wsgi.py&lt;/h3&gt;
+&lt;h3 id=&#34;modify-wsgi-py:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Modify wsgi.py&lt;/h3&gt;
 
 &lt;p&gt;Find &lt;code&gt;wsgi.py&lt;/code&gt; file parallel to &lt;code&gt;settings.py&lt;/code&gt; file. Edit it and add following lines:&lt;/p&gt;
 
@@ -839,7 +839,7 @@ application = get_wsgi_application()
 application = DjangoWhiteNoise(application)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;create-gitignore&#34;&gt;Create .gitignore&lt;/h2&gt;
+&lt;h2 id=&#34;create-gitignore:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Create .gitignore&lt;/h2&gt;
 
 &lt;p&gt;Create a git ignore file to avoid adding of unwanted files to our repository. Create a file called &lt;code&gt;.gitignore&lt;/code&gt; on your project root. Add following lines to it.&lt;/p&gt;
 
@@ -851,7 +851,7 @@ venv
 
 &lt;p&gt;Alternatively you can delete the virtual environment &lt;code&gt;venv&lt;/code&gt; you created!&lt;/p&gt;
 
-&lt;h2 id=&#34;deploy-on-heroku&#34;&gt;Deploy on Heroku&lt;/h2&gt;
+&lt;h2 id=&#34;deploy-on-heroku:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Deploy on Heroku&lt;/h2&gt;
 
 &lt;p&gt;Now you are done with configuring Django application. We are now going to host our application to Heroku. We will use the &lt;strong&gt;herkou toolbelt and git&lt;/strong&gt; we installed previously.&lt;/p&gt;
 
@@ -886,7 +886,7 @@ heroku logs
 # use this to see how your app is working in case you find some error
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:710c80679a96f399e4a7e7e32ef8455f&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;I have tried to give all the steps I took to deploy apps to heroku. If you find this article usefull share it with your friends. Feel free to comment about any improvement you would like to see.&lt;/p&gt;
 
@@ -943,7 +943,7 @@ So let’s explore rCharts without delay.&lt;/p&gt;
 
 &lt;p&gt;Below I&amp;rsquo;ll give code and output for using Highcharts and NVD3. Dimple was just updated as I am writing this blog, I&amp;rsquo;ll try to write a separate blog on that.&lt;/p&gt;
 
-&lt;h2 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h2&gt;
+&lt;h2 id=&#34;prerequisite:c08bdd7c7218578739198737fb20bb13&#34;&gt;Prerequisite&lt;/h2&gt;
 
 &lt;p&gt;Install rCharts. This requires devtools to be installed.&lt;/p&gt;
 
@@ -951,7 +951,7 @@ So let’s explore rCharts without delay.&lt;/p&gt;
 install_github(&#39;rCharts&#39;, &#39;ramnathv&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;nvd3&#34;&gt;NVD3&lt;/h3&gt;
+&lt;h3 id=&#34;nvd3:c08bdd7c7218578739198737fb20bb13&#34;&gt;NVD3&lt;/h3&gt;
 
 &lt;p&gt;We will our &lt;code&gt;mtcars&lt;/code&gt; data set in all below examples to keep it simple. Visit &lt;a href=&#34;http://timelyportfolio.github.io/docs/_build/html/nvd3/create.html&#34;&gt;NVD3 documentation&lt;/a&gt; for more example, have a look below and you will understand how they work.&lt;/p&gt;
 
@@ -982,7 +982,7 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)	               # save it as html
 
 &lt;p&gt;&lt;a href=&#34;http://rcharts.io/viewer/?ec3e1d782fa46be590cb#.Vr1HyPkdD_x&#34;&gt;See Interactive Ouput on Github Here&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;highcharts&#34;&gt;Highcharts&lt;/h3&gt;
+&lt;h3 id=&#34;highcharts:c08bdd7c7218578739198737fb20bb13&#34;&gt;Highcharts&lt;/h3&gt;
 
 &lt;p&gt;The example below creates a scatter plot with &lt;code&gt;mtcars&lt;/code&gt;. I have tried to use almost all the functions and parameters. If I have missed some, please point it out in the comments below.&lt;/p&gt;
 
@@ -1041,11 +1041,11 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)		                 #saves to html
 
 &lt;p&gt;A domain which shows what you do can add &lt;em&gt;credibility&lt;/em&gt; to your blog. In this tutorial we are going to add custom domain to our github page. You may also want to &lt;a href=&#34;..&#34;&gt;host a website on github&lt;/a&gt;. You can have domain with &lt;a href=&#34;https://www.godaddy.com&#34;&gt;godaddy&lt;/a&gt;, &lt;a href=&#34;https://www.hostgator.com&#34;&gt;hostgator&lt;/a&gt;, &lt;a href=&#34;https://www.namecheap.com&#34;&gt;namecheap&lt;/a&gt;, etc. The steps remains the same. I will point out any peculiarity, if they exist. So, lets get started.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuring-github&#34;&gt;Configuring Github&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-github:09ae30f3a7cdecb8c8d164a94bf30204&#34;&gt;Configuring Github&lt;/h2&gt;
 
 &lt;p&gt;There should be a way for github to know what is the name of your domain. To keep it simple you have to create a file &lt;code&gt;CNAME&lt;/code&gt; in your repository root. This will be the place where you have hosted your websites html content. In this file put in your domain name &lt;code&gt;mydomain.com&lt;/code&gt;. You can &lt;a href=&#34;https://github.com/ankitsinghaniyaz/ankitsinghaniyaz.github.io&#34;&gt;visit my github hosting&lt;/a&gt; and checkout how my &lt;code&gt;CNAME&lt;/code&gt; file looks.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuring-domain-provider&#34;&gt;Configuring Domain Provider&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-domain-provider:09ae30f3a7cdecb8c8d164a94bf30204&#34;&gt;Configuring Domain Provider&lt;/h2&gt;
 
 &lt;p&gt;In this step we have to login to our account where we have bought the domain.&lt;/p&gt;
 
@@ -1069,7 +1069,7 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)		                 #saves to html
 
 &lt;p&gt;Keep all other fields to their defaults. Do not hesitate to play. It is how you learn new things.&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:09ae30f3a7cdecb8c8d164a94bf30204&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Within less than 10 minutes you website will come live. You can go to your link and try it! If you find any information missing or have any doubts feel free to leave a comment below. Thanks for reading.&lt;/p&gt;
 </description>
@@ -1085,7 +1085,7 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)		                 #saves to html
 
 &lt;p&gt;This post shows, how you can easily host your static website on Github. We are using Hugo static site generator. You can use anything similar.&lt;/p&gt;
 
-&lt;h2 id=&#34;initial-setup&#34;&gt;Initial Setup&lt;/h2&gt;
+&lt;h2 id=&#34;initial-setup:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Initial Setup&lt;/h2&gt;
 
 &lt;p&gt;I believe that you already have &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;setup your hugo project&lt;/a&gt;, refer the link in case you want to start a project. Then open your &lt;code&gt;config.toml&lt;/code&gt; file and modify the &lt;strong&gt;baseUrl&lt;/strong&gt; as:&lt;/p&gt;
 
@@ -1093,7 +1093,7 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)		                 #saves to html
 
 &lt;p&gt;replace {username} with your username.&lt;/p&gt;
 
-&lt;h2 id=&#34;repository-for-project-files&#34;&gt;Repository for Project Files&lt;/h2&gt;
+&lt;h2 id=&#34;repository-for-project-files:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Repository for Project Files&lt;/h2&gt;
 
 &lt;p&gt;This step is not mandatory, but still you want to do this. Creating a repository for you content will help you monitor how your site advanced. It will also help you correct changes in case you do something wrong(which is bound to happen).&lt;/p&gt;
 
@@ -1112,7 +1112,7 @@ git push -u origin master
 &lt;p&gt;Note : Make sure you are inside the project directory, before issuing the commands.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;repository-for-web-pages&#34;&gt;Repository for Web Pages&lt;/h2&gt;
+&lt;h2 id=&#34;repository-for-web-pages:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Repository for Web Pages&lt;/h2&gt;
 
 &lt;p&gt;We will now create another repository to hold our static website. Create a new repository on GitHub with name as &lt;code&gt;{username}.github.io&lt;/code&gt;. Replace the {username} with you Github username.&lt;/p&gt;
 
@@ -1126,7 +1126,7 @@ git remote add origin {username}.github.io
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;generate-static-site&#34;&gt;Generate Static Site&lt;/h2&gt;
+&lt;h2 id=&#34;generate-static-site:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Generate Static Site&lt;/h2&gt;
 
 &lt;p&gt;We are all set-up. We will create our website which will be visible to everyone.
 Move into your project directory and run following commands:&lt;/p&gt;
@@ -1144,7 +1144,7 @@ Move into your project directory and run following commands:&lt;/p&gt;
 
 &lt;p&gt;So, Now we have our website ready. All we need to do is host them and make it available to everyone.&lt;/p&gt;
 
-&lt;h2 id=&#34;bring-it-live&#34;&gt;Bring It Live&lt;/h2&gt;
+&lt;h2 id=&#34;bring-it-live:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Bring It Live&lt;/h2&gt;
 
 &lt;p&gt;To get our site live we have to move into our &lt;code&gt;github_pages&lt;/code&gt; directory and push it up to Github.&lt;/p&gt;
 
@@ -1154,7 +1154,7 @@ git push
 
 &lt;p&gt;You can now view you website at &lt;strong&gt;www.yourusername.github.io&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;automate-it&#34;&gt;Automate It&lt;/h2&gt;
+&lt;h2 id=&#34;automate-it:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Automate It&lt;/h2&gt;
 
 &lt;p&gt;We do not want to repeat commands every time we make some changes. So in my &lt;code&gt;github&lt;/code&gt; project directory I create a new file called &lt;code&gt;deploy.sh&lt;/code&gt; and add following lines to it.&lt;/p&gt;
 
@@ -1182,11 +1182,11 @@ git push
 
 &lt;p&gt;Now you can just run &lt;code&gt;bash deploy.sh &amp;quot;your message&amp;quot;&lt;/code&gt;. This will do all the above tasks we did manually.&lt;/p&gt;
 
-&lt;h2 id=&#34;custom-domain&#34;&gt;Custom Domain&lt;/h2&gt;
+&lt;h2 id=&#34;custom-domain:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Custom Domain&lt;/h2&gt;
 
 &lt;p&gt;Adding a domain to your website is optional. You can read &lt;a href=&#34;http://classandobjects.com/hugo/adding_custom_domain_to_github_pages/&#34;&gt;how to add domain to my github page&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;finally&#34;&gt;Finally&lt;/h2&gt;
+&lt;h2 id=&#34;finally:ea833f90ee262d4de180a4f65c4c7774&#34;&gt;Finally&lt;/h2&gt;
 
 &lt;p&gt;I tried to show every step I took in hosting my website. My experience was not good with the available documentation, but I hope that this will help you all. If you find anything missing or not mentioned, do let me know in the comments below! Thanks for reading&amp;hellip;&lt;/p&gt;
 </description>

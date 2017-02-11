@@ -19,7 +19,7 @@
 
 &lt;p&gt;MobX is the new state management library which packs really well with react. Mobx makes things much simpler to &lt;code&gt;redux&lt;/code&gt;, which is more famous in react community. I have detailed out the step on how to get started with using mobx and rails 5.&lt;/p&gt;
 
-&lt;h2 id=&#34;install-react-on-rails-gem-https-github-com-shakacode-react-on-rails-blob-master-docs-tutorial-md&#34;&gt;Install &lt;a href=&#34;https://github.com/shakacode/react_on_rails/blob/master/docs/tutorial.md&#34;&gt;react_on_rails gem&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;install-react-on-rails-gem-https-github-com-shakacode-react-on-rails-blob-master-docs-tutorial-md:c654b3e053ef669dc2fc657f0438b2e3&#34;&gt;Install &lt;a href=&#34;https://github.com/shakacode/react_on_rails/blob/master/docs/tutorial.md&#34;&gt;react_on_rails gem&lt;/a&gt;&lt;/h2&gt;
 
 &lt;p&gt;To make mobx functional with rails, I had to drop &lt;code&gt;react-rails&lt;/code&gt; gem and adopt the &lt;code&gt;react_on_rails&lt;/code&gt; gem. Setting it up is cumbersome in the beginning but it pays off well in the long run. React on rails site have a detailed guide on how to setup react_on_rails gem, I&amp;rsquo;ll just quickly brush them up.&lt;/p&gt;
 
@@ -66,7 +66,7 @@ const config = {
 &lt;p&gt;NOTE: Make sure your Node js version is greater than 5, react_on_rails gem has this requirement.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;add-mobx-and-mobx-react&#34;&gt;Add Mobx and Mobx React&lt;/h2&gt;
+&lt;h2 id=&#34;add-mobx-and-mobx-react:c654b3e053ef669dc2fc657f0438b2e3&#34;&gt;Add Mobx and Mobx React&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;# After previous step you will have a client folder
 # inside that folder edit the package.json and add the below lines to the dependencies list
@@ -88,7 +88,7 @@ npm install babel-plugin-transform-decorators-legacy --save-dev
 npm install
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;bring-it-up&#34;&gt;Bring it Up&lt;/h2&gt;
+&lt;h2 id=&#34;bring-it-up:c654b3e053ef669dc2fc657f0438b2e3&#34;&gt;Bring it Up&lt;/h2&gt;
 
 &lt;p&gt;Now you are all set to bring your system up.&lt;/p&gt;
 
@@ -99,7 +99,7 @@ rails db:create # use rake db:create in rails 4 or below
 foreman start -f Procfile.dev
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:c654b3e053ef669dc2fc657f0438b2e3&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;I hope you were successfully able to get your system up and running. If I missed something or you have some doubts, do let me know in the comments below. Thanks for reading.&lt;/p&gt;
 </description>

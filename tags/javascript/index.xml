@@ -6,8 +6,114 @@
     <description>Recent content in Javascript on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Nov 2016 01:35:47 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 11 Feb 2017 15:22:23 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to configure Jasmine test with React, ES6 and Webpack</title>
+      <link>http://classandobjects.com/test_using_jasmine_react_es6_webpack/</link>
+      <pubDate>Sat, 11 Feb 2017 15:22:23 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/test_using_jasmine_react_es6_webpack/</guid>
+      <description>
+
+&lt;p&gt;If you created your app using &lt;code&gt;react_create_app&lt;/code&gt;, congrats! You saved you saved yourself some time. You now have &lt;code&gt;jest&lt;/code&gt; up and running correctly. But chances are you configured your &lt;code&gt;Webpack&lt;/code&gt; and now you want to configure &lt;code&gt;Jasmine&lt;/code&gt; to test your components and do unit testing. Let&amp;rsquo;s see how can we do that:&lt;/p&gt;
+
+&lt;h3 id=&#34;installing-jasmine:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Installing Jasmine&lt;/h3&gt;
+
+&lt;p&gt;To run your test cases and access jasmine from the command line you will want to install jasmine globally.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install -g jasmine
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;initialize-jasmine:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Initialize jasmine&lt;/h3&gt;
+
+&lt;p&gt;Jasmine needs some configuration to know where your tests are and what needs to be done with them. Run the below command to initialize the repository.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jasmine init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command will create a &lt;code&gt;jasmine.json&lt;/code&gt; file, which will look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  // dirctory under which files exists
+  &amp;quot;spec_dir&amp;quot;: &amp;quot;app/javascript&amp;quot;,
+  // nameing convention of the file, i.e. file ending in spec.js
+  &amp;quot;spec_files&amp;quot;: [
+    &amp;quot;**/*[sS]pec.js&amp;quot;
+  ],
+  // helper files are run before specs
+  &amp;quot;helpers&amp;quot;: [
+    &amp;quot;spec_helpers/**/*.js&amp;quot;
+  ],
+  &amp;quot;stopSpecOnExpectationFailure&amp;quot;: false,
+  &amp;quot;random&amp;quot;: false
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;P.S. Please remove all comments if you copy the above json&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;make-jasmine-understand-es6:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Make jasmine understand ES6&lt;/h3&gt;
+
+&lt;p&gt;Jasmine cannot understand ES6 syntax by default. So we will have to use &lt;code&gt;babel&lt;/code&gt;. Install babel like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install babel-cli
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now create a file called as &lt;code&gt;run.js&lt;/code&gt; you can place it anywhere, I like to keep it in &lt;code&gt;spec/&lt;/code&gt;, which should look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;import Jasmine from &#39;jasmine&#39;;
+
+let jasmine = new Jasmine();
+// modify this line to point to your jasmine.json
+jasmine.loadConfigFile(&#39;app/javascript/spec/support/jasmine.json&#39;);
+jasmine.execute();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;run-the-test:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Run the test&lt;/h3&gt;
+
+&lt;p&gt;Finally to run the test, add the following line inside &lt;code&gt;scripts&lt;/code&gt; section of your &lt;code&gt;package.json&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;test&amp;quot;: &amp;quot;babel-node app/javascript/spec/run.js&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Ensure you point to your &lt;code&gt;run.js&lt;/code&gt; file&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;now &lt;code&gt;npm test&lt;/code&gt; will run all your test cases in the spec path specified in jasmine.json file.&lt;/p&gt;
+
+&lt;h3 id=&#34;bonus-handling-webpack-alias:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Bonus: handling webpack alias&lt;/h3&gt;
+
+&lt;p&gt;You should be all good to go, but in case you had some &lt;code&gt;aliases&lt;/code&gt; in your webpack config then you will need to follow this step. Install &lt;code&gt;module-alias&lt;/code&gt; like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install --save module-alias
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then add following line of code in your &lt;code&gt;package.json&lt;/code&gt; at the end:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;_moduleAliases&amp;quot;: {
+  &amp;quot;vendor&amp;quot; : &amp;quot;vendor/&amp;quot;,
+  &amp;quot;js&amp;quot;: &amp;quot;app/javascript/&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;feel free to change the aliases above, in my case, I had two aliases called as vendor and js. Now in order to get this aliases load before your test start, you will have to create a file in &lt;code&gt;helper/&lt;/code&gt;, I will called it &lt;code&gt;alias_fix.js&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In that file all you have to do is paste these lines of code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;import &#39;module-alias/register&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now run your tests as usual and everything should work.&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusion:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;I hope this was helpful. If you find something which can be improved please let me know in the comments below. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Problem With React Single Page App</title>
@@ -21,7 +127,7 @@
 
 &lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/react.png&#34; alt=&#34;react js single page app&#34; title=&#34;single page app issues with react&#34;/&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;the-beginning&#34;&gt;The Beginning&lt;/h2&gt;
+&lt;h2 id=&#34;the-beginning:193c4d247a68848b168cc40000a1dd29&#34;&gt;The Beginning&lt;/h2&gt;
 
 &lt;p&gt;When I started the project I was sure that my project will be on React. I asked myself how do you start a new React project? The first crossroad was about using ES2015. I knew this was coming to all the browsers still I had to make a choice. Recently facebook has introduced a CLI for React called as React-Create-App, which will do the most recommended setup for you. I assume that you are using this CLI tool to scaffold your project. If you indeed used it, congratulations. You saved yourself the pain of setting these things:&lt;/p&gt;
 
@@ -34,7 +140,7 @@
 
 &lt;p&gt;I still  think I haven&amp;rsquo;t mentioned all the things that scaffolding did for you. If instead, you tread on the manual path, you will have to educate yourself about setting up webpack and babel. Differentiate testing frameworks like enzyme and jest. This knowledge is not bad, but it comes in the way of what you actually want to achieve. So this was just setting up the view layer. Let&amp;rsquo;s move on.&lt;/p&gt;
 
-&lt;h2 id=&#34;state-mangement&#34;&gt;State Mangement&lt;/h2&gt;
+&lt;h2 id=&#34;state-mangement:193c4d247a68848b168cc40000a1dd29&#34;&gt;State Mangement&lt;/h2&gt;
 
 &lt;p&gt;The state is the cool thing in react, which is monitored by React and whenever a state changes the view is updated automagically. Now I asked myself how will I want to manage my states? I was presented with few answers. The idealist in me said Redux, the minimalist said React States, the optimist said &lt;a href=&#34;https://mobxjs.github.io/mobx/&#34;&gt;MobX&lt;/a&gt;. What do you choose???&lt;/p&gt;
 
@@ -46,21 +152,21 @@
 &lt;p&gt;P.S. I am Rubyist, so boilerplate? NOOO!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;routing&#34;&gt;Routing&lt;/h2&gt;
+&lt;h2 id=&#34;routing:193c4d247a68848b168cc40000a1dd29&#34;&gt;Routing&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/ReactTraining/react-router&#34;&gt;React-Routers&lt;/a&gt; is the defacto way of routing with React. It also has a simple API and easy to learn. Though there are concepts like Hash History and Browser History. In short, HashHistory is ugly and not to be used in production but easier to setup. The opposite is true for BrowserHistory. In order to use this good looking, preferred BrowserHistory you have to configure the server to return the root page for anything requested. This again feels like a lot of work to me as it should have been easily available out of the box.&lt;/p&gt;
 
-&lt;h2 id=&#34;css-inline-vs-class&#34;&gt;CSS Inline vs Class&lt;/h2&gt;
+&lt;h2 id=&#34;css-inline-vs-class:193c4d247a68848b168cc40000a1dd29&#34;&gt;CSS Inline vs Class&lt;/h2&gt;
 
 &lt;p&gt;I am pretty sure that your app will have some form of styling. So again you will have to spend time digging through discussion and forums deciding what kind of styling you prefer. This may not be a big deal but it takes time and impact the way you structure your project.&lt;/p&gt;
 
-&lt;h2 id=&#34;application-structure-file-name-conventions&#34;&gt;Application Structure, File Name Conventions&lt;/h2&gt;
+&lt;h2 id=&#34;application-structure-file-name-conventions:193c4d247a68848b168cc40000a1dd29&#34;&gt;Application Structure, File Name Conventions&lt;/h2&gt;
 
 &lt;p&gt;Again not a difficult part but I like to follow some well-defined conventions so that I do not have to overload my brain with deciding where to place my files and how will I want to name them. Like my &lt;code&gt;&amp;lt;Toolbar /&amp;gt;&lt;/code&gt; should live in &lt;code&gt;toolbar.jsx&lt;/code&gt; , &lt;code&gt;toolbarComponent.js&lt;/code&gt;, &lt;code&gt;Toolbar.componet.js&lt;/code&gt;, &amp;hellip;.&lt;/p&gt;
 
 &lt;p&gt;I think you get the problem. All these options are logically sound and our mind seems to adapt and learn more patterns as we advance in the project. Some time later I may feel bad about the names I chose a few months back.&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:193c4d247a68848b168cc40000a1dd29&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Please see these are the things which I find challenging and believe someone will feel the same. If you are fine with all these work I respect your views and choices. I am completely for the React and I love it, but surely this issues warrant my attention to other notable frameworks like &lt;a href=&#34;http://emberjs.com/&#34;&gt;ember.js&lt;/a&gt;. I will like to try out Ember and see how it fits my style of development. I will soon be doing a post on my choices and how I tackled all these problems in the React ecosystem. Then I will redo the same things with Ember and try to note my experience with the same.&lt;/p&gt;
 
@@ -80,7 +186,7 @@
 
 &lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/momentjs.png&#34; alt=&#34;moment js cheatsheet&#34; title=&#34;Moment js cheatsheet&#34;/&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;the-moment&#34;&gt;The Moment&lt;/h2&gt;
+&lt;h2 id=&#34;the-moment:33256c48849067d2e4396387431d6dd8&#34;&gt;The Moment&lt;/h2&gt;
 
 &lt;p&gt;I will speak less and let the code do the talking.&lt;/p&gt;
 
@@ -180,7 +286,7 @@ moment(&amp;quot;01/12/2015&amp;quot;, &amp;quot;DD/MM/YYYY&amp;quot;)
 &lt;p&gt;Tip: lower case tokens are used for time and upper case tokens are used for date.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;breaking-the-moment&#34;&gt;Breaking The Moment&lt;/h2&gt;
+&lt;h2 id=&#34;breaking-the-moment:33256c48849067d2e4396387431d6dd8&#34;&gt;Breaking The Moment&lt;/h2&gt;
 
 &lt;p&gt;We find ourself most of the time accessing different pieces of information stored in the moment object. It can be &lt;code&gt;date, hour, seconds, etc&lt;/code&gt;&lt;/p&gt;
 
@@ -203,7 +309,7 @@ now.unix()
 // I have specified the list of all possible vales you can use in get, add and subtract method in the below section.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;play-the-moment&#34;&gt;Play the Moment&lt;/h2&gt;
+&lt;h2 id=&#34;play-the-moment:33256c48849067d2e4396387431d6dd8&#34;&gt;Play the Moment&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var now = moment()
 
@@ -234,7 +340,7 @@ now.format(&#39;hh:mm a&#39;)
 &lt;p&gt;moment.js methods like add and subtract mutates the object itself. This can cause an unseen bug if you are not aware!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:33256c48849067d2e4396387431d6dd8&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Moment.js is very helpful to solve date and time related problems in javascript. It was created to be easy and powerful. With the right exposure we can get our work done easily with &lt;code&gt;momentjs&lt;/code&gt;. If you liked the post, please let us know how can we improve. Thanks for reading.&lt;/p&gt;
 </description>
@@ -250,7 +356,7 @@ now.format(&#39;hh:mm a&#39;)
 
 &lt;p&gt;Subscribe button is a useful feature to have on any website. It helps you create loyal audience base and helps your users get amazing content from the blogs they love. It can be quite easy to integrate one on a WordPress site or a website with a backend. In this article, I will show you how to add a subscribe button to any static website using &lt;a href=&#34;www.formspree.io&#34;&gt;formspree.io&lt;/a&gt;, &lt;a href=&#34;https://github.com/hubspot/vex&#34;&gt;Vex js&lt;/a&gt; and javascript. I will also show how you can add a subscribe box(popup) when a user has scrolled the page. I am using Hugo as my static site generator, the process is exactly the same for any static site. So let&amp;rsquo;s get started.&lt;/p&gt;
 
-&lt;h2 id=&#34;setup-vex-js&#34;&gt;Setup Vex js&lt;/h2&gt;
+&lt;h2 id=&#34;setup-vex-js:80997bc7bd7f5c85dacbd7579f4f2263&#34;&gt;Setup Vex js&lt;/h2&gt;
 
 &lt;p&gt;I did my little research and found out Vex js is the best dialogue(popup) creator library. It is &lt;strong&gt;light, good looking and has zero dependencies&lt;/strong&gt;, and that is all we need. First, you will need to &lt;a href=&#34;http://github.hubspot.com/vex/api/themes/&#34;&gt;select a theme&lt;/a&gt;, visit the link to see examples of all the themes which you can use. Select the one you like and download it from here. Also download &lt;code&gt;vex-theme-bottom-right-corner&lt;/code&gt;, if you want to do a subscribe popup after scrolling your page. You will need to &lt;a href=&#34;https://github.com/HubSpot/vex/tree/master/dist/js&#34;&gt;download vex.combined.min.js&lt;/a&gt; from this link. Make sure you have one theme CSS file and one Vex combined js file. Now you will want to store this file to your static directory, where you have your Javascript and CSS.&lt;/p&gt;
 
@@ -268,7 +374,7 @@ now.format(&#39;hh:mm a&#39;)
       vex-theme-name.css
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;add-a-subscribe-button&#34;&gt;Add a subscribe button&lt;/h2&gt;
+&lt;h2 id=&#34;add-a-subscribe-button:80997bc7bd7f5c85dacbd7579f4f2263&#34;&gt;Add a subscribe button&lt;/h2&gt;
 
 &lt;p&gt;Now, after having set up Vex, we want a form to be shown to the user when  they click the Subscribe button.&lt;/p&gt;
 
@@ -335,7 +441,7 @@ function subscribe() {
 &lt;p&gt;TIP: You will have to verify the first email you get via formspree.io&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;bonus-adding-a-subscribe-form-on-scroll&#34;&gt;Bonus, Adding a subscribe form on scroll&lt;/h2&gt;
+&lt;h2 id=&#34;bonus-adding-a-subscribe-form-on-scroll:80997bc7bd7f5c85dacbd7579f4f2263&#34;&gt;Bonus, Adding a subscribe form on scroll&lt;/h2&gt;
 
 &lt;p&gt;Try scrolling below on this site and as you reach around &lt;strong&gt;70%&lt;/strong&gt;, you get a popup to subscribe. You should continue this step if you want to implement something similar to this.&lt;/p&gt;
 
@@ -400,7 +506,7 @@ function onScrollSubscribePopup () {
 
 &lt;p&gt;The code to calculate the scroll percentage has been taken from this &lt;a href=&#34;https://codepen.io/achudars/pen/Cpast&#34;&gt;codepen&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:80997bc7bd7f5c85dacbd7579f4f2263&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;I believe this post was helpful for creating a subscribe button. If you find any issue with the above code or need any help do let me know in the comments below. Thanks for reading!&lt;/p&gt;
 </description>

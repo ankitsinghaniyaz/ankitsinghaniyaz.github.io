@@ -21,7 +21,7 @@
 
 &lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/tutorial/momentjs.png&#34; alt=&#34;moment js cheatsheet&#34; title=&#34;Moment js cheatsheet&#34;/&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;the-moment&#34;&gt;The Moment&lt;/h2&gt;
+&lt;h2 id=&#34;the-moment:33256c48849067d2e4396387431d6dd8&#34;&gt;The Moment&lt;/h2&gt;
 
 &lt;p&gt;I will speak less and let the code do the talking.&lt;/p&gt;
 
@@ -121,7 +121,7 @@ moment(&amp;quot;01/12/2015&amp;quot;, &amp;quot;DD/MM/YYYY&amp;quot;)
 &lt;p&gt;Tip: lower case tokens are used for time and upper case tokens are used for date.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;breaking-the-moment&#34;&gt;Breaking The Moment&lt;/h2&gt;
+&lt;h2 id=&#34;breaking-the-moment:33256c48849067d2e4396387431d6dd8&#34;&gt;Breaking The Moment&lt;/h2&gt;
 
 &lt;p&gt;We find ourself most of the time accessing different pieces of information stored in the moment object. It can be &lt;code&gt;date, hour, seconds, etc&lt;/code&gt;&lt;/p&gt;
 
@@ -144,7 +144,7 @@ now.unix()
 // I have specified the list of all possible vales you can use in get, add and subtract method in the below section.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;play-the-moment&#34;&gt;Play the Moment&lt;/h2&gt;
+&lt;h2 id=&#34;play-the-moment:33256c48849067d2e4396387431d6dd8&#34;&gt;Play the Moment&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var now = moment()
 
@@ -175,7 +175,7 @@ now.format(&#39;hh:mm a&#39;)
 &lt;p&gt;moment.js methods like add and subtract mutates the object itself. This can cause an unseen bug if you are not aware!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion:33256c48849067d2e4396387431d6dd8&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;Moment.js is very helpful to solve date and time related problems in javascript. It was created to be easy and powerful. With the right exposure we can get our work done easily with &lt;code&gt;momentjs&lt;/code&gt;. If you liked the post, please let us know how can we improve. Thanks for reading.&lt;/p&gt;
 </description>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Es6 on Class &amp; Objects</title>
+    <link>http://classandobjects.com/categories/es6/</link>
+    <description>Recent content in Es6 on Class &amp; Objects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Feb 2017 15:22:23 +0530</lastBuildDate>
+    <atom:link href="http://classandobjects.com/categories/es6/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to configure Jasmine test with React, ES6 and Webpack</title>
+      <link>http://classandobjects.com/test_using_jasmine_react_es6_webpack/</link>
+      <pubDate>Sat, 11 Feb 2017 15:22:23 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/test_using_jasmine_react_es6_webpack/</guid>
+      <description>
+
+&lt;p&gt;If you created your app using &lt;code&gt;react_create_app&lt;/code&gt;, congrats! You saved you saved yourself some time. You now have &lt;code&gt;jest&lt;/code&gt; up and running correctly. But chances are you configured your &lt;code&gt;Webpack&lt;/code&gt; and now you want to configure &lt;code&gt;Jasmine&lt;/code&gt; to test your components and do unit testing. Let&amp;rsquo;s see how can we do that:&lt;/p&gt;
+
+&lt;h3 id=&#34;installing-jasmine:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Installing Jasmine&lt;/h3&gt;
+
+&lt;p&gt;To run your test cases and access jasmine from the command line you will want to install jasmine globally.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install -g jasmine
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;initialize-jasmine:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Initialize jasmine&lt;/h3&gt;
+
+&lt;p&gt;Jasmine needs some configuration to know where your tests are and what needs to be done with them. Run the below command to initialize the repository.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jasmine init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command will create a &lt;code&gt;jasmine.json&lt;/code&gt; file, which will look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  // dirctory under which files exists
+  &amp;quot;spec_dir&amp;quot;: &amp;quot;app/javascript&amp;quot;,
+  // nameing convention of the file, i.e. file ending in spec.js
+  &amp;quot;spec_files&amp;quot;: [
+    &amp;quot;**/*[sS]pec.js&amp;quot;
+  ],
+  // helper files are run before specs
+  &amp;quot;helpers&amp;quot;: [
+    &amp;quot;spec_helpers/**/*.js&amp;quot;
+  ],
+  &amp;quot;stopSpecOnExpectationFailure&amp;quot;: false,
+  &amp;quot;random&amp;quot;: false
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;P.S. Please remove all comments if you copy the above json&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;make-jasmine-understand-es6:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Make jasmine understand ES6&lt;/h3&gt;
+
+&lt;p&gt;Jasmine cannot understand ES6 syntax by default. So we will have to use &lt;code&gt;babel&lt;/code&gt;. Install babel like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install babel-cli
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now create a file called as &lt;code&gt;run.js&lt;/code&gt; you can place it anywhere, I like to keep it in &lt;code&gt;spec/&lt;/code&gt;, which should look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;import Jasmine from &#39;jasmine&#39;;
+
+let jasmine = new Jasmine();
+// modify this line to point to your jasmine.json
+jasmine.loadConfigFile(&#39;app/javascript/spec/support/jasmine.json&#39;);
+jasmine.execute();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;run-the-test:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Run the test&lt;/h3&gt;
+
+&lt;p&gt;Finally to run the test, add the following line inside &lt;code&gt;scripts&lt;/code&gt; section of your &lt;code&gt;package.json&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;test&amp;quot;: &amp;quot;babel-node app/javascript/spec/run.js&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Ensure you point to your &lt;code&gt;run.js&lt;/code&gt; file&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;now &lt;code&gt;npm test&lt;/code&gt; will run all your test cases in the spec path specified in jasmine.json file.&lt;/p&gt;
+
+&lt;h3 id=&#34;bonus-handling-webpack-alias:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Bonus: handling webpack alias&lt;/h3&gt;
+
+&lt;p&gt;You should be all good to go, but in case you had some &lt;code&gt;aliases&lt;/code&gt; in your webpack config then you will need to follow this step. Install &lt;code&gt;module-alias&lt;/code&gt; like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install --save module-alias
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then add following line of code in your &lt;code&gt;package.json&lt;/code&gt; at the end:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;_moduleAliases&amp;quot;: {
+  &amp;quot;vendor&amp;quot; : &amp;quot;vendor/&amp;quot;,
+  &amp;quot;js&amp;quot;: &amp;quot;app/javascript/&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;feel free to change the aliases above, in my case, I had two aliases called as vendor and js. Now in order to get this aliases load before your test start, you will have to create a file in &lt;code&gt;helper/&lt;/code&gt;, I will called it &lt;code&gt;alias_fix.js&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In that file all you have to do is paste these lines of code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;import &#39;module-alias/register&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now run your tests as usual and everything should work.&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusion:a7b602c2db563f0f7ed935347ae2f6b7&#34;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;I hope this was helpful. If you find something which can be improved please let me know in the comments below. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
