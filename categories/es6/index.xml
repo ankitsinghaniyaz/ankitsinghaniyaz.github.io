@@ -38,7 +38,7 @@
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
   // dirctory under which files exists
   &amp;quot;spec_dir&amp;quot;: &amp;quot;app/javascript&amp;quot;,
-  // nameing convention of the file, i.e. file ending in spec.js
+  // naming convention of the file, i.e. file ending in spec.js
   &amp;quot;spec_files&amp;quot;: [
     &amp;quot;**/*[sS]pec.js&amp;quot;
   ],

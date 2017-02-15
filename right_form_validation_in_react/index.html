@@ -7,34 +7,32 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" How to configure Jasmine test with React, ES6 and Webpack &middot;  Class &amp; Objects" />
+        <meta property="og:title" content=" The zen of form validation (React) &middot;  Class &amp; Objects" />
         <meta property="og:site_name" content="Class &amp; Objects" />
-        <meta property="og:url" content="http://classandobjects.com/test_using_jasmine_react_es6_webpack/" />
+        <meta property="og:url" content="http://classandobjects.com/right_form_validation_in_react/" />
 
     
         <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2017-02-11T15:22:23&#43;05:30" />
+        <meta property="og:article:published_time" content="2017-02-16T00:13:56&#43;05:30" />
+        <meta property="og:article:tag" content="validation" />
         <meta property="og:article:tag" content="javascript" />
         <meta property="og:article:tag" content="react" />
-        <meta property="og:article:tag" content="webpack" />
-        <meta property="og:article:tag" content="ES6" />
-        <meta property="og:article:tag" content="jasmine" />
         
 
 
-        <meta name="keywords" content="javascript, react, webpack, ES6, jasmine, setup jasmine with react, setup jasmine with webpack"/>
+        <meta name="keywords" content="form validation, the right way to validate form, how to validate form in react"/>
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@classandobjects" />
         <meta name="twitter:creator" content="@classandobjects" />
-        <meta name="twitter:title" content="How to configure Jasmine test with React, ES6 and Webpack" />
-        <meta name="twitter:description" content="Jasmine is well known in javascript world. This post helps you setup " />
-        <meta name="twitter:url" content="http://classandobjects.com/test_using_jasmine_react_es6_webpack/" />
+        <meta name="twitter:title" content="The zen of form validation (React)" />
+        <meta name="twitter:description" content="There are so many ways to validate form and inputs. What is the right way to do it? Validation gets even more complicated with React js, here is what I do" />
+        <meta name="twitter:url" content="http://classandobjects.com/right_form_validation_in_react/" />
     
 
-        <title> How to configure Jasmine test with React, ES6 and Webpack &middot;  Class &amp; Objects</title>
+        <title> The zen of form validation (React) &middot;  Class &amp; Objects</title>
 
     
-        <meta name="description" content="Jasmine is well known in javascript world. This post helps you setup " />
+        <meta name="description" content="There are so many ways to validate form and inputs. What is the right way to do it? Validation gets even more complicated with React js, here is what I do" />
     
 
         <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
@@ -50,21 +48,21 @@
     
 
     
-        <link rel="canonical" href="http://classandobjects.com/test_using_jasmine_react_es6_webpack/" />
+        <link rel="canonical" href="http://classandobjects.com/right_form_validation_in_react/" />
 
     
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "How to configure Jasmine test with React, ES6 and Webpack",
+        "headline": "The zen of form validation (React)",
         "author": {
             "@type": "Person",
             "name": "http://profiles.google.com/\x2bAnkitSinghaniya?rel=author"
         },
-        "datePublished": "2017-02-11",
-        "description": "Jasmine is well known in javascript world. This post helps you setup ",
-        "wordCount":  438 
+        "datePublished": "2017-02-16",
+        "description": "There are so many ways to validate form and inputs. What is the right way to do it? Validation gets even more complicated with React js, here is what I do",
+        "wordCount":  533 
     }
     </script>
     
@@ -80,7 +78,7 @@
         <header id="header">
             <a id="logo" href="http://classandobjects.com/"><img src="https://www.gravatar.com/avatar/eeb8f1009ec39ef99a26740cb0361418?s=512" alt="Class &amp; Objects" /></a>
             <h1><a href="http://classandobjects.com/">Class &amp; Objects</a></h1>
-            <p>Jasmine is well known in javascript world. This post helps you setup </p>
+            <p>There are so many ways to validate form and inputs. What is the right way to do it? Validation gets even more complicated with React js, here is what I do</p>
 
             <div id="follow-icons">
 	
@@ -148,133 +146,70 @@ function subscribe() {
 
 <article id="" class="page">
     <div class="post-stamp">
-        <time datetime="2017-02-11T15:22:23&#43;05:30">
-            11 Feb 2017
+        <time datetime="2017-02-16T00:13:56&#43;05:30">
+            16 Feb 2017
         </time>
         <span class="taglist">
         
         &middot;
         
+            <a href="http://classandobjects.com/tags/validation/">validation</a>
+        
             <a href="http://classandobjects.com/tags/javascript/">javascript</a>
         
             <a href="http://classandobjects.com/tags/react/">react</a>
         
-            <a href="http://classandobjects.com/tags/webpack/">webpack</a>
-        
-            <a href="http://classandobjects.com/tags/es6/">ES6</a>
-        
-            <a href="http://classandobjects.com/tags/jasmine/">jasmine</a>
-        
         
         </span>
     </div>
-    <h1 class="post-title">How to configure Jasmine test with React, ES6 and Webpack</h1>
+    <h1 class="post-title">The zen of form validation (React)</h1>
 
     
     
 
     
 
-<p>If you created your app using <code>react_create_app</code>, congrats! You saved you saved yourself some time. You now have <code>jest</code> up and running correctly. But chances are you configured your <code>Webpack</code> and now you want to configure <code>Jasmine</code> to test your components and do unit testing. Let&rsquo;s see how can we do that:</p>
+<p>Form validation is complex! With react, it gets even more complicated. In the traditional web, there are inputs and we specify the type, max, min, etc which are validated when the user submits the form. In a slightly more UX focused app you will use <code>jQuery</code> and it&rsquo;s plugin to give the feedback as user types and interacts with the system. You can see all types of validations happening throughout the web and here are my conclusion after doing some research. I will also share how I plan to solve this excruciating pain in React.</p>
 
-<h3 id="installing-jasmine:a7b602c2db563f0f7ed935347ae2f6b7">Installing Jasmine</h3>
-
-<p>To run your test cases and access jasmine from the command line you will want to install jasmine globally.</p>
-
-<pre><code class="language-bash">npm install -g jasmine
-</code></pre>
-
-<h3 id="initialize-jasmine:a7b602c2db563f0f7ed935347ae2f6b7">Initialize jasmine</h3>
-
-<p>Jasmine needs some configuration to know where your tests are and what needs to be done with them. Run the below command to initialize the repository.</p>
-
-<pre><code class="language-bash">jasmine init
-</code></pre>
-
-<p>This command will create a <code>jasmine.json</code> file, which will look like this:</p>
-
-<pre><code class="language-json">{
-  // dirctory under which files exists
-  &quot;spec_dir&quot;: &quot;app/javascript&quot;,
-  // naming convention of the file, i.e. file ending in spec.js
-  &quot;spec_files&quot;: [
-    &quot;**/*[sS]pec.js&quot;
-  ],
-  // helper files are run before specs
-  &quot;helpers&quot;: [
-    &quot;spec_helpers/**/*.js&quot;
-  ],
-  &quot;stopSpecOnExpectationFailure&quot;: false,
-  &quot;random&quot;: false
-}
-</code></pre>
+<p>These are few distilled rules that I come to rely upon which can be followed. They may look very simple but difficult to get right. Here they are:</p>
 
 <blockquote>
-<p>P.S. Please remove all comments if you copy the above json</p>
+<p>TL;DR;</p>
 </blockquote>
 
-<h3 id="make-jasmine-understand-es6:a7b602c2db563f0f7ed935347ae2f6b7">Make jasmine understand ES6</h3>
+<ol>
+<li>Validate field only when they are touched</li>
+<li>If a field is changing there should be some delay before you validate.</li>
+<li>When submit is attempted then validate all</li>
+<li>Show error above/beside the input, also highlight the input in question.</li>
+</ol>
 
-<p>Jasmine cannot understand ES6 syntax by default. So we will have to use <code>babel</code>. Install babel like so:</p>
+<p>If we are to follow these few rules then we can easily nail down validation. I will quickly and briefly describe them.</p>
 
-<pre><code class="language-bash">npm install babel-cli
-</code></pre>
+<h3 id="validate-only-when-a-field-is-touched:a00e322c32e19c56f62ae51e6ffd572f">Validate only when a field is touched</h3>
 
-<p>Now create a file called as <code>run.js</code> you can place it anywhere, I like to keep it in <code>spec/</code>, which should look like this:</p>
+<p>Let&rsquo;s say you have few fields and all are empty by default. Do you like to see all the fields marked as red before you even do anything? NO! So we should only validate fields which user has touched once. By touch I mean not just clicked in the input, it means he/she actually tries to change the value even once. Then we can keep doing validation continuously.</p>
 
-<pre><code class="language-javascript">import Jasmine from 'jasmine';
+<h3 id="delay-before-you-validate:a00e322c32e19c56f62ae51e6ffd572f">Delay before you validate</h3>
 
-let jasmine = new Jasmine();
-// modify this line to point to your jasmine.json
-jasmine.loadConfigFile('app/javascript/spec/support/jasmine.json');
-jasmine.execute();
-</code></pre>
+<p>I bet you have seen this, click on a field called as <code>email</code>, type the first character and you see an error, this is not a valid email. You just started and you know it&rsquo;s not complete yet. Give some time before you show error in these cases.</p>
 
-<h3 id="run-the-test:a7b602c2db563f0f7ed935347ae2f6b7">Run the test</h3>
+<h3 id="validate-all-fields-on-submit:a00e322c32e19c56f62ae51e6ffd572f">Validate all fields on submit</h3>
 
-<p>Finally to run the test, add the following line inside <code>scripts</code> section of your <code>package.json</code>:</p>
+<p>Validation on submit is the only way you can validate required fields. It is only when the end user tries to submit the form you will know that he left out the required field(s). Other times we can safely assume that he is still filling in the form.</p>
 
-<pre><code class="language-json">&quot;test&quot;: &quot;babel-node app/javascript/spec/run.js&quot;
-</code></pre>
+<h3 id="show-error-message-above-beside-and-highlight-the-input-in-question:a00e322c32e19c56f62ae51e6ffd572f">Show error message above/beside and highlight the input in question</h3>
 
-<blockquote>
-<p>Ensure you point to your <code>run.js</code> file</p>
-</blockquote>
+<p>This is the goal why we are reading this post. The user doesn&rsquo;t fill in something or fills in the wrong information. We want to avoid that. So we need to show <code>meaningful</code> and <code>well-located</code> error messages. According to my reading, people say showing the error on top of the input in question is ideal, but I&rsquo;m not sure on this one. All I am saying is error should be shown as close to the input as possible. Also highlighting the input is a plus to get users attention.</p>
 
-<p>now <code>npm test</code> will run all your test cases in the spec path specified in jasmine.json file.</p>
+<h3 id="conclusion:a00e322c32e19c56f62ae51e6ffd572f">Conclusion</h3>
 
-<h3 id="bonus-handling-webpack-alias:a7b602c2db563f0f7ed935347ae2f6b7">Bonus: handling webpack alias</h3>
-
-<p>You should be all good to go, but in case you had some <code>aliases</code> in your webpack config then you will need to follow this step. Install <code>module-alias</code> like so:</p>
-
-<pre><code class="language-bash">npm install --save module-alias
-</code></pre>
-
-<p>Then add following line of code in your <code>package.json</code> at the end:</p>
-
-<pre><code class="language-json">&quot;_moduleAliases&quot;: {
-  &quot;vendor&quot; : &quot;vendor/&quot;,
-  &quot;js&quot;: &quot;app/javascript/&quot;
-}
-</code></pre>
-
-<p>feel free to change the aliases above, in my case, I had two aliases called as vendor and js. Now in order to get this aliases load before your test start, you will have to create a file in <code>helper/</code>, I will called it <code>alias_fix.js</code>.</p>
-
-<p>In that file all you have to do is paste these lines of code:</p>
-
-<pre><code class="language-javascript">import 'module-alias/register';
-</code></pre>
-
-<p>Now run your tests as usual and everything should work.</p>
-
-<h3 id="conclusion:a7b602c2db563f0f7ed935347ae2f6b7">Conclusion</h3>
-
-<p>I hope this was helpful. If you find something which can be improved please let me know in the comments below. Thanks for reading.</p>
+<p>If you follow these steps you are bound to nail form validation and UX for your application. I am also trying to solve the same problem with React, as you may know, that form validation in React is a pain. In the next article, I&rsquo;ll talk about how can we follow these rules and do the right things in react. I hope you liked the article, thanks for reading!</p>
 
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
       <li class="email">
-          <a href="mailto:?subject=How%20to%20configure%20Jasmine%20test%20with%20React%2c%20ES6%20and%20Webpack&amp;body=http://classandobjects.com/test_using_jasmine_react_es6_webpack/">
+          <a href="mailto:?subject=The%20zen%20of%20form%20validation%20%28React%29&amp;body=http://classandobjects.com/right_form_validation_in_react/">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
@@ -284,7 +219,7 @@ jasmine.execute();
           </a>
       </li>
       <li class="facebook">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://classandobjects.com/test_using_jasmine_react_es6_webpack/" class="popup">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://classandobjects.com/right_form_validation_in_react/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
@@ -294,7 +229,7 @@ jasmine.execute();
           </a>
       </li>
 			<li class="twitter">
-          <a href="http://twitter.com/home?status=How%20to%20configure%20Jasmine%20test%20with%20React%2c%20ES6%20and%20Webpack%20http://classandobjects.com/test_using_jasmine_react_es6_webpack/" class="popup">
+          <a href="http://twitter.com/home?status=The%20zen%20of%20form%20validation%20%28React%29%20http://classandobjects.com/right_form_validation_in_react/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
@@ -304,7 +239,7 @@ jasmine.execute();
           </a>
       </li>
 			<li class="linkedin">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://classandobjects.com/test_using_jasmine_react_es6_webpack/&amp;title=How%20to%20configure%20Jasmine%20test%20with%20React%2c%20ES6%20and%20Webpack&amp;summary=If%20you%20created%20your%20app%20using%20react_create_app%2c%20congrats%21%20You%20saved%20you%20saved%20yourself%20some%20time.%20You%20now%20have%20jest%20up%20and%20running%20correctly.%20But%20chances%20are%20you%20configured%20your%20Webpack%20and%20now%20you%20want%20to%20configure%20Jasmine%20to%20test%20your%20components%20and%20do%20unit%20testing.%20Let%26rsquo%3bs%20see%20how%20can%20we%20do%20that%3a%20Installing%20Jasmine%20To%20run%20your%20test%20cases%20and%20access%20jasmine%20from%20the%20command%20line%20you%20will%20want%20to%20install%20jasmine%20globally...." class="popup">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://classandobjects.com/right_form_validation_in_react/&amp;title=The%20zen%20of%20form%20validation%20%28React%29&amp;summary=Form%20validation%20is%20complex%21%20With%20react%2c%20it%20gets%20even%20more%20complicated.%20In%20the%20traditional%20web%2c%20there%20are%20inputs%20and%20we%20specify%20the%20type%2c%20max%2c%20min%2c%20etc%20which%20are%20validated%20when%20the%20user%20submits%20the%20form.%20In%20a%20slightly%20more%20UX%20focused%20app%20you%20will%20use%20jQuery%20and%20it%26rsquo%3bs%20plugin%20to%20give%20the%20feedback%20as%20user%20types%20and%20interacts%20with%20the%20system.%20You%20can%20see%20all%20types%20of%20validations%20happening%20throughout%20the%20web%20and%20here%20are%20my%20conclusion%20after%20doing%20some%20research...." class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
@@ -315,7 +250,7 @@ jasmine.execute();
       </li>
       <li class="tumblr">
 					<script>
-						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/classandobjects.com\/test_using_jasmine_react_es6_webpack\/') + '&amp;t=How to configure Jasmine test with React, ES6 and Webpack" class="popup">');
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/classandobjects.com\/right_form_validation_in_react\/') + '&amp;t=The zen of form validation (React)" class="popup">');
 					</script>
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -326,7 +261,7 @@ jasmine.execute();
           <script>document.write('</a>');</script>
       </li>
       <li class="reddit">
-          <a href="http://www.reddit.com/submit?url=http://classandobjects.com/test_using_jasmine_react_es6_webpack/">
+          <a href="http://www.reddit.com/submit?url=http://classandobjects.com/right_form_validation_in_react/">
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 											<g>
@@ -341,7 +276,7 @@ jasmine.execute();
           </a>
       </li>
       <li class="googleplus">
-          <a href="https://plus.google.com/share?url=http://classandobjects.com/test_using_jasmine_react_es6_webpack/" class="popup">
+          <a href="https://plus.google.com/share?url=http://classandobjects.com/right_form_validation_in_react/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <g>
@@ -371,9 +306,9 @@ jasmine.execute();
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'classandobjects';
-      var disqus_identifier = 'http:\/\/classandobjects.com\/test_using_jasmine_react_es6_webpack\/';
-      var disqus_title = 'How to configure Jasmine test with React, ES6 and Webpack';
-      var disqus_url = 'http:\/\/classandobjects.com\/test_using_jasmine_react_es6_webpack\/';
+      var disqus_identifier = 'http:\/\/classandobjects.com\/right_form_validation_in_react\/';
+      var disqus_title = 'The zen of form validation (React)';
+      var disqus_url = 'http:\/\/classandobjects.com\/right_form_validation_in_react\/';
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';

@@ -6,8 +6,55 @@
     <description>Recent content in Javascript on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Feb 2017 15:22:23 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 16 Feb 2017 00:13:56 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The zen of form validation (React)</title>
+      <link>http://classandobjects.com/right_form_validation_in_react/</link>
+      <pubDate>Thu, 16 Feb 2017 00:13:56 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/right_form_validation_in_react/</guid>
+      <description>
+
+&lt;p&gt;Form validation is complex! With react, it gets even more complicated. In the traditional web, there are inputs and we specify the type, max, min, etc which are validated when the user submits the form. In a slightly more UX focused app you will use &lt;code&gt;jQuery&lt;/code&gt; and it&amp;rsquo;s plugin to give the feedback as user types and interacts with the system. You can see all types of validations happening throughout the web and here are my conclusion after doing some research. I will also share how I plan to solve this excruciating pain in React.&lt;/p&gt;
+
+&lt;p&gt;These are few distilled rules that I come to rely upon which can be followed. They may look very simple but difficult to get right. Here they are:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;TL;DR;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Validate field only when they are touched&lt;/li&gt;
+&lt;li&gt;If a field is changing there should be some delay before you validate.&lt;/li&gt;
+&lt;li&gt;When submit is attempted then validate all&lt;/li&gt;
+&lt;li&gt;Show error above/beside the input, also highlight the input in question.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If we are to follow these few rules then we can easily nail down validation. I will quickly and briefly describe them.&lt;/p&gt;
+
+&lt;h3 id=&#34;validate-only-when-a-field-is-touched:a00e322c32e19c56f62ae51e6ffd572f&#34;&gt;Validate only when a field is touched&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say you have few fields and all are empty by default. Do you like to see all the fields marked as red before you even do anything? NO! So we should only validate fields which user has touched once. By touch I mean not just clicked in the input, it means he/she actually tries to change the value even once. Then we can keep doing validation continuously.&lt;/p&gt;
+
+&lt;h3 id=&#34;delay-before-you-validate:a00e322c32e19c56f62ae51e6ffd572f&#34;&gt;Delay before you validate&lt;/h3&gt;
+
+&lt;p&gt;I bet you have seen this, click on a field called as &lt;code&gt;email&lt;/code&gt;, type the first character and you see an error, this is not a valid email. You just started and you know it&amp;rsquo;s not complete yet. Give some time before you show error in these cases.&lt;/p&gt;
+
+&lt;h3 id=&#34;validate-all-fields-on-submit:a00e322c32e19c56f62ae51e6ffd572f&#34;&gt;Validate all fields on submit&lt;/h3&gt;
+
+&lt;p&gt;Validation on submit is the only way you can validate required fields. It is only when the end user tries to submit the form you will know that he left out the required field(s). Other times we can safely assume that he is still filling in the form.&lt;/p&gt;
+
+&lt;h3 id=&#34;show-error-message-above-beside-and-highlight-the-input-in-question:a00e322c32e19c56f62ae51e6ffd572f&#34;&gt;Show error message above/beside and highlight the input in question&lt;/h3&gt;
+
+&lt;p&gt;This is the goal why we are reading this post. The user doesn&amp;rsquo;t fill in something or fills in the wrong information. We want to avoid that. So we need to show &lt;code&gt;meaningful&lt;/code&gt; and &lt;code&gt;well-located&lt;/code&gt; error messages. According to my reading, people say showing the error on top of the input in question is ideal, but I&amp;rsquo;m not sure on this one. All I am saying is error should be shown as close to the input as possible. Also highlighting the input is a plus to get users attention.&lt;/p&gt;
+
+&lt;h3 id=&#34;conclusion:a00e322c32e19c56f62ae51e6ffd572f&#34;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;If you follow these steps you are bound to nail form validation and UX for your application. I am also trying to solve the same problem with React, as you may know, that form validation in React is a pain. In the next article, I&amp;rsquo;ll talk about how can we follow these rules and do the right things in react. I hope you liked the article, thanks for reading!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to configure Jasmine test with React, ES6 and Webpack</title>
@@ -38,7 +85,7 @@
 &lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
   // dirctory under which files exists
   &amp;quot;spec_dir&amp;quot;: &amp;quot;app/javascript&amp;quot;,
-  // nameing convention of the file, i.e. file ending in spec.js
+  // naming convention of the file, i.e. file ending in spec.js
   &amp;quot;spec_files&amp;quot;: [
     &amp;quot;**/*[sS]pec.js&amp;quot;
   ],
