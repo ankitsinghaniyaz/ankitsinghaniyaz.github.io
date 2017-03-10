@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atom on Class &amp; Objects</title>
+    <link>http://classandobjects.com/categories/atom/</link>
+    <description>Recent content in Atom on Class &amp; Objects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Mar 2017 19:02:13 +0530</lastBuildDate>
+    <atom:link href="http://classandobjects.com/categories/atom/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Perfect Atom Setup</title>
+      <link>http://classandobjects.com/blogs/the_perfect_atom_setup/</link>
+      <pubDate>Fri, 10 Mar 2017 19:02:13 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/blogs/the_perfect_atom_setup/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/blogs/atom_logo.png&#34; alt=&#34;atom editor&#34; title=&#34;The ultimate editor atom&#34; style=&#34;padding-right: 30px;&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;I love my editor, Atom. I have tried most of them out there and still, I always come back to this one. It is not perfect but I find my peace in its imperfection. Here are few things I do to make my Atom awesome.&lt;/p&gt;
+
+&lt;h2 id=&#34;making-it-beautiful:ee384879cdfa45954460e4af013701dc&#34;&gt;Making it beautiful&lt;/h2&gt;
+
+&lt;p&gt;I am a connoisseur when it comes to beauty. If you want me hooked, be beautiful. I love beautiful code and here is what I do to make my editor look beautiful.&lt;/p&gt;
+
+&lt;h3 id=&#34;ui-theme:ee384879cdfa45954460e4af013701dc&#34;&gt;UI theme&lt;/h3&gt;
+
+&lt;p&gt;I use &lt;a href=&#34;https://atom.io/themes/atom-material-ui&#34;&gt;Atom Material UI&lt;/a&gt;, there are people who may not like this theme but I perfectly adore this.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apm install atom-material-ui
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;syntax-theme:ee384879cdfa45954460e4af013701dc&#34;&gt;Syntax Theme&lt;/h3&gt;
+
+&lt;p&gt;This is the most important things you can have in your editor, the right syntax colouring can do magic. This can increase your productivity, reduce eye strain and make the work enjoyable. I take my eyes very seriously so should you. I use &lt;a href=&#34;https://atom.io/themes/spacegray-atom-dark-syntax&#34;&gt;Spacegray Atom Dark Syntax&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apm install spacegray-atom-dark-syntax
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The syntax highlighting in VS Code is better than Atom, but that is a discussion for another day.&lt;/p&gt;
+
+&lt;h3 id=&#34;font-face:ee384879cdfa45954460e4af013701dc&#34;&gt;Font Face&lt;/h3&gt;
+
+&lt;p&gt;The font I personally use is &lt;a href=&#34;https://github.com/adobe-fonts/source-code-pro&#34;&gt;Source Code Pro&lt;/a&gt;, I also like to use &lt;a href=&#34;https://github.com/tonsky/FiraCode&#34;&gt;Fira Code&lt;/a&gt; for its symbol translations.&lt;/p&gt;
+
+&lt;h2 id=&#34;making-it-powerful:ee384879cdfa45954460e4af013701dc&#34;&gt;Making it powerful&lt;/h2&gt;
+
+&lt;p&gt;Atom is modular in structure and everything can be added as a package. Here are few packages I use to speed up my workflow.&lt;/p&gt;
+
+&lt;h3 id=&#34;auto-close-html:ee384879cdfa45954460e4af013701dc&#34;&gt;Auto close HTML&lt;/h3&gt;
+
+&lt;p&gt;This is a huge time saver, helps me &lt;a href=&#34;https://atom.io/packages/autoclose-html&#34;&gt;autoclose HTML tags&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apm install autoclose-html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;fold-function:ee384879cdfa45954460e4af013701dc&#34;&gt;Fold Function&lt;/h3&gt;
+
+&lt;p&gt;If you have ever navigated a huge codebase you know how many functions it can have and this package helps &lt;a href=&#34;https://atom.io/packages/fold-functions&#34;&gt;fold functions&lt;/a&gt; and just see their prototype.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apm install fold-functions
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;minimap:ee384879cdfa45954460e4af013701dc&#34;&gt;Minimap&lt;/h3&gt;
+
+&lt;p&gt;This seems like a useless plugin, but I miss it when it&amp;rsquo;s not there. I use it to &lt;a href=&#34;https://atom.io/packages/minimap&#34;&gt;scroll and navigate&lt;/a&gt; the codebase.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apm install minimap
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;highlight-selected:ee384879cdfa45954460e4af013701dc&#34;&gt;Highlight Selected&lt;/h3&gt;
+
+&lt;p&gt;This is a must have. Most of the editor has this built in, but we can always install the extension in the atom and make it work. It helps me &lt;a href=&#34;https://atom.io/packages/highlight-selected&#34;&gt;highlight a word and find all its instances&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I also install a version which shows &lt;a href=&#34;https://atom.io/packages/minimap-highlight-selected&#34;&gt;highlighted words&lt;/a&gt; in minimap too.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apm install highlight-selected
+apm install minimap-highlight-selected
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;linting:ee384879cdfa45954460e4af013701dc&#34;&gt;Linting&lt;/h2&gt;
+
+&lt;p&gt;I use Ruby and JavaScript most of the times and my projects have linting configured, so I like to see the error as I code. So I use &lt;a href=&#34;https://atom.io/packages/linter-ruby&#34;&gt;ruby lint&lt;/a&gt; and &lt;a href=&#34;https://atom.io/packages/linter-eslint&#34;&gt;eslint&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apm install linter-ruby
+apm install linter-eslint
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;conclusion:ee384879cdfa45954460e4af013701dc&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;If there is anything that you feel I should try, feel free to let me know. My arsenal is always empty for cool technologies. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
