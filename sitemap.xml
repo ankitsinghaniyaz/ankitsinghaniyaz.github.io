@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://classandobjects.com/</loc>
-    <lastmod>2017-03-10T19:02:13+05:30</lastmod>
+    <lastmod>2017-03-10T19:02:43+05:30</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://classandobjects.com/tutorial/use_webpack_and_yarn_with_rails/</loc>
+    <lastmod>2017-03-10T19:02:43+05:30</lastmod>
   </url>
   
   <url>

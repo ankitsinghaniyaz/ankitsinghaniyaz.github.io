@@ -6,8 +6,84 @@
     <description>Recent content in Rails on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Mar 2017 19:01:30 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 10 Mar 2017 19:02:43 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using Webpack and Yarn with Rails 5</title>
+      <link>http://classandobjects.com/tutorial/use_webpack_and_yarn_with_rails/</link>
+      <pubDate>Fri, 10 Mar 2017 19:02:43 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/use_webpack_and_yarn_with_rails/</guid>
+      <description>
+
+&lt;p&gt;Rails is awesome, agreed? Everyone understood that JavaScript is coming huge and there has to be a community-specific way to integrate React, Angular or &lt;a href=&#34;https://vuejs.org/&#34;&gt;Vue&lt;/a&gt; with a rails project.&lt;/p&gt;
+
+&lt;p&gt;There have been partial successful attempts like like &lt;a href=&#34;https://github.com/reactjs/react-rails&#34;&gt;react-rails gem&lt;/a&gt;, &lt;a href=&#34;https://github.com/shakacode/react_on_rails&#34;&gt;react-on-rails&lt;/a&gt;, webpack-rails, etc to help user bring JS in. Still, they all lacked somewhere. So here comes all new &lt;a href=&#34;weblog.rubyonrails.org/2017/2/23/Rails-5-1-beta1/&#34;&gt;Rails 5.1&lt;/a&gt; with &lt;strong&gt;webpack&lt;/strong&gt; and &lt;strong&gt;yarn&lt;/strong&gt; integrated.&lt;/p&gt;
+
+&lt;p&gt;You don&amp;rsquo;t need to wait for 5.1 to release or try its beta version, all these is is now available via the gem &lt;a href=&#34;https://github.com/rails/webpacker&#34;&gt;webpacker&lt;/a&gt;. In this post I&amp;rsquo;ll cover how we can pull in this gem and start our JavaScript love story in the Rails land gracefully.&lt;/p&gt;
+
+&lt;p&gt;I am doing a post on how to integrate Vue and Rails, so this is a follow up for how to get the app up and running.&lt;/p&gt;
+
+&lt;h2 id=&#34;setting-up-the-webpacker-gem:b2e57e59eb273f2270b8bcec9b7fd15f&#34;&gt;Setting up the Webpacker gem&lt;/h2&gt;
+
+&lt;p&gt;Add the following line to your &lt;code&gt;Gemfile&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;gem &#39;webpacker&#39;, github: &#39;rails/webpacker&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;then run the following commands from your bash:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# to install the new gem
+bundle
+# to configure webpack
+bin/rails webpacker:install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will generate an &lt;code&gt;app/javascript&lt;/code&gt; directory for you. All of the files can now use &lt;code&gt;ES6&lt;/code&gt; syntax. These files will be compiled and available in your &lt;code&gt;/public&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-next:b2e57e59eb273f2270b8bcec9b7fd15f&#34;&gt;What next?&lt;/h2&gt;
+
+&lt;p&gt;You can now create a file in this javascript directory and then we can refer them from any file like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-erb&#34;&gt;&amp;lt;%# like in app/views/layout/application.html.erb %&amp;gt;
+&amp;lt;%= javascript_pack_tag &#39;calendar&#39; %&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;javascript_pack_tag&lt;/code&gt; is helper provided to bring in this files. This will basically import the compiled version of &lt;code&gt;app/javascript/calendar.js&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;So now we have written our first file and we want to use that, so we will want to have our webpack transpile these file for us. We can do so by running the command below in a separate terminal.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./bin/webpack-watcher
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will keep watching for all the changes we make to our file and bundle them.&lt;/p&gt;
+
+&lt;h2 id=&#34;installing-packages:b2e57e59eb273f2270b8bcec9b7fd15f&#34;&gt;Installing packages&lt;/h2&gt;
+
+&lt;p&gt;You should also see a &lt;code&gt;package.json&lt;/code&gt; file created in your root which allows you to bring in any npm or bower packages. Let&amp;rsquo;s say we want to install &lt;a href=&#34;https://lodash.com/&#34;&gt;lodash&lt;/a&gt;, we can simply do:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yarn add lodash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and now you have this npm asset available along with your rails assets pipeline, pretty cool huh?&lt;/p&gt;
+
+&lt;p&gt;This is very powerful if you don&amp;rsquo;t know. Previously rails developer need to be dependent on some wrapper gem, which will most probably not updated very frequently. So this saves us all those headache.&lt;/p&gt;
+
+&lt;h2 id=&#34;bonus:b2e57e59eb273f2270b8bcec9b7fd15f&#34;&gt;bonus!&lt;/h2&gt;
+
+&lt;p&gt;The webpacker gem tries to help you start your project with ease and thus come with preconfigured with react, vue and angular. You can start using anyone of them with the respective command below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rails webpacker:install:react
+rails webpacker:install:angular
+rails webpacker:install:vue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;conclusion:b2e57e59eb273f2270b8bcec9b7fd15f&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;There are still few things like getting all of these to work while keeping &lt;code&gt;turbolinks&lt;/code&gt; and how to structure the code. All these things are yet to get more concrete. In the meanwhile, whatever we have now is pretty powerful and helps achive a lot. I hope you find this post helpful. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Using Multiple Version of Rails Easily</title>
