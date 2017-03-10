@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://classandobjects.com/</loc>
-    <lastmod>2017-02-16T00:13:56+05:30</lastmod>
+    <lastmod>2017-03-10T19:01:30+05:30</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://classandobjects.com/tutorial/use_multiple_version_of_rails_using_rbenv_or_rvm/</loc>
+    <lastmod>2017-03-10T19:01:30+05:30</lastmod>
   </url>
   
   <url>

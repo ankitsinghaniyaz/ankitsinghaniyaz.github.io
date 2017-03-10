@@ -6,8 +6,26 @@
     <description>Recent content on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Feb 2017 00:13:56 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 10 Mar 2017 19:01:30 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using multiple version of rails easily</title>
+      <link>http://classandobjects.com/tutorial/use_multiple_version_of_rails_using_rbenv_or_rvm/</link>
+      <pubDate>Fri, 10 Mar 2017 19:01:30 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/use_multiple_version_of_rails_using_rbenv_or_rvm/</guid>
+      <description>&lt;p&gt;Managing rails version on local computer can be a pain. We mostly use &lt;code&gt;rbenv&lt;/code&gt; and &lt;code&gt;rvm&lt;/code&gt; to manage the &lt;code&gt;ruby&lt;/code&gt; version. But it gets difficult to manange version of each gem. In todays world you will want to use &lt;a href=&#34;https://www.docker.com/&#34;&gt;docker&lt;/a&gt; to control you complete environment. Still, there are cases when you want to try out a version of rails, so here is how you can do that.&lt;/p&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://asciinema.org/a/90t07lcrwl2scjlrzqdvqgtmb.js&#34; id=&#34;asciicast-90t07lcrwl2scjlrzqdvqgtmb&#34; async&gt;&lt;/script&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;credit: this &lt;a href=&#34;http://stackoverflow.com/questions/8877772/how-do-you-use-multiple-rails-versions-with-rbenv&#34;&gt;post on StackOverflow&lt;/a&gt; was how I got inspiration.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hope this was helpful in some way. Thanks for reading. :)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The zen of form validation (React)</title>
@@ -1312,50 +1330,6 @@ a$save(&amp;quot;E:\\temp.html&amp;quot;)		                 #saves to html
 &lt;a href=&#34;http://rcharts.github.io/viewer/?ecd2a7f0b7abd611ed9a&#34;&gt;See Interactive Ouput on Github Here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I hope you liked the blog and the examples proved useful. They have been taken from many different websites and StackExchange. Thank you everyone for reading.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Adding Domain to Github Pages</title>
-      <link>http://classandobjects.com/tutorial/adding_custom_domain_to_github_pages/</link>
-      <pubDate>Sun, 22 May 2016 16:48:45 +0530</pubDate>
-      
-      <guid>http://classandobjects.com/tutorial/adding_custom_domain_to_github_pages/</guid>
-      <description>
-
-&lt;p&gt;A domain which shows what you do can add &lt;em&gt;credibility&lt;/em&gt; to your blog. In this tutorial we are going to add custom domain to our github page. You may also want to &lt;a href=&#34;..&#34;&gt;host a website on github&lt;/a&gt;. You can have domain with &lt;a href=&#34;https://www.godaddy.com&#34;&gt;godaddy&lt;/a&gt;, &lt;a href=&#34;https://www.hostgator.com&#34;&gt;hostgator&lt;/a&gt;, &lt;a href=&#34;https://www.namecheap.com&#34;&gt;namecheap&lt;/a&gt;, etc. The steps remains the same. I will point out any peculiarity, if they exist. So, lets get started.&lt;/p&gt;
-
-&lt;h2 id=&#34;configuring-github:09ae30f3a7cdecb8c8d164a94bf30204&#34;&gt;Configuring Github&lt;/h2&gt;
-
-&lt;p&gt;There should be a way for github to know what is the name of your domain. To keep it simple you have to create a file &lt;code&gt;CNAME&lt;/code&gt; in your repository root. This will be the place where you have hosted your websites html content. In this file put in your domain name &lt;code&gt;mydomain.com&lt;/code&gt;. You can &lt;a href=&#34;https://github.com/ankitsinghaniyaz/ankitsinghaniyaz.github.io&#34;&gt;visit my github hosting&lt;/a&gt; and checkout how my &lt;code&gt;CNAME&lt;/code&gt; file looks.&lt;/p&gt;
-
-&lt;h2 id=&#34;configuring-domain-provider:09ae30f3a7cdecb8c8d164a94bf30204&#34;&gt;Configuring Domain Provider&lt;/h2&gt;
-
-&lt;p&gt;In this step we have to login to our account where we have bought the domain.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Warning: This may seem complicated, but it is not.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://classandobjects.com/images/domain_entry.png&#34; alt=&#34;adding entries in domain&#34; title=&#34;TEXT&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;You have to follow these three simple steps. Just add/modify these entries:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Create/modify &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;Aname&lt;/code&gt; or &lt;code&gt;Alias&lt;/code&gt; with name as &lt;code&gt;@&lt;/code&gt;  and value as &lt;code&gt;192.30.252.153&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Create/modify &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;Aname&lt;/code&gt; or &lt;code&gt;Alias&lt;/code&gt; with name as &lt;code&gt;@&lt;/code&gt;  and value as &lt;code&gt;192.30.252.154&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Create/modify &lt;code&gt;CNAME&lt;/code&gt; with name as &lt;code&gt;www&lt;/code&gt; and value as &lt;code&gt;yourgithubid.github.io&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Note: &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;Aname&lt;/code&gt; and &lt;code&gt;Alias&lt;/code&gt; are same thing.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Keep all other fields to their defaults. Do not hesitate to play. It is how you learn new things.&lt;/p&gt;
-
-&lt;h2 id=&#34;conclusion:09ae30f3a7cdecb8c8d164a94bf30204&#34;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Within less than 10 minutes you website will come live. You can go to your link and try it! If you find any information missing or have any doubts feel free to leave a comment below. Thanks for reading.&lt;/p&gt;
 </description>
     </item>
     

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rvm on Class &amp; Objects</title>
+    <link>http://classandobjects.com/tags/rvm/</link>
+    <description>Recent content in Rvm on Class &amp; Objects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Mar 2017 19:01:30 +0530</lastBuildDate>
+    <atom:link href="http://classandobjects.com/tags/rvm/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using multiple version of rails easily</title>
+      <link>http://classandobjects.com/tutorial/use_multiple_version_of_rails_using_rbenv_or_rvm/</link>
+      <pubDate>Fri, 10 Mar 2017 19:01:30 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/use_multiple_version_of_rails_using_rbenv_or_rvm/</guid>
+      <description>&lt;p&gt;Managing rails version on local computer can be a pain. We mostly use &lt;code&gt;rbenv&lt;/code&gt; and &lt;code&gt;rvm&lt;/code&gt; to manage the &lt;code&gt;ruby&lt;/code&gt; version. But it gets difficult to manange version of each gem. In todays world you will want to use &lt;a href=&#34;https://www.docker.com/&#34;&gt;docker&lt;/a&gt; to control you complete environment. Still, there are cases when you want to try out a version of rails, so here is how you can do that.&lt;/p&gt;
+
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://asciinema.org/a/90t07lcrwl2scjlrzqdvqgtmb.js&#34; id=&#34;asciicast-90t07lcrwl2scjlrzqdvqgtmb&#34; async&gt;&lt;/script&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;credit: this &lt;a href=&#34;http://stackoverflow.com/questions/8877772/how-do-you-use-multiple-rails-versions-with-rbenv&#34;&gt;post on StackOverflow&lt;/a&gt; was how I got inspiration.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hope this was helpful in some way. Thanks for reading. :)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
