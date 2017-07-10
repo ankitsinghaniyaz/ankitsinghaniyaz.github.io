@@ -6,8 +6,77 @@
     <description>Recent content on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Jul 2017 22:36:48 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jul 2017 23:04:59 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>4 ways to pass parameters to a method in Ruby</title>
+      <link>http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/</link>
+      <pubDate>Mon, 10 Jul 2017 23:04:59 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/</guid>
+      <description>
+
+&lt;p&gt;Recently I have been dreaming and talking a lot about methods. Here are few cool things which I discovered on my way to get better at Ruby. I&amp;rsquo;ll talk about different ways in which we can pass parameters to a method. Continue to find out how many of them did you knew already. You can read my &lt;a href=&#34;http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/&#34;&gt;difference between class methods and instance methods&lt;/a&gt; for some more fun.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-common-method:a07ed1599a14c5f4bae4a0dc31fb7db6&#34;&gt;The common method&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;def full_name(first, last)
+  &amp;quot;#{first} #{last}&amp;quot;
+end
+
+full_name(&#39;sam&#39;, &#39;smith&#39;)
+=&amp;gt; &amp;quot;sam smith&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;named-parameters:a07ed1599a14c5f4bae4a0dc31fb7db6&#34;&gt;Named parameters&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;def parse(name: &#39;Jhon&#39;, hero: &#39;superman&#39;)
+  &amp;quot;I am #{name}, the #{hero}&amp;quot;
+end
+
+parse
+=&amp;gt; &amp;quot;I am Jhon, the superman&amp;quot;
+
+parse(name: &#39;Harry Potter&#39;, hero: &#39;wizard&#39;)
+=&amp;gt; &amp;quot;I am Harry Potter, the wizard&amp;quot;
+
+parse(name: &#39;Luffy&#39;, food: &#39;meat&#39;)
+# ArgumentError: unknown keyword: food
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;any-number-of-unnamed-parameters:a07ed1599a14c5f4bae4a0dc31fb7db6&#34;&gt;Any number of unnamed parameters&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;def attributes(*args)
+ args.join(&#39;, &#39;)
+end
+
+attributes(&#39;hi&#39;, &#39;how&#39;, &#39;are&#39;, &#39;you&#39;)
+=&amp;gt; &amp;quot;hi, how, are, you&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;any-number-of-named-parameters:a07ed1599a14c5f4bae4a0dc31fb7db6&#34;&gt;Any number of named parameters&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;def fields(args = {})
+  args.each do |k,v|
+    puts k, v
+  end
+end
+
+fields(name: &#39;adf&#39;, fasd: &#39;fasd&#39;)
+name
+adf
+fasd
+fasd
+=&amp;gt; {:name=&amp;gt;&amp;quot;adf&amp;quot;, :fasd=&amp;gt;&amp;quot;fasd&amp;quot;}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;conclusion:a07ed1599a14c5f4bae4a0dc31fb7db6&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;We can do mix and match of all these different ways of sending params and create a very robust method. I hope you find this helpful. If I missed somthing do let me know in the comments below. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Understanding the difference between Ruby class method and instance method</title>
@@ -1174,22 +1243,6 @@ class ComponentB extends React.Component {
 &lt;h2 id=&#34;conclusion:3222e409acaa90f43374c31f0beac177&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;As my conclusion, I will say that React js seem like it will stay in the market for a long time. Even if it does not, it is very easy to learn and does not require a lot of concepts. It is fast and keeps your code DRY. You should try React if you have not tried it yet. It is fun.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Level Up the Programming Skills : Language vs Logic</title>
-      <link>http://classandobjects.com/blogs/level_up_programming_skills/</link>
-      <pubDate>Fri, 09 Sep 2016 19:17:43 +0530</pubDate>
-      
-      <guid>http://classandobjects.com/blogs/level_up_programming_skills/</guid>
-      <description>&lt;p&gt;Learning the language of computers can be both interesting and daunting. You may be either starting your career or are a seasoned developer, the chances are too likely that you are having trouble hitting the right balance between language and logical skills.  In this article, I will try to find out what is the right balance to keep levelling up our programming skills.&lt;/p&gt;
-
-&lt;p&gt;In the current education system, most of the times, we tend to focus too much on the logical aspect of the programming. Understanding logic and different algorithms are albeit the most important part of programming. I believe that when you know why you are learning and what all can be done with your tools then you do it better and faster. Take an example of a man learning to be a carpenter. He is taught how to use the saw, hammer, nails, but he does not yet know how the hammer, nails and saw are related. The example may be poor but I hope you get the point. There is another extreme which mostly happen to the people from the non-computer background. They know how to code Java, Python and Ruby, but what they do not know is what are the tools that we have and how to use them efficiently. They do not understand things like time and space complexity or maybe they do, but after a long time. You can also find yourself in this situation if you are in the industry for a long while, where most of the work is easy. You get to learn new ways of doing things, new syntax and new technology, but you are not flexing your logical muscles much.&lt;/p&gt;
-
-&lt;p&gt;Here is a quick suggestion on what I feel is the right approach to the right balance. When you have plenty of time and you are in a learning phase, focus on building logic. You can build logical abilities by solving different algorithmic problems on different coding platforms. You should also try out classical problems like trees, sorting techniques, pattern printing and recursion. Now when you are comfortable with one language and know the logic, it is time to dive deep into learning language intricacies. Try getting your hands on some framework and build something real. The most obvious way would be to go with  web development or mobile development. You should also build some projects and start learning the language part(framework) when you are nearing to apply for a job. You need some solid projects to back you up in the interview. This is going to give you the matter to talk on and your logical skills are going to get you through the tricky programming questions most interviewers ask.&lt;/p&gt;
-
-&lt;p&gt;In the end, I would just say that build your logical skills first and keep an eye on what are you going to do with these skills. As you get into the career you will not have much time to work on the logical part but you should keep taking some occasional coding challenges to keep yourself revitalized. Thanks for reading, looking forward to a difference in opinion!&lt;/p&gt;
 </description>
     </item>
     

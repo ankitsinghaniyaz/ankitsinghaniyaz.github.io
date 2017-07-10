@@ -6,8 +6,77 @@
     <description>Recent content in Tutorials on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Jul 2017 22:36:48 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jul 2017 23:04:59 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>4 ways to pass parameters to a method in Ruby</title>
+      <link>http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/</link>
+      <pubDate>Mon, 10 Jul 2017 23:04:59 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/</guid>
+      <description>
+
+&lt;p&gt;Recently I have been dreaming and talking a lot about methods. Here are few cool things which I discovered on my way to get better at Ruby. I&amp;rsquo;ll talk about different ways in which we can pass parameters to a method. Continue to find out how many of them did you knew already. You can read my &lt;a href=&#34;http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/&#34;&gt;difference between class methods and instance methods&lt;/a&gt; for some more fun.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-common-method:a07ed1599a14c5f4bae4a0dc31fb7db6&#34;&gt;The common method&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;def full_name(first, last)
+  &amp;quot;#{first} #{last}&amp;quot;
+end
+
+full_name(&#39;sam&#39;, &#39;smith&#39;)
+=&amp;gt; &amp;quot;sam smith&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;named-parameters:a07ed1599a14c5f4bae4a0dc31fb7db6&#34;&gt;Named parameters&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;def parse(name: &#39;Jhon&#39;, hero: &#39;superman&#39;)
+  &amp;quot;I am #{name}, the #{hero}&amp;quot;
+end
+
+parse
+=&amp;gt; &amp;quot;I am Jhon, the superman&amp;quot;
+
+parse(name: &#39;Harry Potter&#39;, hero: &#39;wizard&#39;)
+=&amp;gt; &amp;quot;I am Harry Potter, the wizard&amp;quot;
+
+parse(name: &#39;Luffy&#39;, food: &#39;meat&#39;)
+# ArgumentError: unknown keyword: food
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;any-number-of-unnamed-parameters:a07ed1599a14c5f4bae4a0dc31fb7db6&#34;&gt;Any number of unnamed parameters&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;def attributes(*args)
+ args.join(&#39;, &#39;)
+end
+
+attributes(&#39;hi&#39;, &#39;how&#39;, &#39;are&#39;, &#39;you&#39;)
+=&amp;gt; &amp;quot;hi, how, are, you&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;any-number-of-named-parameters:a07ed1599a14c5f4bae4a0dc31fb7db6&#34;&gt;Any number of named parameters&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;def fields(args = {})
+  args.each do |k,v|
+    puts k, v
+  end
+end
+
+fields(name: &#39;adf&#39;, fasd: &#39;fasd&#39;)
+name
+adf
+fasd
+fasd
+=&amp;gt; {:name=&amp;gt;&amp;quot;adf&amp;quot;, :fasd=&amp;gt;&amp;quot;fasd&amp;quot;}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;conclusion:a07ed1599a14c5f4bae4a0dc31fb7db6&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;We can do mix and match of all these different ways of sending params and create a very robust method. I hope you find this helpful. If I missed somthing do let me know in the comments below. Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Understanding the difference between Ruby class method and instance method</title>

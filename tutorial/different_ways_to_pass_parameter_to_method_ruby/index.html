@@ -7,30 +7,30 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Understanding the difference between Ruby class method and instance method &middot;  Class &amp; Objects" />
+        <meta property="og:title" content=" 4 ways to pass parameters to a method in Ruby &middot;  Class &amp; Objects" />
         <meta property="og:site_name" content="Class &amp; Objects" />
-        <meta property="og:url" content="http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/" />
+        <meta property="og:url" content="http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/" />
 
     
         <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2017-07-10T22:36:48&#43;05:30" />
+        <meta property="og:article:published_time" content="2017-07-10T23:04:59&#43;05:30" />
         <meta property="og:article:tag" content="ruby" />
         
 
 
-        <meta name="keywords" content="ruby, class method vs instance method ruby, difference between class and instance method in ruby"/>
+        <meta name="keywords" content="ruby, how to pass parameter to a method in ruby, pass variable number of params in ruby"/>
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@classandobjects" />
         <meta name="twitter:creator" content="@classandobjects" />
-        <meta name="twitter:title" content="Understanding the difference between Ruby class method and instance method" />
-        <meta name="twitter:description" content="Have you ever wondered when to use an instance method vs when to use a class method? Here is how to judge" />
-        <meta name="twitter:url" content="http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/" />
+        <meta name="twitter:title" content="4 ways to pass parameters to a method in Ruby" />
+        <meta name="twitter:description" content="There are many ways to define a method in Ruby. Read for youself and find out which one is best for you." />
+        <meta name="twitter:url" content="http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/" />
     
 
-        <title> Understanding the difference between Ruby class method and instance method &middot;  Class &amp; Objects</title>
+        <title> 4 ways to pass parameters to a method in Ruby &middot;  Class &amp; Objects</title>
 
     
-        <meta name="description" content="Have you ever wondered when to use an instance method vs when to use a class method? Here is how to judge" />
+        <meta name="description" content="There are many ways to define a method in Ruby. Read for youself and find out which one is best for you." />
     
 
         <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
@@ -46,21 +46,21 @@
     
 
     
-        <link rel="canonical" href="http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/" />
+        <link rel="canonical" href="http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/" />
 
     
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Understanding the difference between Ruby class method and instance method",
+        "headline": "4 ways to pass parameters to a method in Ruby",
         "author": {
             "@type": "Person",
             "name": "http://profiles.google.com/\x2bAnkitSinghaniya?rel=author"
         },
         "datePublished": "2017-07-10",
-        "description": "Have you ever wondered when to use an instance method vs when to use a class method? Here is how to judge",
-        "wordCount":  382 
+        "description": "There are many ways to define a method in Ruby. Read for youself and find out which one is best for you.",
+        "wordCount":  212 
     }
     </script>
     
@@ -76,7 +76,7 @@
         <header id="header">
             <a id="logo" href="http://classandobjects.com/"><img src="https://www.gravatar.com/avatar/eeb8f1009ec39ef99a26740cb0361418?s=512" alt="Class &amp; Objects" /></a>
             <h1><a href="http://classandobjects.com/">Class &amp; Objects</a></h1>
-            <p>Have you ever wondered when to use an instance method vs when to use a class method? Here is how to judge</p>
+            <p>There are many ways to define a method in Ruby. Read for youself and find out which one is best for you.</p>
 
             <div id="follow-icons">
 	
@@ -144,7 +144,7 @@ function subscribe() {
 
 <article id="" class="tutorial">
     <div class="post-stamp">
-        <time datetime="2017-07-10T22:36:48&#43;05:30">
+        <time datetime="2017-07-10T23:04:59&#43;05:30">
             10 Jul 2017
         </time>
         <span class="taglist">
@@ -156,68 +156,76 @@ function subscribe() {
         
         </span>
     </div>
-    <h1 class="post-title">Understanding the difference between Ruby class method and instance method</h1>
+    <h1 class="post-title">4 ways to pass parameters to a method in Ruby</h1>
 
     
     
 
     
 
-<p>Though this is a very simple concept. In my early days of using Ruby, I was always confused about which one to use when and why. I came up with the following way to identify if a method should be a class method or an instance method. I hope this will help you also clear the confusion.</p>
+<p>Recently I have been dreaming and talking a lot about methods. Here are few cool things which I discovered on my way to get better at Ruby. I&rsquo;ll talk about different ways in which we can pass parameters to a method. Continue to find out how many of them did you knew already. You can read my <a href="http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/">difference between class methods and instance methods</a> for some more fun.</p>
 
-<h2 id="class-method:6af750d47b9b682ce730084dc3560cf0">Class Method</h2>
+<h2 id="the-common-method:a07ed1599a14c5f4bae4a0dc31fb7db6">The common method</h2>
 
-<p>I think of class methods like function which is going to deal with a collection of Object. Let&rsquo;s say we have a class <code>User</code> in our case and we want to get the list of all the users. This allows me to ask the question am I dealing with one user or a group of users. Here I know that I want a list of users. Therefore an instance method. Let&rsquo;s say we want to find the User with the best profile picture. All these methods tell us that we are dealing with multiple users and we want to operate on them. In the case of best profile picture, it is a bit more confusing as we are just going to return one instance of the User. Here is how it will look like in the code.</p>
+<pre><code class="language-ruby">def full_name(first, last)
+  &quot;#{first} #{last}&quot;
+end
 
-<pre><code class="language-ruby">class User
-  def self.all
-    # some logic to return all the users
-  end
+full_name('sam', 'smith')
+=&gt; &quot;sam smith&quot;
+</code></pre>
 
-  def self.with_best_profile_pic
-    # logic to find out the best profile pic and return that user
+<h2 id="named-parameters:a07ed1599a14c5f4bae4a0dc31fb7db6">Named parameters</h2>
+
+<pre><code class="language-ruby">def parse(name: 'Jhon', hero: 'superman')
+  &quot;I am #{name}, the #{hero}&quot;
+end
+
+parse
+=&gt; &quot;I am Jhon, the superman&quot;
+
+parse(name: 'Harry Potter', hero: 'wizard')
+=&gt; &quot;I am Harry Potter, the wizard&quot;
+
+parse(name: 'Luffy', food: 'meat')
+# ArgumentError: unknown keyword: food
+</code></pre>
+
+<h2 id="any-number-of-unnamed-parameters:a07ed1599a14c5f4bae4a0dc31fb7db6">Any number of unnamed parameters</h2>
+
+<pre><code class="language-ruby">def attributes(*args)
+ args.join(', ')
+end
+
+attributes('hi', 'how', 'are', 'you')
+=&gt; &quot;hi, how, are, you&quot;
+</code></pre>
+
+<h2 id="any-number-of-named-parameters:a07ed1599a14c5f4bae4a0dc31fb7db6">Any number of named parameters</h2>
+
+<pre><code class="language-ruby">def fields(args = {})
+  args.each do |k,v|
+    puts k, v
   end
 end
 
-# Print all the user
-User.all
-# Output: [&lt;#User1&gt;, &lt;#User2&gt;]
+fields(name: 'adf', fasd: 'fasd')
+name
+adf
+fasd
+fasd
+=&gt; {:name=&gt;&quot;adf&quot;, :fasd=&gt;&quot;fasd&quot;}
 
-# Find a user with best profile pic in all users
-User.with_best_profile_pic
-# Output: &lt;#User3&gt;
 </code></pre>
 
-<h2 id="instance-method:6af750d47b9b682ce730084dc3560cf0">Instance Method</h2>
+<h2 id="conclusion:a07ed1599a14c5f4bae4a0dc31fb7db6">Conclusion</h2>
 
-<p>Instance methods deal with an individual instance of the class. In more object oriented way we would say these methods are the action which the object can take. Like again for our User class, one particular user can do actions like subscribe, log in, etc.</p>
-
-<p>Here is how it will look in the code:</p>
-
-<pre><code class="language-ruby">class User
-  def call
-    # user calling action will be performed
-  end
-end
-
-# we first get one of the users
-sam = User.with_best_profile_pic
-# then we can make that user do any action which we want
-sam.call
-</code></pre>
-
-<blockquote>
-<p>Question to ask: Am I dealing with one instance or many instances of the class?</p>
-</blockquote>
-
-<h2 id="conclusion:6af750d47b9b682ce730084dc3560cf0">Conclusion</h2>
-
-<p>I hope that helped you in some way. Thanks for your time. Feel free to add more in the comments below!</p>
+<p>We can do mix and match of all these different ways of sending params and create a very robust method. I hope you find this helpful. If I missed somthing do let me know in the comments below. Thanks for reading.</p>
 
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
       <li class="email">
-          <a href="mailto:?subject=Understanding%20the%20difference%20between%20Ruby%20class%20method%20and%20instance%20method&amp;body=http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/">
+          <a href="mailto:?subject=4%20ways%20to%20pass%20parameters%20to%20a%20method%20in%20Ruby&amp;body=http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
@@ -227,7 +235,7 @@ sam.call
           </a>
       </li>
       <li class="facebook">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/" class="popup">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
@@ -237,7 +245,7 @@ sam.call
           </a>
       </li>
 			<li class="twitter">
-          <a href="http://twitter.com/home?status=Understanding%20the%20difference%20between%20Ruby%20class%20method%20and%20instance%20method%20http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/" class="popup">
+          <a href="http://twitter.com/home?status=4%20ways%20to%20pass%20parameters%20to%20a%20method%20in%20Ruby%20http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
@@ -247,7 +255,7 @@ sam.call
           </a>
       </li>
 			<li class="linkedin">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/&amp;title=Understanding%20the%20difference%20between%20Ruby%20class%20method%20and%20instance%20method&amp;summary=Though%20this%20is%20a%20very%20simple%20concept.%20In%20my%20early%20days%20of%20using%20Ruby%2c%20I%20was%20always%20confused%20about%20which%20one%20to%20use%20when%20and%20why.%20I%20came%20up%20with%20the%20following%20way%20to%20identify%20if%20a%20method%20should%20be%20a%20class%20method%20or%20an%20instance%20method.%20I%20hope%20this%20will%20help%20you%20also%20clear%20the%20confusion.%20Class%20Method%20I%20think%20of%20class%20methods%20like%20function%20which%20is%20going%20to%20deal%20with%20a%20collection%20of%20Object...." class="popup">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/&amp;title=4%20ways%20to%20pass%20parameters%20to%20a%20method%20in%20Ruby&amp;summary=Recently%20I%20have%20been%20dreaming%20and%20talking%20a%20lot%20about%20methods.%20Here%20are%20few%20cool%20things%20which%20I%20discovered%20on%20my%20way%20to%20get%20better%20at%20Ruby.%20I%26rsquo%3bll%20talk%20about%20different%20ways%20in%20which%20we%20can%20pass%20parameters%20to%20a%20method.%20Continue%20to%20find%20out%20how%20many%20of%20them%20did%20you%20knew%20already.%20You%20can%20read%20my%20difference%20between%20class%20methods%20and%20instance%20methods%20for%20some%20more%20fun.%20The%20common%20method%20def%20full_name%28first%2c%20last%29%20%26quot%3b%23%7bfirst%7d%20%23%7blast%7d%26quot%3b%20end%20full_name%28%27sam%27%2c%20%27smith%27%29%20%3d%26gt%3b%20%26quot%3bsam%20smith%26quot%3b%20Named%20parameters%20def%20parse%28name%3a%20%27Jhon%27%2c%20hero%3a%20%27superman%27%29%20%26quot%3bI%20am%20%23%7bname%7d%2c%20the%20%23%7bhero%7d%26quot%3b%20end%20parse%20%3d%26gt%3b%20%26quot%3bI%20am%20Jhon%2c%20the%20superman%26quot%3b%20parse%28name%3a%20%27Harry%20Potter%27%2c%20hero%3a%20%27wizard%27%29%20%3d%26gt%3b%20%26quot%3bI%20am%20Harry%20Potter%2c%20the%20wizard%26quot%3b%20parse%28name%3a%20%27Luffy%27%2c%20food%3a%20%27meat%27%29%20%23%20ArgumentError%3a%20unknown%20keyword%3a%20food%20Any%20number%20of%20unnamed%20parameters%20def%20attributes%28%2aargs%29%20args.join%28%27%2c%20%27%29%20end%20attributes%28%27hi%27%2c%20%27how%27%2c%20%27are%27%2c%20%27you%27%29%20%3d%26gt%3b%20%26quot%3bhi%2c%20how%2c%20are%2c%20you%26quot%3b%20Any%20number%20of%20named%20parameters%20def%20fields%28args%20%3d%20%7b%7d%29%20args.each%20do%20%7ck%2cv%7c%20puts%20k%2c%20v%20end%20end%20fields%28name%3a%20%27adf%27%2c%20fasd%3a%20%27fasd%27%29%20name%20adf%20fasd%20fasd%20%3d%26gt%3b%20%7b%3aname%3d%26gt%3b%26quot%3badf%26quot%3b%2c%20%3afasd%3d%26gt%3b%26quot%3bfasd%26quot%3b%7d%20Conclusion%20We%20can%20do%20mix%20and%20match%20of%20all%20these%20different%20ways%20of%20sending%20params%20and%20create%20a%20very%20robust%20method...." class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
@@ -258,7 +266,7 @@ sam.call
       </li>
       <li class="tumblr">
 					<script>
-						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/classandobjects.com\/tutorial\/instance_method_vs_class_method_in_ruby\/') + '&amp;t=Understanding the difference between Ruby class method and instance method" class="popup">');
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/classandobjects.com\/tutorial\/different_ways_to_pass_parameter_to_method_ruby\/') + '&amp;t=4 ways to pass parameters to a method in Ruby" class="popup">');
 					</script>
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -269,7 +277,7 @@ sam.call
           <script>document.write('</a>');</script>
       </li>
       <li class="reddit">
-          <a href="http://www.reddit.com/submit?url=http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/">
+          <a href="http://www.reddit.com/submit?url=http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/">
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 											<g>
@@ -284,7 +292,7 @@ sam.call
           </a>
       </li>
       <li class="googleplus">
-          <a href="https://plus.google.com/share?url=http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/" class="popup">
+          <a href="https://plus.google.com/share?url=http://classandobjects.com/tutorial/different_ways_to_pass_parameter_to_method_ruby/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <g>
@@ -314,9 +322,9 @@ sam.call
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'classandobjects';
-      var disqus_identifier = 'http:\/\/classandobjects.com\/tutorial\/instance_method_vs_class_method_in_ruby\/';
-      var disqus_title = 'Understanding the difference between Ruby class method and instance method';
-      var disqus_url = 'http:\/\/classandobjects.com\/tutorial\/instance_method_vs_class_method_in_ruby\/';
+      var disqus_identifier = 'http:\/\/classandobjects.com\/tutorial\/different_ways_to_pass_parameter_to_method_ruby\/';
+      var disqus_title = '4 ways to pass parameters to a method in Ruby';
+      var disqus_url = 'http:\/\/classandobjects.com\/tutorial\/different_ways_to_pass_parameter_to_method_ruby\/';
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
