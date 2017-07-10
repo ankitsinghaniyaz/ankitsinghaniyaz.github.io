@@ -6,8 +6,69 @@
     <description>Recent content in Tutorials on Class &amp; Objects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Mar 2017 19:02:43 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jul 2017 22:36:48 +0530</lastBuildDate>
     <atom:link href="http://classandobjects.com/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Understanding the difference between Ruby class method and instance method</title>
+      <link>http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/</link>
+      <pubDate>Mon, 10 Jul 2017 22:36:48 +0530</pubDate>
+      
+      <guid>http://classandobjects.com/tutorial/instance_method_vs_class_method_in_ruby/</guid>
+      <description>
+
+&lt;p&gt;Though this is a very simple concept. In my early days of using Ruby, I was always confused about which one to use when and why. I came up with the following way to identify if a method should be a class method or an instance method. I hope this will help you also clear the confusion.&lt;/p&gt;
+
+&lt;h2 id=&#34;class-method:6af750d47b9b682ce730084dc3560cf0&#34;&gt;Class Method&lt;/h2&gt;
+
+&lt;p&gt;I think of class methods like function which is going to deal with a collection of Object. Let&amp;rsquo;s say we have a class &lt;code&gt;User&lt;/code&gt; in our case and we want to get the list of all the users. This allows me to ask the question am I dealing with one user or a group of users. Here I know that I want a list of users. Therefore an instance method. Let&amp;rsquo;s say we want to find the User with the best profile picture. All these methods tell us that we are dealing with multiple users and we want to operate on them. In the case of best profile picture, it is a bit more confusing as we are just going to return one instance of the User. Here is how it will look like in the code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;class User
+  def self.all
+    # some logic to return all the users
+  end
+
+  def self.with_best_profile_pic
+    # logic to find out the best profile pic and return that user
+  end
+end
+
+# Print all the user
+User.all
+# Output: [&amp;lt;#User1&amp;gt;, &amp;lt;#User2&amp;gt;]
+
+# Find a user with best profile pic in all users
+User.with_best_profile_pic
+# Output: &amp;lt;#User3&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;instance-method:6af750d47b9b682ce730084dc3560cf0&#34;&gt;Instance Method&lt;/h2&gt;
+
+&lt;p&gt;Instance methods deal with an individual instance of the class. In more object oriented way we would say these methods are the action which the object can take. Like again for our User class, one particular user can do actions like subscribe, log in, etc.&lt;/p&gt;
+
+&lt;p&gt;Here is how it will look in the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;class User
+  def call
+    # user calling action will be performed
+  end
+end
+
+# we first get one of the users
+sam = User.with_best_profile_pic
+# then we can make that user do any action which we want
+sam.call
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Question to ask: Am I dealing with one instance or many instances of the class?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;conclusion:6af750d47b9b682ce730084dc3560cf0&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I hope that helped you in some way. Thanks for your time. Feel free to add more in the comments below!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Using Webpack and Yarn with Rails 5</title>
